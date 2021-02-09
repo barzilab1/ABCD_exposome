@@ -52,9 +52,21 @@ demographics_set[demo_prnt_marital_v2_l == 777 , demo_prnt_marital_v2_l:= NA]
 
 demographics_set[,separated_or_divorced := 0]
 demographics_set[(demo_prnt_marital_v2_l %in%  c(3,4)), separated_or_divorced := 1]
+demographics_set[is.na(demo_prnt_marital_v2_l), separated_or_divorced := NA]
 
 demographics_set[,parents_married := 0]
 demographics_set[(demo_prnt_marital_v2_l == 1), parents_married := 1]
+demographics_set[is.na(demo_prnt_marital_v2_l), parents_married := NA]
+
+demographics_set[,living_with_partenr  := 0]
+demographics_set[(demo_prnt_marital_v2_l == 6), living_with_partenr  := 1]
+demographics_set[is.na(demo_prnt_marital_v2_l), living_with_partenr  := NA]
+
+demographics_set[, demo_prnt_marital_v2_l:= NULL]
+
+########### child religious 
+demographics_set[demo_yrs_1_l %in% c(777, 999), demo_yrs_1_l := NA]
+demographics_set[demo_yrs_2_l %in% c(777, 999), demo_yrs_2_l := NA]
 
 ########### economic hardship
 economic_hardship_names = grep("demo_fam_exp", colnames(demographics_set),value = T)
@@ -74,34 +86,36 @@ demographics_set[, demo_fam_poverty := rowSums(.SD, na.rm = T), .SDcols = econom
 demographics_set[rowSums(is.na(demographics_set[,.SD,.SDcols = economic_hardship_names])) == 7 , "demo_fam_poverty" := NA]
 
 
-##################only in exposome
+
+
+
+
+
 demographics_set = demographics_set[eventname == "1_year_follow_up_y_arm_1",]
 
 #remove any empty cols in 1 year follow up
 demographics_set[, colnames(demographics_set)[colSums(is.na(demographics_set)) == dim(demographics_set)[1]] := NULL]
 
 #remove irrelevant columns
-#languages *** fix if need leng
-demographics_set[, grep("_lang", colnames(demographics_set), value = T) := NULL]
-#parent data
-demographics_set [, c("demo_prnt_age_v2_l", "demo_prnt_age_v2_refuse_l", "demo_prnt_gender_id_v2_l") := NULL]
+demographics_set[, grep("_lang_(.*2|years)_", colnames(demographics_set), value = T) := NULL]
 
-demographics_set[, grep("_(prnt|prtnr)_(race|ethn.*|indust_refuse|empl_time|2yr)_", colnames(demographics_set), value = T) := NULL]
+demographics_set[, grep("_(prnt|prtnr)_(race|ethn.*|indust_refuse|empl|2yr|nat|income|prtnr)_", colnames(demographics_set), value = T) := NULL]
 demographics_set[, grep("_child_time(2|3)_", colnames(demographics_set), value = T) := NULL]
 demographics_set[, grep("_roster_(.*c|.*refuse)_", colnames(demographics_set), value = T) := NULL]
 demographics_set[, grep("_yrs_2([a-b]|.*display)_", colnames(demographics_set), value = T) := NULL]
 demographics_set[, grep("_med_", colnames(demographics_set), value = T) := NULL]
 
+
+demographics_set [, c("demo_prnt_age_v2_l", "demo_prnt_age_v2_refuse_l", "demo_prnt_gender_id_v2_l", 
+                      "demo_l_p_select_language___1", "demo_brthdat_v2_l", "demo_relig_v2_l") := NULL]
+
+demographics_set[demo_child_time_v2_l == 777, demo_child_time_v2_l := NA]
+
 demographics_set = droplevels(demographics_set)
 
 
 
-write.csv(file = "outputs/discrimination_demographics.csv",x = demographics_set[,c("src_subject_id", "interview_date", "interview_age", "demo_prim" , "eventname", "sex",
-                                                                                                "demo_ed_v2_l", 
-                                                                                                "household_income","demo_prnt_ed_v2_l", "demo_prtnr_ed_v2_l", "parents_avg_edu", 
-                                                                                                "demo_prnt_marital_v2_l", "separated_or_divorced", "parents_married",
-                                                                                                "age", "sex_br", "gender",
-                                                                                                economic_hardship_names, "demo_fam_poverty")], row.names=F, na = "")
+write.csv(file = "outputs/demographics_longitudinal.csv",x = demographics_set, row.names=F, na = "")
 
 
 

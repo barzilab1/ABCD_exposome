@@ -28,6 +28,7 @@ yssbpm01 = yssbpm01[,grepl("^(src|interv|event|sex)|_(r|t|mean|sum)$", colnames(
 
 
 psychopathology_sum_scores = merge(mhy,mhp02)
+psychopathology_sum_scores = merge(psychopathology_sum_scores,yssbpm01)
 
 
 write.csv(file = "outputs/psychopathology_sum_scores.csv",x = psychopathology_sum_scores, row.names = F, na = "")
