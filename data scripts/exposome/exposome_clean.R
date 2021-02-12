@@ -10,18 +10,7 @@ ydmes01 = droplevels(ydmes01)
 
 summary(ydmes01[ydmes01$eventname == "1_year_follow_up_y_arm_1",])
 
-#check collinearity 
-library("psych")
-matrix_names = colnames(ydmes01[ ,grep("_matrix_", colnames(ydmes01)) ])
-ydmes01[,matrix_names] = apply(ydmes01[,matrix_names], 2, function(x) {as.numeric(as.character(x))})
-xcor <- polychoric(ydmes01[,matrix_names])$rho
-VSS.scree(xcor)
-eigen(xcor)$values[1]/eigen(xcor)$values[2]
 
-
-ydmes01$dim_y_ss_sum = rowSums(ydmes01[,matrix_names])
-ydmes01$dim_y_ss_sum = ifelse(is.na(ydmes01$dim_y_ss_sum) & rowSums(is.na(ydmes01[,matrix_names])) <= 3, 
-                              rowSums(ydmes01[,matrix_names], na.rm = T),ydmes01$dim_y_ss_sum )
 
 ################### TRAUMA ################### 
 #abcd_ptsd01
@@ -31,20 +20,23 @@ ptsd01_baseline = ptsd01[which(grepl("baseline", ptsd01$eventname)),]
 ptsd01_first_year = ptsd01[which(grepl("1_year_follow_up", ptsd01$eventname)),]
 
 #update first year names
-colnames(ptsd01_first_year)[c(2,3)] = paste0(colnames(ptsd01_first_year)[c(2,3)], "_1_year")
+# colnames(ptsd01_first_year)[c(2,3)] = paste0(colnames(ptsd01_first_year)[c(2,3)], "_1_year")
 
 
 ########### School Risk and Protective Factors ########### 
 srpf01 = load_instrument("srpf01",exposome_files_path)
-
-#remove School Disengagement columns 
-srpf01 = srpf01[, !(colnames(srpf01) %in% c("school_15_y", "school_17_y"))]
-
 summary(srpf01)
 
 
-########### Family Environment Scale: Family Conflict Subscale ########### 
+########### Youth Family Environment Scale: Family Conflict Subscale ########### 
 fes01 = load_instrument("abcd_fes01",exposome_files_path)
+
+
+########### Parent Family Environment Scale: Family Conflict Subscale ########### 
+fes02 = load_instrument("fes02",exposome_files_path)
+fes02 = unique(fes02)
+
+fes02 = fes02[, !(colnames(fes02) %in% c("fam_enviro_select_language___1"))]
 
 
 ########### Parental Monitoring Survey ########### 
@@ -58,66 +50,170 @@ nsc01 = load_instrument("abcd_nsc01",exposome_files_path)
 
 ########### Parent Neighborhood Safety/Crime ########### 
 pnsc01 = load_instrument("abcd_pnsc01",exposome_files_path)
+pnsc01 = pnsc01[, !(colnames(pnsc01) %in% c("nei_p_select_language___1"))]
 
 
-########### family history ########### 
-fhx.1 = load_instrument("fhxp102",exposome_files_path)
-fhx.2 = load_instrument("fhxp201",exposome_files_path)
+########### Parent Family History Summary Scores ########### 
+fhxssp = load_instrument("abcd_fhxssp01",exposome_files_path)
 
-fh_dataset = merge(fhx.1, fhx.2)
-fh_dataset = fh_dataset[, grep("^(src|interview|event|sex)|famhx_1$|famhx_4_p$|^fam_history_([5-9]|1[0-3])_yes_no", colnames(fh_dataset))]
+fhxssp_main = fhxssp[,!grepl("momdad|parent", colnames(fhxssp))]
+fhxssp_item = fhxssp[,grepl("^(src|sex|inter|event)|momdad|parent", colnames(fhxssp))]
 
-fh_dataset[fh_dataset == 7|fh_dataset == 999] = NA
-summary(fh_dataset)
+summary(fhxssp_item)
 
-###rename variables to meaningful names
-colnames(fh_dataset)[7] = "FH_ALCOHOL"
-colnames(fh_dataset)[8] = "FH_DRUGS"
-colnames(fh_dataset)[9] = "FH_DEPRESSION"
-colnames(fh_dataset)[10] = "FH_BIPOLAR"
-colnames(fh_dataset)[11] = "FH_PSYCHOSIS"
-colnames(fh_dataset)[12] = "FH_EXTERNALIZING"
-colnames(fh_dataset)[13] = "FH_NERVES"
-colnames(fh_dataset)[14] = "FH_MENTAL_HEALTH_PROFFESSIONAL"
-colnames(fh_dataset)[15] = "FH_PSYCHIATRIC_HOSPITALIZATION"
-colnames(fh_dataset)[16] = "FH_SUICIDALITY"
-
-
-########### ABCD Youth Life Events ###########
+########### Youth Life Events ###########
 yle01 = load_instrument("abcd_yle01",exposome_files_path)
 
-summary(yle01[,grepl("_y$",colnames(yle01))])
+summary(droplevels(yle01[yle01$eventname == "1_year_follow_up_y_arm_1",]))
+
+
+########### Parent Life Events ########### 
+ple = load_instrument("abcd_ple01",exposome_files_path)
+ple = ple[, !(colnames(ple) %in% c("ple_p_select_language___1"))]
+
+summary(droplevels(ple))
 
 
 ########### family relationship section ########### 
 acspsw03 = load_instrument("acspsw03",exposome_files_path)
 
-acspsw03 = acspsw03[, grepl("^(src|interview|event|sex)|(rel_family_id)$", colnames(acspsw03))]
-
 summary(acspsw03)
 
 
+########### Parent Community Risk and Protective Factors ########### 
+crpf = load_instrument("abcd_crpf01",exposome_files_path)
 
-########### Peer Experiences Questionnaire ########### 
-#2_year_follow_up only 
-peq01 = load_instrument("abcd_peq01",exposome_files_path)
+crpf[crpf == 999] = NA
+crpf = crpf[, !(colnames(crpf) %in% c("su_select_language___1"))]
 
+summary(droplevels(crpf))
+
+
+
+########### Developmental History ########### 
+dhx01 = load_instrument("dhx01",exposome_files_path)
+
+dhx01[dhx01 == 999 | dhx01 == -1] = NA
+dhx01 = dhx01[, !(colnames(dhx01) %in% c("accult_select_language", "devhx_1_p"))]
+
+summary(droplevels(dhx01))
+
+
+########### Longitudinal Parent Sports and Activities Involvement Questionnaire ########### 
+lpsaiq = load_instrument("abcd_lpsaiq01",exposome_files_path)
+
+lpsaiq[lpsaiq == 999] = NA
+lpsaiq = lpsaiq[, !(colnames(lpsaiq) %in% c("sai_l_p_select_language___1"))]
+
+summary(droplevels(lpsaiq))
+
+
+########### Parent Multi-Group Ethnic Identity-Revised Survey ########### 
+meim = load_instrument("abcd_meim01",exposome_files_path)
+
+#remove empty columns
+meim = meim[,-which(colSums(is.na(meim)) == dim(meim)[1])]
+summary(droplevels(meim))
+
+
+########### Youth Screen Time Survey ########### 
+stq = load_instrument("abcd_stq01",exposome_files_path)
+
+summary(stq)
+
+
+########### Youth Screen Time Survey ########### 
+crpbi = load_instrument("crpbi01",exposome_files_path)
+crpbi = crpbi[, !(colnames(crpbi) %in% c("timept"))]
+
+summary(crpbi[crpbi$eventname == "1_year_follow_up_y_arm_1",])
+
+
+########### Parent Mexican American Cultural Values Scale Modified ########### 
+macv = load_instrument("macv01",exposome_files_path)
+macv = macv[, !(colnames(macv) %in% c("mex_american_select_lang_1"))]
+
+
+########### Parent Acculturation Survey ########### 
+pacc = load_instrument("pacc01",exposome_files_path)
+pacc = pacc[, !(colnames(pacc) %in% c("accult_select_language___1"))]
+
+#remove empty columns
+pacc = pacc[, colSums(is.na(pacc)) != dim(pacc)[1]]
+
+pacc[pacc == 777 | pacc == 999] = NA
+
+
+########### Parent Adult Self Report Raw Scores Aseba ########### 
+pasr = load_instrument("pasr01",exposome_files_path)
+pasr = pasr[, !(colnames(pasr) %in% c("asr_select_language___1"))]
+
+
+########### Parental Rules on Substance Use ########### 
+prq = load_instrument("prq01",exposome_files_path)
+prq = prq[, !(colnames(prq) %in% c("pr_select_language___1"))]
+
+
+########### Youth Acculturation Survey Modified from PhenX (ACC) ########### 
+yacc = load_instrument("yacc01",exposome_files_path)
+yacc[yacc == 777] = NA
+
+
+########### Child Nutrition Assessment ########### 
+cna = load_instrument("abcd_cna01",exposome_files_path)
+cna[cna == 999] = NA
+
+
+########### Parent Ohio State Traumatic Brain Injury Screen ###########
+otbi = load_instrument("abcd_otbi01",exposome_files_path)
+otbi = otbi[, !(colnames(otbi) %in% c("tbi_select_language___1"))]
+
+#remove empty columns
+otbi = otbi[, colSums(is.na(otbi)) != dim(otbi)[1]]
+
+
+########### Parent Vancouver Index of Acculturation-Short Survey (VIA) ########### 
+# via = load_instrument("abcd_via01",exposome_files_path)
 
 
 ########### merge all tables
-exposome_set = merge(srpf01,pmq01)
-exposome_set = merge(exposome_set,yle01)
-exposome_set = merge(exposome_set,fes01)
-exposome_set = merge(exposome_set,nsc01)
-exposome_set = merge(exposome_set,pnsc01)
+### main
+exposome_item_level_main = merge(crpf, nsc01)
+exposome_item_level_main = merge(exposome_item_level_main, stq)
+exposome_item_level_main = merge(exposome_item_level_main, pmq01)
+exposome_item_level_main = merge(exposome_item_level_main, prq)
+exposome_item_level_main = merge(exposome_item_level_main, ydmes01)
+exposome_item_level_main = merge(exposome_item_level_main, srpf01)
+exposome_item_level_main = merge(exposome_item_level_main, pacc, all.x = T) #11234
+exposome_item_level_main = merge(exposome_item_level_main, yacc,  all.x = T) #10326
+exposome_item_level_main = exposome_item_level_main[exposome_item_level_main$eventname == "1_year_follow_up_y_arm_1",]
+exposome_item_level_main = exposome_item_level_main[,!grepl("^(event|inter|sex)", colnames(exposome_item_level_main))]
 
-#acspsw03 doesnt have data in 1 year followup
-#family history wasn't administered in 1 year followup
-family_set = merge(fh_dataset, acspsw03)
+exposome_item_level_main_baseline = merge(fhxssp_main, dhx01)
+exposome_item_level_main_baseline = exposome_item_level_main_baseline[,!grepl("^(event|inter|sex)", colnames(exposome_item_level_main_baseline))]
 
-write.csv(file = "outputs/lancent_4_features.csv",x = exposome_set, row.names = F, na = "")
-write.csv(file = "outputs/family_set.csv",x = family_set, row.names = F, na = "")
+exposome_item_level_main = merge(exposome_item_level_main, exposome_item_level_main_baseline)
+write.csv(file = "outputs/exposome_item_level_main.csv",x = exposome_item_level_main, row.names = F, na = "")
 
 
+### not main
+exposome_item_level = merge(fes01, lpsaiq)
+exposome_item_level = merge(exposome_item_level, ple)
+exposome_item_level = merge(exposome_item_level, pnsc01)
+exposome_item_level = merge(exposome_item_level, yle01)
+exposome_item_level = merge(exposome_item_level, crpbi)
+exposome_item_level = merge(exposome_item_level, fes02)
+exposome_item_level = merge(exposome_item_level, macv)
+exposome_item_level = merge(exposome_item_level, cna)
+exposome_item_level = exposome_item_level[exposome_item_level$eventname == "1_year_follow_up_y_arm_1",]
+exposome_item_level = exposome_item_level[,!grepl("^(event|inter|sex)", colnames(exposome_item_level))]
+
+exposome_item_level_baseline = merge(fhxssp_item, meim)
+exposome_item_level_baseline = merge(exposome_item_level_baseline, pasr)
+exposome_item_level_baseline = merge(exposome_item_level_baseline, otbi)
+exposome_item_level_baseline = exposome_item_level_baseline[,!grepl("^(event|inter|sex)", colnames(exposome_item_level_baseline))]
+
+exposome_item_level = merge(exposome_item_level,exposome_item_level_baseline)
+write.csv(file = "outputs/exposome_item_level.csv",x = exposome_item_level, row.names = F, na = "")
 
 
