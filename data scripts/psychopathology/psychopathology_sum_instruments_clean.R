@@ -16,7 +16,14 @@ summary(mhy[mhy$eventname == "1_year_follow_up_y_arm_1" ,])
 
 ################### Sum Scores Mental Health Parent ################### 
 mhp02 = load_instrument("abcd_mhp02", psychopathology_files_path)
-mhp02 = mhp02[,grepl("^(src|interview|event|sex)|(score)$",colnames(mhp02))]
+mhp02 = mhp02[,grepl("^(src|interview|event|sex|ple)|(score)$",colnames(mhp02))]
+
+#remove empty columns
+mhp02 = mhp02[, colSums(is.na(mhp02)) != dim(mhp02)[1]]
+
+mhp02 = mhp02[,!grepl("_(nt|nm)$",colnames(mhp02))]
+
+
 
 summary(mhp02[mhp02$eventname == "baseline_year_1_arm_1" ,])
 summary(mhp02[mhp02$eventname == "1_year_follow_up_y_arm_1" ,])

@@ -11,8 +11,9 @@ rhds01 = load_instrument("abcd_rhds01",exposome_files_path)
 
 #TODO check for each time point
 #remove columns with more than 20% NA
-rhds01 = droplevels(rhds01[rhds01$eventname == "baseline_year_1_arm_1",])
+rhds01 = droplevels(rhds01[rhds01$eventname == "baseline_year_1_arm_1", ])
 rhds01 = rhds01[, colSums(is.na(rhds01)) <= 0.2*dim(rhds01)[1]]
+rhds01 = rhds01[, !grepl("^(inter|event|sex)", colnames(rhds01))]
 
 summary(rhds01)
 

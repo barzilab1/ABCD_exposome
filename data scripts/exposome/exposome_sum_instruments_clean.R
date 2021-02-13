@@ -25,6 +25,8 @@ sscep_base = sscep_base[, grepl("^(src|sex|inter|event|meim|via)", colnames(ssce
 sscep_1_year = sscep[sscep$eventname == "1_year_follow_up_y_arm_1", ]
 sscep_1_year = sscep_1_year[, colSums(is.na(sscep_1_year)) != dim(sscep_1_year)[1]]
 
+sscep_1_year = sscep_1_year[,!grepl("^psb",colnames(sscep_1_year))]
+
 
 ########### Sum Scores Mobil Tech Youth ########### 
 ssmty = load_instrument("abcd_ssmty01",exposome_files_path)
@@ -52,7 +54,7 @@ fhx.1 = load_instrument("fhxp102",exposome_files_path)
 fhx.2 = load_instrument("fhxp201",exposome_files_path)
 
 fh_dataset = merge(fhx.1, fhx.2)
-fh_dataset = fh_dataset[, grep("^(src|interview|event|sex)|famhx_1$|famhx_4_p$|^fam_history_([5-9]|1[0-3])_yes_no", colnames(fh_dataset))]
+fh_dataset = fh_dataset[, grep("^(src|interview|event|sex)|famhx_4_p$|^fam_history_([5-9]|1[0-3])_yes_no", colnames(fh_dataset))]
 
 fh_dataset[fh_dataset == 7|fh_dataset == 999] = NA
 summary(fh_dataset)

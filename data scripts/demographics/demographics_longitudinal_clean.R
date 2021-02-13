@@ -76,17 +76,6 @@ for(name in economic_hardship_names){
 
 demographics_set[ , (economic_hardship_names) := lapply(.SD, function(x){as.numeric(as.character(x))}), .SDcols = economic_hardship_names]
 
-library("psych")
-xcor <- polychoric(as.data.frame(demographics_set)[ ,economic_hardship_names ])$rho
-VSS.scree(xcor)
-eigen(xcor)$values[1]/eigen(xcor)$values[2]
-
-demographics_set[, demo_fam_poverty := rowSums(.SD, na.rm = T), .SDcols = economic_hardship_names]
-# demographics_set[ , View(.SD), .SDcols = c(economic_hardship_names, "demo_fam_poverty") ]
-demographics_set[rowSums(is.na(demographics_set[,.SD,.SDcols = economic_hardship_names])) == 7 , "demo_fam_poverty" := NA]
-
-
-
 
 
 

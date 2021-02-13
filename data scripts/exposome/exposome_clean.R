@@ -2,6 +2,15 @@
 source("config.R")
 source("utility_fun.R")
 
+########### family relationship section ########### 
+acspsw03 = load_instrument("acspsw03",exposome_files_path)
+
+summary(acspsw03)
+acspsw03 = acspsw03[acspsw03$eventname == "baseline_year_1_arm_1",]
+
+write.csv(file = "outputs/family_id.csv",x = acspsw03[,grepl("^(src|sex|rel_fa)", colnames(acspsw03))], row.names=F, na = "")
+
+
 ########### Discrimination ########### 
 ydmes01 = load_instrument("abcd_ydmes01",exposome_files_path)
 
@@ -13,14 +22,10 @@ summary(ydmes01[ydmes01$eventname == "1_year_follow_up_y_arm_1",])
 
 
 ################### TRAUMA ################### 
-#abcd_ptsd01
 ptsd01 = load_instrument("abcd_ptsd01",exposome_files_path)
 
 ptsd01_baseline = ptsd01[which(grepl("baseline", ptsd01$eventname)),]
 ptsd01_first_year = ptsd01[which(grepl("1_year_follow_up", ptsd01$eventname)),]
-
-#update first year names
-# colnames(ptsd01_first_year)[c(2,3)] = paste0(colnames(ptsd01_first_year)[c(2,3)], "_1_year")
 
 
 ########### School Risk and Protective Factors ########### 
@@ -74,12 +79,6 @@ ple = ple[, !(colnames(ple) %in% c("ple_p_select_language___1"))]
 summary(droplevels(ple))
 
 
-########### family relationship section ########### 
-acspsw03 = load_instrument("acspsw03",exposome_files_path)
-
-summary(acspsw03)
-
-
 ########### Parent Community Risk and Protective Factors ########### 
 crpf = load_instrument("abcd_crpf01",exposome_files_path)
 
@@ -113,11 +112,15 @@ meim = load_instrument("abcd_meim01",exposome_files_path)
 
 #remove empty columns
 meim = meim[,-which(colSums(is.na(meim)) == dim(meim)[1])]
+
+meim = meim[,!grepl("ethnic_id", colnames(meim))]
+
 summary(droplevels(meim))
 
 
 ########### Youth Screen Time Survey ########### 
 stq = load_instrument("abcd_stq01",exposome_files_path)
+stq = stq[,!grepl("___", colnames(stq))]
 
 summary(stq)
 
@@ -162,6 +165,7 @@ yacc[yacc == 777] = NA
 ########### Child Nutrition Assessment ########### 
 cna = load_instrument("abcd_cna01",exposome_files_path)
 cna[cna == 999] = NA
+cna = cna[, !(colnames(cna) %in% c("cna_p_select_language___1", "cna_15_p", "cna_16_p"))]
 
 
 ########### Parent Ohio State Traumatic Brain Injury Screen ###########
@@ -190,6 +194,7 @@ exposome_item_level_main = exposome_item_level_main[exposome_item_level_main$eve
 exposome_item_level_main = exposome_item_level_main[,!grepl("^(event|inter|sex)", colnames(exposome_item_level_main))]
 
 exposome_item_level_main_baseline = merge(fhxssp_main, dhx01)
+exposome_item_level_main_baseline = merge(exposome_item_level_main_baseline, ptsd01)
 exposome_item_level_main_baseline = exposome_item_level_main_baseline[,!grepl("^(event|inter|sex)", colnames(exposome_item_level_main_baseline))]
 
 exposome_item_level_main = merge(exposome_item_level_main, exposome_item_level_main_baseline)
