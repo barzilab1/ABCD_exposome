@@ -58,6 +58,10 @@ exposome_item_level_main <- read_csv("outputs/exposome_item_level_main.csv")
 exposome_sum_main <- read_csv("outputs/exposome_sum_main.csv")
 geo_data <- read_csv("outputs/geo_data.csv")
 
+exposome_item_level <- read_csv("outputs/exposome_item_level.csv")
+exposome_sum <- read_csv("outputs/exposome_sum.csv")
+
+
 exposome = merge(exposome_sum_main, exposome_item_level_main)
 exposome = merge(exposome, geo_data)
 
@@ -65,7 +69,13 @@ exposome = merge(exposome, geo_data)
 exposome = merge(exposome, psychopathology_sum_scores[,grepl("^(src|ple_)", colnames(psychopathology_sum_scores))])
 
 #add from demographics
-exposome = merge(exposome, demographics[,grepl("demo_fam|demo_yrs|child_time|src",colnames(demographics))])
+exposome = merge(exposome, demographics[,grepl("src|demo_fam|demo_yrs",colnames(demographics))])
+
+
+#add more items after first analysis: 
+exposome = merge(exposome, exposome_sum[,grepl("src|pmq_y_ss_mean",colnames(exposome_sum))])
+exposome = merge(exposome, exposome_item_level[,grepl("src|^ple_(.*)_y$",colnames(exposome_item_level))])
+
 
 #remove columns with too many NA
 exposome = exposome[, colSums(is.na(exposome)) < NA_percentage_to_remove*dim(exposome)[1]]
@@ -73,12 +83,10 @@ exposome = exposome[, colSums(is.na(exposome)) < NA_percentage_to_remove*dim(exp
 write.csv(file = "outputs/exposome_main_final.csv",x = exposome, row.names=F, na = "")
 
 
-exposome_item_level <- read_csv("outputs/exposome_item_level.csv")
 exposome_item_level = exposome_item_level[, colSums(is.na(exposome_item_level)) < NA_percentage_to_remove*dim(exposome_item_level)[1]]
 write.csv(file = "outputs/exposome_item_level_final.csv",x = exposome_item_level, row.names=F, na = "")
 
 
-exposome_sum <- read_csv("outputs/exposome_sum.csv")
 exposome_sum = exposome_sum[, colSums(is.na(exposome_sum)) < NA_percentage_to_remove*dim(exposome_sum)[1]]
 write.csv(file = "outputs/exposome_sum_final.csv",x = exposome_sum, row.names=F, na = "")
 
