@@ -1,0 +1,1163 @@
+Mplus VERSION 8.4
+MUTHEN & MUTHEN
+10/13/2021   2:27 PM
+
+INPUT INSTRUCTIONS
+
+    TITLE: c6x4j2v9b5s2
+
+    DATA:
+    	FILE IS "pnc_mini_exposome_MPLUS.csv";
+
+    VARIABLE:
+      NAMES =
+  bblid
+  AvgParentEducation
+  ethnicity
+  sex
+  Race_Black
+  Race_White
+  PTD001
+  PTD002
+  PTD003
+  PTD004
+  PTD005
+  PTD006
+  PTD007
+  PTD008
+  PTD009
+  Age
+  PWhite
+  PercentMarried
+  PercentInPoverty
+  MedianFamilyIncome
+  PercentHighSchoolPlus
+  PopDensity
+  PercentEmployed
+  PerVac
+  MED_AGE
+  PercentFemale
+  PercentWithChildren
+  PercentEnglishSpeakers
+  AvgHouseholdSize
+  PercentNonfamilyHouseholds
+  med070
+  med242
+  Ran_psychosis_FH
+  Ran_depression_FH
+  Ran_bipolar_or_lithium_FH
+  Ran_Sui_attempt_or_death_FH
+  Ran_substance_FH
+  Parents_Sep_Divorce
+  Current_Suicidal_Ideation
+  Lifetime_Suicide_Attempt
+  Depression_mod_above_at_phq
+  PHQ9_Sum
+  famid;
+
+        USEVARIABLES =
+  PTD001
+  PTD002
+  PTD003
+  PTD004
+  PTD006
+  PTD007
+  PTD008
+  PTD009
+  PercentMarried
+  PercentInPoverty
+  MedianFamilyIncome
+  PercentHighSchoolPlus
+  PopDensity
+  PercentEmployed
+  PerVac
+  MED_AGE
+  PercentFemale
+  PercentWithChildren
+  PercentEnglishSpeakers
+  AvgHouseholdSize
+  PercentNonfamilyHouseholds
+  med070
+  med242
+  Ran_psychosis_FH
+  Ran_depression_FH
+  Ran_bipolar_or_lithium_FH
+  Ran_Sui_attempt_or_death_FH
+  Ran_substance_FH
+  Parents_Sep_Divorce;
+
+  CATEGORICAL=
+  PTD001
+  PTD002
+  PTD003
+  PTD004
+  PTD006
+  PTD007
+  PTD008
+  PTD009
+  med070
+  med242
+  Ran_psychosis_FH
+  Ran_depression_FH
+  Ran_bipolar_or_lithium_FH
+  Ran_Sui_attempt_or_death_FH
+  Ran_substance_FH
+  Parents_Sep_Divorce;
+
+  MISSING=ALL(99999);
+
+  cluster=famid;
+  !IDVAR=ids;
+
+    ANALYSIS:
+     ESTIMATOR=wlsmv;
+     TYPE=COMPLEX;
+     ! ALGORITHM=EMA;
+     !CHAINS = 1;
+     ! BCONVERGENCE = 0.08;
+     ! BITERATIONS = 20000 (100);
+     ! PROCESSORS = 3;
+     MODEL = NOCOVARIANCES;
+     ! process=4;
+
+    MODEL:
+
+  House_Probs BY
+  Ran_psychosis_FH*
+  Ran_depression_FH
+  Ran_bipolar_or_lithium_FH
+  Ran_Sui_attempt_or_death_FH
+  Ran_substance_FH
+  Parents_Sep_Divorce;
+
+  Nbrhd_Poverty BY
+  PercentMarried*
+  PercentInPoverty
+  MedianFamilyIncome
+  PercentHighSchoolPlus
+  PopDensity
+  PercentEmployed
+  PerVac
+  MED_AGE
+  PercentFemale
+  PercentWithChildren
+  PercentEnglishSpeakers
+  AvgHouseholdSize
+  PercentNonfamilyHouseholds;
+
+  DayToDay BY
+  PTD001*
+  PTD002
+  PTD003
+  PTD004
+  PTD006
+  PTD007
+  PTD008
+  PTD009;
+
+  Brth_Preg_Comp BY
+  med070* (p1)
+  med242 (p2);
+
+  Gen_Adversity BY
+  Ran_psychosis_FH*
+  Ran_depression_FH
+  Ran_bipolar_or_lithium_FH
+  Ran_Sui_attempt_or_death_FH
+  Ran_substance_FH
+  Parents_Sep_Divorce
+  PercentMarried
+  PercentInPoverty
+  MedianFamilyIncome
+  PercentHighSchoolPlus
+  PopDensity
+  PercentEmployed
+  PerVac
+  MED_AGE
+  PercentFemale
+  PercentWithChildren
+  PercentEnglishSpeakers
+  AvgHouseholdSize
+  PercentNonfamilyHouseholds
+  PTD001
+  PTD002
+  PTD003
+  PTD004
+  PTD006
+  PTD007
+  PTD008
+  PTD009
+  med070
+  med242;
+
+  House_Probs@1;
+  Nbrhd_Poverty@1;
+  DayToDay@1;
+  Brth_Preg_Comp@1;
+  Gen_Adversity@1;
+
+  MODEL CONSTRAINT:
+  p1=p2;
+    	
+    OUTPUT:
+    !MOD(ALL)
+    STDYX
+    sampstat;
+    SAVEDATA:
+    FILE IS "PNC_exposome_bifactor_fam_expandedENV.dat";
+    SAVE=FSCORES;
+    !PLOT:
+    !TYPE=PLOT3;
+    	
+
+
+
+*** WARNING in VARIABLE command
+  Note that only the first 8 characters of variable names are used in the output.
+  Shorten variable names to avoid any confusion.
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+c6x4j2v9b5s2
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        9498
+
+Number of dependent variables                                   29
+Number of independent variables                                  0
+Number of continuous latent variables                            5
+
+Observed dependent variables
+
+  Continuous
+   PERCENTMAR  PERCENTINP  MEDIANFAMI  PERCENTHIG  POPDENSITY  PERCENTEMP
+   PERVAC      MED_AGE     PERCENTFEM  PERCENTWIT  PERCENTENG  AVGHOUSEHO
+   PERCENTNON
+
+  Binary and ordered categorical (ordinal)
+   PTD001      PTD002      PTD003      PTD004      PTD006      PTD007
+   PTD008      PTD009      MED070      MED242      RAN_PSYC    RAN_DEPR
+   RAN_BIPO    RAN_SUI_    RAN_SUBS    PARENTS_
+
+Continuous latent variables
+   HOUSE_PR    NBRHD_PO    DAYTODAY    BRTH_PRE    GEN_ADVE
+
+Variables with special functions
+
+  Cluster variable      FAMID
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+Link                                                        PROBIT
+
+Input data file(s)
+  pnc_mini_exposome_MPLUS.csv
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            54
+     Number of clusters                       8808
+
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              PTD001        PTD002        PTD003        PTD004        PTD006
+              ________      ________      ________      ________      ________
+ PTD001         0.980
+ PTD002         0.979         0.980
+ PTD003         0.979         0.979         0.979
+ PTD004         0.977         0.977         0.977         0.978
+ PTD006         0.979         0.980         0.979         0.977         0.980
+ PTD007         0.980         0.980         0.979         0.978         0.980
+ PTD008         0.979         0.979         0.978         0.977         0.979
+ PTD009         0.977         0.977         0.976         0.975         0.977
+ PERCENTM       0.980         0.980         0.979         0.978         0.980
+ PERCENTI       0.980         0.980         0.979         0.978         0.980
+ MEDIANFA       0.980         0.980         0.979         0.978         0.980
+ PERCENTH       0.980         0.980         0.979         0.978         0.980
+ POPDENSI       0.980         0.980         0.979         0.978         0.980
+ PERCENTE       0.980         0.980         0.979         0.978         0.980
+ PERVAC         0.980         0.980         0.979         0.978         0.980
+ MED_AGE        0.980         0.980         0.979         0.978         0.980
+ PERCENTF       0.980         0.980         0.979         0.978         0.980
+ PERCENTW       0.980         0.980         0.979         0.978         0.980
+ PERCENTE       0.980         0.980         0.979         0.978         0.980
+ AVGHOUSE       0.980         0.980         0.979         0.978         0.980
+ PERCENTN       0.980         0.980         0.979         0.978         0.980
+ MED070         0.962         0.962         0.961         0.960         0.962
+ MED242         0.974         0.974         0.973         0.972         0.974
+ RAN_PSYC       0.980         0.980         0.979         0.978         0.980
+ RAN_DEPR       0.974         0.974         0.974         0.972         0.974
+ RAN_BIPO       0.974         0.974         0.974         0.972         0.974
+ RAN_SUI_       0.958         0.958         0.958         0.957         0.958
+ RAN_SUBS       0.917         0.917         0.916         0.915         0.917
+ PARENTS_       0.972         0.972         0.971         0.970         0.972
+
+
+           Covariance Coverage
+              PTD007        PTD008        PTD009        PERCENTM      PERCENTI
+              ________      ________      ________      ________      ________
+ PTD007         0.980
+ PTD008         0.979         0.980
+ PTD009         0.977         0.976         0.977
+ PERCENTM       0.980         0.980         0.977         0.984
+ PERCENTI       0.980         0.980         0.977         0.984         0.984
+ MEDIANFA       0.980         0.980         0.977         0.984         0.984
+ PERCENTH       0.980         0.980         0.977         0.984         0.984
+ POPDENSI       0.980         0.980         0.977         0.984         0.984
+ PERCENTE       0.980         0.980         0.977         0.984         0.984
+ PERVAC         0.980         0.980         0.977         0.984         0.984
+ MED_AGE        0.980         0.980         0.977         0.984         0.984
+ PERCENTF       0.980         0.980         0.977         0.984         0.984
+ PERCENTW       0.980         0.980         0.977         0.984         0.984
+ PERCENTE       0.980         0.980         0.977         0.984         0.984
+ AVGHOUSE       0.980         0.980         0.977         0.984         0.984
+ PERCENTN       0.980         0.980         0.977         0.984         0.984
+ MED070         0.963         0.962         0.960         0.966         0.966
+ MED242         0.974         0.974         0.971         0.978         0.978
+ RAN_PSYC       0.980         0.980         0.977         0.984         0.984
+ RAN_DEPR       0.975         0.974         0.972         0.979         0.979
+ RAN_BIPO       0.975         0.974         0.972         0.979         0.979
+ RAN_SUI_       0.959         0.958         0.956         0.961         0.961
+ RAN_SUBS       0.917         0.917         0.914         0.920         0.920
+ PARENTS_       0.972         0.971         0.969         0.976         0.976
+
+
+           Covariance Coverage
+              MEDIANFA      PERCENTH      POPDENSI      PERCENTE      PERVAC
+              ________      ________      ________      ________      ________
+ MEDIANFA       0.984
+ PERCENTH       0.984         0.984
+ POPDENSI       0.984         0.984         0.984
+ PERCENTE       0.984         0.984         0.984         0.984
+ PERVAC         0.984         0.984         0.984         0.984         0.984
+ MED_AGE        0.984         0.984         0.984         0.984         0.984
+ PERCENTF       0.984         0.984         0.984         0.984         0.984
+ PERCENTW       0.984         0.984         0.984         0.984         0.984
+ PERCENTE       0.984         0.984         0.984         0.984         0.984
+ AVGHOUSE       0.984         0.984         0.984         0.984         0.984
+ PERCENTN       0.984         0.984         0.984         0.984         0.984
+ MED070         0.966         0.966         0.966         0.966         0.966
+ MED242         0.978         0.978         0.978         0.978         0.978
+ RAN_PSYC       0.984         0.984         0.984         0.984         0.984
+ RAN_DEPR       0.979         0.979         0.979         0.979         0.979
+ RAN_BIPO       0.979         0.979         0.979         0.979         0.979
+ RAN_SUI_       0.961         0.961         0.961         0.961         0.961
+ RAN_SUBS       0.920         0.920         0.920         0.920         0.920
+ PARENTS_       0.976         0.976         0.976         0.976         0.976
+
+
+           Covariance Coverage
+              MED_AGE       PERCENTF      PERCENTW      PERCENTE      AVGHOUSE
+              ________      ________      ________      ________      ________
+ MED_AGE        0.984
+ PERCENTF       0.984         0.984
+ PERCENTW       0.984         0.984         0.984
+ PERCENTE       0.984         0.984         0.984         0.984
+ AVGHOUSE       0.984         0.984         0.984         0.984         0.984
+ PERCENTN       0.984         0.984         0.984         0.984         0.984
+ MED070         0.966         0.966         0.966         0.966         0.966
+ MED242         0.978         0.978         0.978         0.978         0.978
+ RAN_PSYC       0.984         0.984         0.984         0.984         0.984
+ RAN_DEPR       0.979         0.979         0.979         0.979         0.979
+ RAN_BIPO       0.979         0.979         0.979         0.979         0.979
+ RAN_SUI_       0.961         0.961         0.961         0.961         0.961
+ RAN_SUBS       0.920         0.920         0.920         0.920         0.920
+ PARENTS_       0.976         0.976         0.976         0.976         0.976
+
+
+           Covariance Coverage
+              PERCENTN      MED070        MED242        RAN_PSYC      RAN_DEPR
+              ________      ________      ________      ________      ________
+ PERCENTN       0.984
+ MED070         0.966         0.972
+ MED242         0.978         0.971         0.985
+ RAN_PSYC       0.984         0.972         0.985         1.000
+ RAN_DEPR       0.979         0.971         0.983         0.985         0.985
+ RAN_BIPO       0.979         0.971         0.983         0.985         0.985
+ RAN_SUI_       0.961         0.959         0.965         0.968         0.966
+ RAN_SUBS       0.920         0.917         0.924         0.925         0.925
+ PARENTS_       0.976         0.963         0.975         0.977         0.977
+
+
+           Covariance Coverage
+              RAN_BIPO      RAN_SUI_      RAN_SUBS      PARENTS_
+              ________      ________      ________      ________
+ RAN_BIPO       0.985
+ RAN_SUI_       0.966         0.968
+ RAN_SUBS       0.925         0.924         0.925
+ PARENTS_       0.977         0.958         0.918         0.977
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    PTD001
+      Category 1    0.959         8930.000
+      Category 2    0.041          378.000
+    PTD002
+      Category 1    0.883         8223.000
+      Category 2    0.117         1086.000
+    PTD003
+      Category 1    0.941         8748.000
+      Category 2    0.059          553.000
+    PTD004
+      Category 1    0.966         8976.000
+      Category 2    0.034          313.000
+    PTD006
+      Category 1    0.951         8853.000
+      Category 2    0.049          456.000
+    PTD007
+      Category 1    0.900         8377.000
+      Category 2    0.100          934.000
+    PTD008
+      Category 1    0.820         7626.000
+      Category 2    0.180         1679.000
+    PTD009
+      Category 1    0.776         7208.000
+      Category 2    0.224         2075.000
+    MED070
+      Category 1    0.566         5227.000
+      Category 2    0.434         4008.000
+    MED242
+      Category 1    0.981         9171.000
+      Category 2    0.019          180.000
+    RAN_PSYC
+      Category 1    0.974         9254.000
+      Category 2    0.026          244.000
+    RAN_DEPR
+      Category 1    0.889         8318.000
+      Category 2    0.111         1040.000
+    RAN_BIPO
+      Category 1    0.965         9026.000
+      Category 2    0.035          332.000
+    RAN_SUI_
+      Category 1    0.935         8598.000
+      Category 2    0.065          596.000
+    RAN_SUBS
+      Category 1    0.821         7213.000
+      Category 2    0.179         1573.000
+    PARENTS_
+      Category 1    0.812         7530.000
+      Category 2    0.188         1749.000
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              PTD001$1      PTD002$1      PTD003$1      PTD004$1      PTD006$1
+              ________      ________      ________      ________      ________
+                1.744         1.192         1.559         1.829         1.655
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              PTD007$1      PTD008$1      PTD009$1      PERCENTM      PERCENTI
+              ________      ________      ________      ________      ________
+                1.280         0.914         0.760         0.486         0.134
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              MEDIANFA      PERCENTH      POPDENSI      PERCENTE      PERVAC
+              ________      ________      ________      ________      ________
+                8.229         0.821         1.068         0.459         0.077
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              MED_AGE       PERCENTF      PERCENTW      PERCENTE      AVGHOUSE
+              ________      ________      ________      ________      ________
+               38.543         0.524         0.219         0.937         2.777
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              PERCENTN      MED070$1      MED242$1      RAN_PSYC      RAN_DEPR
+              ________      ________      ________      ________      ________
+                0.049         0.166         2.070         1.948         1.221
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              RAN_BIPO      RAN_SUI_      RAN_SUBS      PARENTS_
+              ________      ________      ________      ________
+                1.806         1.515         0.919         0.883
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              PTD001        PTD002        PTD003        PTD004        PTD006
+              ________      ________      ________      ________      ________
+ PTD001
+ PTD002         0.333
+ PTD003         0.259         0.535
+ PTD004         0.219         0.422         0.459
+ PTD006         0.120         0.585         0.648         0.292
+ PTD007         0.190         0.340         0.329         0.239         0.292
+ PTD008         0.237         0.505         0.441         0.281         0.558
+ PTD009         0.173         0.357         0.293         0.258         0.399
+ PERCENTM       0.019        -0.165        -0.199        -0.116        -0.252
+ PERCENTI      -0.017         0.138         0.144         0.068         0.206
+ MEDIANFA      -0.030        -0.167        -0.207        -0.112        -0.263
+ PERCENTH      -0.040        -0.141        -0.134        -0.091        -0.179
+ POPDENSI      -0.032         0.141         0.158         0.076         0.198
+ PERCENTE       0.000        -0.107        -0.106        -0.042        -0.177
+ PERVAC         0.008         0.110         0.121         0.075         0.143
+ MED_AGE       -0.015        -0.129        -0.148        -0.061        -0.162
+ PERCENTF       0.010         0.051         0.113         0.040         0.095
+ PERCENTW       0.016        -0.034        -0.047        -0.090        -0.062
+ PERCENTE      -0.021        -0.026        -0.046         0.006        -0.050
+ AVGHOUSE      -0.009        -0.031        -0.037        -0.027        -0.035
+ PERCENTN      -0.050         0.035         0.057         0.051         0.041
+ MED070         0.061         0.016         0.032         0.020        -0.057
+ MED242         0.024        -0.017         0.095         0.004         0.105
+ RAN_PSYC       0.148         0.216         0.226         0.263         0.208
+ RAN_DEPR       0.058         0.120         0.112         0.104         0.008
+ RAN_BIPO       0.069         0.141         0.117         0.194         0.172
+ RAN_SUI_       0.040         0.224         0.218         0.266         0.270
+ RAN_SUBS       0.087         0.245         0.236         0.242         0.200
+ PARENTS_       0.082         0.191         0.204         0.200         0.168
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              PTD007        PTD008        PTD009        PERCENTM      PERCENTI
+              ________      ________      ________      ________      ________
+ PTD008         0.333
+ PTD009         0.244         0.478
+ PERCENTM      -0.077        -0.242        -0.175         0.033
+ PERCENTI       0.046         0.222         0.167        -0.711         0.023
+ MEDIANFA      -0.066        -0.247        -0.208         0.709        -0.669
+ PERCENTH      -0.057        -0.205        -0.164         0.600        -0.631
+ POPDENSI       0.035         0.205         0.139        -0.634         0.589
+ PERCENTE      -0.032        -0.204        -0.133         0.495        -0.681
+ PERVAC         0.066         0.171         0.117        -0.543         0.548
+ MED_AGE       -0.043        -0.173        -0.139         0.520        -0.531
+ PERCENTF       0.055         0.080         0.055        -0.249         0.222
+ PERCENTW      -0.042        -0.031        -0.021         0.279         0.003
+ PERCENTE      -0.015        -0.070        -0.052         0.069        -0.239
+ AVGHOUSE      -0.025        -0.005        -0.022         0.067        -0.033
+ PERCENTN       0.019         0.016         0.020        -0.319         0.154
+ MED070         0.019        -0.047        -0.039         0.087        -0.100
+ MED242         0.044         0.094         0.054        -0.307         0.266
+ RAN_PSYC       0.151         0.220         0.085        -0.221         0.174
+ RAN_DEPR       0.016         0.011        -0.031         0.023        -0.060
+ RAN_BIPO       0.089         0.055         0.059        -0.071         0.054
+ RAN_SUI_       0.092         0.166         0.096        -0.146         0.114
+ RAN_SUBS       0.086         0.125         0.101        -0.150         0.125
+ PARENTS_       0.092         0.148         0.101        -0.183         0.127
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              MEDIANFA      PERCENTH      POPDENSI      PERCENTE      PERVAC
+              ________      ________      ________      ________      ________
+ MEDIANFA      20.171
+ PERCENTH       0.695         0.014
+ POPDENSI      -0.569        -0.516         1.525
+ PERCENTE       0.497         0.545        -0.437         0.012
+ PERVAC        -0.479        -0.412         0.396        -0.429         0.005
+ MED_AGE        0.507         0.441        -0.517         0.299        -0.266
+ PERCENTF      -0.211        -0.180         0.173        -0.245         0.122
+ PERCENTW       0.113         0.068        -0.081        -0.217        -0.147
+ PERCENTE       0.220         0.165        -0.176         0.280        -0.092
+ AVGHOUSE       0.115        -0.033        -0.051        -0.229        -0.135
+ PERCENTN      -0.144        -0.033         0.127         0.118         0.162
+ MED070         0.067         0.060        -0.081         0.096        -0.063
+ MED242        -0.389        -0.224         0.200        -0.206         0.197
+ RAN_PSYC      -0.257        -0.172         0.144        -0.148         0.123
+ RAN_DEPR       0.048         0.035        -0.048         0.072        -0.058
+ RAN_BIPO      -0.089        -0.052         0.057        -0.046         0.058
+ RAN_SUI_      -0.175        -0.138         0.122        -0.102         0.079
+ RAN_SUBS      -0.205        -0.131         0.120        -0.066         0.095
+ PARENTS_      -0.214        -0.143         0.116        -0.082         0.086
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              MED_AGE       PERCENTF      PERCENTW      PERCENTE      AVGHOUSE
+              ________      ________      ________      ________      ________
+ MED_AGE       44.569
+ PERCENTF      -0.040         0.004
+ PERCENTW      -0.180         0.000         0.007
+ PERCENTE       0.319        -0.135        -0.474         0.002
+ AVGHOUSE      -0.233        -0.097         0.359        -0.161         0.363
+ PERCENTN      -0.214        -0.105        -0.305         0.097        -0.124
+ MED070         0.043        -0.047         0.005         0.032        -0.005
+ MED242        -0.261         0.153        -0.043        -0.079        -0.061
+ RAN_PSYC      -0.179        -0.004        -0.023        -0.021        -0.058
+ RAN_DEPR       0.037        -0.027        -0.018         0.028        -0.026
+ RAN_BIPO      -0.091         0.026        -0.034         0.012         0.015
+ RAN_SUI_      -0.097         0.046        -0.020        -0.057        -0.044
+ RAN_SUBS      -0.072         0.040        -0.059        -0.039        -0.092
+ PARENTS_      -0.097         0.048        -0.080        -0.019        -0.042
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              PERCENTN      MED070        MED242        RAN_PSYC      RAN_DEPR
+              ________      ________      ________      ________      ________
+ PERCENTN       0.003
+ MED070         0.003
+ MED242         0.083         0.045
+ RAN_PSYC       0.052         0.045         0.129
+ RAN_DEPR       0.045         0.104         0.016         0.208
+ RAN_BIPO       0.043         0.055         0.047         0.484        -0.574
+ RAN_SUI_       0.059         0.046         0.132         0.462         0.285
+ RAN_SUBS       0.047         0.035         0.113         0.253         0.177
+ PARENTS_       0.070        -0.024         0.019         0.211         0.102
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              RAN_BIPO      RAN_SUI_      RAN_SUBS      PARENTS_
+              ________      ________      ________      ________
+ RAN_SUI_       0.437
+ RAN_SUBS       0.383         0.435
+ PARENTS_       0.216         0.281         0.327
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     PERCENTMARRIED        0.486      -0.385       0.000    0.09%       0.300      0.460      0.515
+            9349.000       0.033      -0.830       0.871    0.01%       0.567      0.653
+     PERCENTINPOVERT       0.134       1.466       0.000   13.55%       0.018      0.049      0.071
+            9349.000       0.023       1.658       0.912    0.01%       0.105      0.253
+     MEDIANFAMILYINC       8.229       0.735       0.000    0.06%       3.961      6.612      7.875
+            9349.000      20.171       0.496      25.000    0.47%       9.008     11.808
+     PERCENTHIGHSCHO       0.821      -1.013       0.286    0.02%       0.727      0.816      0.847
+            9349.000       0.014       0.841       1.001    0.01%       0.873      0.924
+     POPDENSITY            1.068       1.421       0.000    0.01%       0.123      0.307      0.465
+            9349.000       1.525       1.510       8.020    0.03%       0.744      2.155
+     PERCENTEMPLOYED       0.459      -0.479       0.101    0.01%       0.369      0.451      0.479
+            9349.000       0.012       0.285       1.000    0.02%       0.501      0.547
+     PERVAC                0.077       2.873       0.000    0.06%       0.028      0.043      0.054
+            9349.000       0.005      16.307       0.892    0.01%       0.067      0.119
+     MED_AGE              38.543       0.218      11.400    0.01%      33.200     37.100     38.700
+            9349.000      44.569       1.681      82.600    0.01%      40.500     43.700
+     PERCENTFEMALE         0.524       0.057       0.086    0.05%       0.479      0.508      0.520
+            9349.000       0.004       2.814       0.833    0.01%       0.531      0.569
+     PERCENTWITHCHIL       0.219       0.159       0.000    0.57%       0.152      0.199      0.220
+            9349.000       0.007       0.710       0.641    0.01%       0.240      0.283
+     PERCENTENGLISHS       0.937      -1.187       0.687    0.03%       0.909      0.934      0.943
+            9349.000       0.002       3.030       1.001    0.01%       0.951      0.969
+     AVGHOUSEHOLDSIZ       2.777       2.671       1.000    0.02%       2.342      2.618      2.730
+            9349.000       0.363      22.467      10.339    0.03%       2.853      3.172
+     PERCENTNONFAMIL       0.049       2.294       0.000   26.43%       0.000      0.024      0.033
+            9349.000       0.003      10.396       0.596    0.05%       0.045      0.083
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       99
+
+Chi-Square Test of Model Fit
+
+          Value                           4717.274*
+          Degrees of Freedom                   349
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.036
+          90 Percent C.I.                    0.035  0.037
+          Probability RMSEA <= .05           1.000
+
+CFI/TLI
+
+          CFI                                0.943
+          TLI                                0.933
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                          76521.044
+          Degrees of Freedom                   406
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.068
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.21886597D+00
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ HOUSE_PR BY
+    RAN_PSYCHO         0.553      0.036     15.454      0.000
+    RAN_DEPRES         0.334      0.028     11.772      0.000
+    RAN_BIPOLA         0.615      0.033     18.694      0.000
+    RAN_SUI_AT         0.701      0.029     24.389      0.000
+    RAN_SUBSTA         0.582      0.026     22.509      0.000
+    PARENTS_SE         0.391      0.025     15.460      0.000
+
+ NBRHD_PO BY
+    PERCENTMAR         0.014      0.006      2.256      0.024
+    PERCENTINP         0.030      0.005      5.980      0.000
+    MEDIANFAMI        -0.293      0.143     -2.043      0.041
+    PERCENTHIG        -0.021      0.003     -6.126      0.000
+    POPDENSITY         0.130      0.035      3.752      0.000
+    PERCENTEMP        -0.049      0.003    -19.660      0.000
+    PERVAC            -0.008      0.002     -4.521      0.000
+    MED_AGE           -2.334      0.147    -15.895      0.000
+    PERCENTFEM        -0.006      0.001     -6.141      0.000
+    PERCENTWIT         0.062      0.001     59.052      0.000
+    PERCENTENG        -0.016      0.000    -32.712      0.000
+    AVGHOUSEHO         0.285      0.004     74.789      0.000
+    PERCENTNON        -0.017      0.001    -24.165      0.000
+
+ DAYTODAY BY
+    PTD001             0.372      0.031     11.969      0.000
+    PTD002             0.708      0.016     43.314      0.000
+    PTD003             0.686      0.020     33.769      0.000
+    PTD004             0.491      0.032     15.492      0.000
+    PTD006             0.733      0.020     37.055      0.000
+    PTD007             0.448      0.022     19.957      0.000
+    PTD008             0.653      0.016     40.998      0.000
+    PTD009             0.496      0.018     27.538      0.000
+
+ BRTH_PRE BY
+    MED070             0.284      0.068      4.191      0.000
+    MED242             0.284      0.068      4.191      0.000
+
+ GEN_ADVE BY
+    RAN_PSYCHO         0.251      0.028      8.848      0.000
+    RAN_DEPRES        -0.054      0.019     -2.893      0.004
+    RAN_BIPOLA         0.101      0.028      3.656      0.000
+    RAN_SUI_AT         0.193      0.024      8.164      0.000
+    RAN_SUBSTA         0.188      0.016     11.598      0.000
+    PARENTS_SE         0.201      0.016     12.671      0.000
+    PERCENTMAR        -0.165      0.002    -68.903      0.000
+    PERCENTINP         0.129      0.002     70.018      0.000
+    MEDIANFAMI        -3.728      0.043    -86.397      0.000
+    PERCENTHIG        -0.088      0.001    -63.473      0.000
+    POPDENSITY         0.872      0.014     63.761      0.000
+    PERCENTEMP        -0.061      0.002    -28.978      0.000
+    PERVAC             0.042      0.000     98.557      0.000
+    MED_AGE           -3.548      0.101    -35.085      0.000
+    PERCENTFEM         0.017      0.001     32.797      0.000
+    PERCENTWIT        -0.017      0.002     -6.771      0.000
+    PERCENTENG        -0.007      0.001    -10.539      0.000
+    AVGHOUSEHO        -0.035      0.012     -3.009      0.003
+    PERCENTNON         0.012      0.001     15.437      0.000
+    PTD001             0.006      0.025      0.223      0.824
+    PTD002             0.199      0.017     11.965      0.000
+    PTD003             0.226      0.020     11.073      0.000
+    PTD004             0.132      0.025      5.199      0.000
+    PTD006             0.287      0.020     14.116      0.000
+    PTD007             0.083      0.018      4.502      0.000
+    PTD008             0.292      0.014     21.154      0.000
+    PTD009             0.218      0.014     15.224      0.000
+    MED070            -0.100      0.014     -7.110      0.000
+    MED242             0.354      0.026     13.802      0.000
+
+ Intercepts
+    PERCENTMAR         0.486      0.002    222.196      0.000
+    PERCENTINP         0.134      0.003     50.686      0.000
+    MEDIANFAMI         8.229      0.058    143.001      0.000
+    PERCENTHIG         0.821      0.002    487.273      0.000
+    POPDENSITY         1.068      0.022     48.961      0.000
+    PERCENTEMP         0.459      0.001    353.828      0.000
+    PERVAC             0.077      0.001     72.250      0.000
+    MED_AGE           38.543      0.076    507.777      0.000
+    PERCENTFEM         0.524      0.001    756.736      0.000
+    PERCENTWIT         0.219      0.001    236.279      0.000
+    PERCENTENG         0.937      0.001   1822.754      0.000
+    AVGHOUSEHO         2.777      0.008    346.527      0.000
+    PERCENTNON         0.049      0.001     59.480      0.000
+
+ Thresholds
+    PTD001$1           1.744      0.024     74.002      0.000
+    PTD002$1           1.192      0.017     69.599      0.000
+    PTD003$1           1.559      0.021     74.415      0.000
+    PTD004$1           1.829      0.025     72.888      0.000
+    PTD006$1           1.655      0.022     74.421      0.000
+    PTD007$1           1.280      0.018     71.206      0.000
+    PTD008$1           0.914      0.015     59.674      0.000
+    PTD009$1           0.760      0.015     52.168      0.000
+    MED070$1           0.166      0.013     12.384      0.000
+    MED242$1           2.070      0.031     66.997      0.000
+    RAN_PSYC$1         1.948      0.031     63.723      0.000
+    RAN_DEPR$1         1.221      0.018     69.467      0.000
+    RAN_BIPO$1         1.806      0.026     70.354      0.000
+    RAN_SUI_$1         1.515      0.023     66.135      0.000
+    RAN_SUBS$1         0.919      0.016     58.138      0.000
+    PARENTS_$1         0.883      0.016     56.302      0.000
+
+ Variances
+    HOUSE_PROB         1.000      0.000    999.000    999.000
+    NBRHD_POVE         1.000      0.000    999.000    999.000
+    DAYTODAY           1.000      0.000    999.000    999.000
+    BRTH_PREG_         1.000      0.000    999.000    999.000
+    GEN_ADVERS         1.000      0.000    999.000    999.000
+
+ Residual Variances
+    PERCENTMAR         0.006      0.000     38.475      0.000
+    PERCENTINP         0.005      0.000     55.879      0.000
+    MEDIANFAMI         6.189      0.086     71.915      0.000
+    PERCENTHIG         0.006      0.000     74.048      0.000
+    POPDENSITY         0.748      0.011     69.721      0.000
+    PERCENTEMP         0.006      0.000     75.488      0.000
+    PERVAC             0.003      0.000    134.852      0.000
+    MED_AGE           26.536      0.312     85.080      0.000
+    PERCENTFEM         0.004      0.000    100.361      0.000
+    PERCENTWIT         0.003      0.000     36.137      0.000
+    PERCENTENG         0.001      0.000     84.502      0.000
+    AVGHOUSEHO         0.280      0.002    138.769      0.000
+    PERCENTNON         0.003      0.000    106.180      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ HOUSE_PR BY
+    RAN_PSYCHO         0.553      0.036     15.454      0.000
+    RAN_DEPRES         0.334      0.028     11.772      0.000
+    RAN_BIPOLA         0.615      0.033     18.694      0.000
+    RAN_SUI_AT         0.701      0.029     24.389      0.000
+    RAN_SUBSTA         0.582      0.026     22.509      0.000
+    PARENTS_SE         0.391      0.025     15.460      0.000
+
+ NBRHD_PO BY
+    PERCENTMAR         0.079      0.035      2.257      0.024
+    PERCENTINP         0.199      0.033      5.996      0.000
+    MEDIANFAMI        -0.065      0.032     -2.044      0.041
+    PERCENTHIG        -0.174      0.028     -6.132      0.000
+    POPDENSITY         0.105      0.028      3.756      0.000
+    PERCENTEMP        -0.443      0.022    -19.996      0.000
+    PERVAC            -0.108      0.024     -4.521      0.000
+    MED_AGE           -0.350      0.022    -16.013      0.000
+    PERCENTFEM        -0.093      0.015     -6.150      0.000
+    PERCENTWIT         0.749      0.011     70.233      0.000
+    PERCENTENG        -0.397      0.011    -34.796      0.000
+    AVGHOUSEHO         0.473      0.006     81.448      0.000
+    PERCENTNON        -0.297      0.012    -24.550      0.000
+
+ DAYTODAY BY
+    PTD001             0.372      0.031     11.969      0.000
+    PTD002             0.708      0.016     43.314      0.000
+    PTD003             0.686      0.020     33.769      0.000
+    PTD004             0.491      0.032     15.492      0.000
+    PTD006             0.733      0.020     37.055      0.000
+    PTD007             0.448      0.022     19.957      0.000
+    PTD008             0.653      0.016     40.998      0.000
+    PTD009             0.496      0.018     27.538      0.000
+
+ BRTH_PRE BY
+    MED070             0.284      0.068      4.191      0.000
+    MED242             0.284      0.068      4.191      0.000
+
+ GEN_ADVE BY
+    RAN_PSYCHO         0.251      0.028      8.848      0.000
+    RAN_DEPRES        -0.054      0.019     -2.893      0.004
+    RAN_BIPOLA         0.101      0.028      3.656      0.000
+    RAN_SUI_AT         0.193      0.024      8.164      0.000
+    RAN_SUBSTA         0.188      0.016     11.598      0.000
+    PARENTS_SE         0.201      0.016     12.671      0.000
+    PERCENTMAR        -0.900      0.005   -194.592      0.000
+    PERCENTINP         0.856      0.008    107.173      0.000
+    MEDIANFAMI        -0.830      0.004   -202.510      0.000
+    PERCENTHIG        -0.733      0.008    -92.626      0.000
+    POPDENSITY         0.706      0.006    124.166      0.000
+    PERCENTEMP        -0.551      0.018    -31.079      0.000
+    PERVAC             0.591      0.005    116.862      0.000
+    MED_AGE           -0.531      0.014    -37.429      0.000
+    PERCENTFEM         0.276      0.008     34.506      0.000
+    PERCENTWIT        -0.203      0.030     -6.792      0.000
+    PERCENTENG        -0.190      0.018    -10.606      0.000
+    AVGHOUSEHO        -0.059      0.020     -3.009      0.003
+    PERCENTNON         0.222      0.014     15.548      0.000
+    PTD001             0.006      0.025      0.223      0.824
+    PTD002             0.199      0.017     11.965      0.000
+    PTD003             0.226      0.020     11.073      0.000
+    PTD004             0.132      0.025      5.199      0.000
+    PTD006             0.287      0.020     14.116      0.000
+    PTD007             0.083      0.018      4.502      0.000
+    PTD008             0.292      0.014     21.154      0.000
+    PTD009             0.218      0.014     15.224      0.000
+    MED070            -0.100      0.014     -7.110      0.000
+    MED242             0.354      0.026     13.802      0.000
+
+ Intercepts
+    PERCENTMAR         2.657      0.028     94.731      0.000
+    PERCENTINP         0.889      0.024     36.595      0.000
+    MEDIANFAMI         1.832      0.024     76.753      0.000
+    PERCENTHIG         6.850      0.049    139.743      0.000
+    POPDENSITY         0.865      0.025     34.852      0.000
+    PERCENTEMP         4.133      0.030    135.558      0.000
+    PERVAC             1.099      0.018     61.167      0.000
+    MED_AGE            5.773      0.037    155.504      0.000
+    PERCENTFEM         8.428      0.043    196.333      0.000
+    PERCENTWIT         2.648      0.022    121.427      0.000
+    PERCENTENG        23.863      0.133    179.955      0.000
+    AVGHOUSEHO         4.612      0.023    198.572      0.000
+    PERCENTNON         0.871      0.017     50.849      0.000
+
+ Thresholds
+    PTD001$1           1.744      0.024     74.002      0.000
+    PTD002$1           1.192      0.017     69.599      0.000
+    PTD003$1           1.559      0.021     74.415      0.000
+    PTD004$1           1.829      0.025     72.888      0.000
+    PTD006$1           1.655      0.022     74.421      0.000
+    PTD007$1           1.280      0.018     71.206      0.000
+    PTD008$1           0.914      0.015     59.674      0.000
+    PTD009$1           0.760      0.015     52.168      0.000
+    MED070$1           0.166      0.013     12.384      0.000
+    MED242$1           2.070      0.031     66.997      0.000
+    RAN_PSYC$1         1.948      0.031     63.723      0.000
+    RAN_DEPR$1         1.221      0.018     69.467      0.000
+    RAN_BIPO$1         1.806      0.026     70.354      0.000
+    RAN_SUI_$1         1.515      0.023     66.135      0.000
+    RAN_SUBS$1         0.919      0.016     58.138      0.000
+    PARENTS_$1         0.883      0.016     56.302      0.000
+
+ Variances
+    HOUSE_PROB         1.000      0.000    999.000    999.000
+    NBRHD_POVE         1.000      0.000    999.000    999.000
+    DAYTODAY           1.000      0.000    999.000    999.000
+    BRTH_PREG_         1.000      0.000    999.000    999.000
+    GEN_ADVERS         1.000      0.000    999.000    999.000
+
+ Residual Variances
+    PERCENTMAR         0.183      0.006     28.590      0.000
+    PERCENTINP         0.228      0.005     46.555      0.000
+    MEDIANFAMI         0.307      0.005     57.592      0.000
+    PERCENTHIG         0.433      0.007     66.240      0.000
+    POPDENSITY         0.490      0.006     78.365      0.000
+    PERCENTEMP         0.500      0.007     67.866      0.000
+    PERVAC             0.639      0.004    146.115      0.000
+    MED_AGE            0.595      0.007     83.964      0.000
+    PERCENTFEM         0.915      0.005    191.343      0.000
+    PERCENTWIT         0.398      0.012     34.356      0.000
+    PERCENTENG         0.806      0.007    113.757      0.000
+    AVGHOUSEHO         0.773      0.005    155.291      0.000
+    PERCENTNON         0.862      0.006    140.369      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed   Residual
+    Variable        Estimate       S.E.  Est./S.E.    P-Value    Variance
+
+    PTD001             0.139      0.023      5.987      0.000      0.861
+    PTD002             0.541      0.023     23.416      0.000      0.459
+    PTD003             0.522      0.028     18.929      0.000      0.478
+    PTD004             0.258      0.031      8.340      0.000      0.742
+    PTD006             0.620      0.029     21.305      0.000      0.380
+    PTD007             0.207      0.020     10.224      0.000      0.793
+    PTD008             0.512      0.021     24.235      0.000      0.488
+    PTD009             0.294      0.018     15.924      0.000      0.706
+    PERCENTM           0.817      0.006    127.497      0.000
+    PERCENTI           0.772      0.005    157.819      0.000
+    MEDIANFA           0.693      0.005    130.112      0.000
+    PERCENTH           0.567      0.007     86.791      0.000
+    POPDENSI           0.510      0.006     81.400      0.000
+    PERCENTE           0.500      0.007     67.752      0.000
+    PERVAC             0.361      0.004     82.530      0.000
+    MED_AGE            0.405      0.007     57.060      0.000
+    PERCENTF           0.085      0.005     17.766      0.000
+    PERCENTW           0.602      0.012     51.988      0.000
+    PERCENTE           0.194      0.007     27.417      0.000
+    AVGHOUSE           0.227      0.005     45.567      0.000
+    PERCENTN           0.138      0.006     22.388      0.000
+    MED070             0.091      0.038      2.353      0.019      0.909
+    MED242             0.206      0.042      4.890      0.000      0.794
+    RAN_PSYC           0.369      0.039      9.536      0.000      0.631
+    RAN_DEPR           0.115      0.019      6.042      0.000      0.885
+    RAN_BIPO           0.389      0.040      9.832      0.000      0.611
+    RAN_SUI_           0.529      0.040     13.327      0.000      0.471
+    RAN_SUBS           0.374      0.030     12.529      0.000      0.626
+    PARENTS_           0.193      0.020      9.761      0.000      0.807
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.574E-06
+       (ratio of smallest to largest eigenvalue)
+
+
+SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              HOUSE_PR      HOUSE_PR      NBRHD_PO      NBRHD_PO      DAYTODAY
+              ________      ________      ________      ________      ________
+                0.066         0.819        -0.001         0.518         0.091
+
+
+           Means
+              DAYTODAY      BRTH_PRE      BRTH_PRE      GEN_ADVE      GEN_ADVE
+              ________      ________      ________      ________      ________
+                0.730         0.002         0.971         0.004         0.271
+
+
+           Covariances
+              HOUSE_PR      HOUSE_PR      NBRHD_PO      NBRHD_PO      DAYTODAY
+              ________      ________      ________      ________      ________
+ HOUSE_PR       0.312
+ HOUSE_PR      -0.046         0.008
+ NBRHD_PO      -0.019         0.002         0.760
+ NBRHD_PO       0.000         0.001         0.000         0.004
+ DAYTODAY       0.055        -0.008        -0.003        -0.001         0.410
+ DAYTODAY      -0.009         0.003         0.000         0.002        -0.069
+ BRTH_PRE       0.006        -0.001        -0.004         0.000         0.001
+ BRTH_PRE       0.000         0.000         0.000         0.000         0.000
+ GEN_ADVE       0.005        -0.030         0.022         0.000        -0.006
+ GEN_ADVE      -0.001         0.001         0.000         0.006        -0.001
+
+
+           Covariances
+              DAYTODAY      BRTH_PRE      BRTH_PRE      GEN_ADVE      GEN_ADVE
+              ________      ________      ________      ________      ________
+ DAYTODAY       0.016
+ BRTH_PRE       0.000         0.057
+ BRTH_PRE       0.000        -0.001         0.000
+ GEN_ADVE      -0.048         0.001        -0.002         0.911
+ GEN_ADVE       0.003         0.000         0.000         0.000         0.008
+
+
+           Correlations
+              HOUSE_PR      HOUSE_PR      NBRHD_PO      NBRHD_PO      DAYTODAY
+              ________      ________      ________      ________      ________
+ HOUSE_PR       1.000
+ HOUSE_PR      -0.891         1.000
+ NBRHD_PO      -0.039         0.026         1.000
+ NBRHD_PO      -0.009         0.149         0.000         1.000
+ DAYTODAY       0.154        -0.135        -0.006        -0.018         1.000
+ DAYTODAY      -0.130         0.285        -0.003         0.265        -0.840
+ BRTH_PRE       0.048        -0.043        -0.018         0.014         0.005
+ BRTH_PRE      -0.026         0.254        -0.019         0.306         0.013
+ GEN_ADVE       0.009        -0.342         0.026         0.001        -0.010
+ GEN_ADVE      -0.011         0.153         0.000         1.000        -0.020
+
+
+           Correlations
+              DAYTODAY      BRTH_PRE      BRTH_PRE      GEN_ADVE      GEN_ADVE
+              ________      ________      ________      ________      ________
+ DAYTODAY       1.000
+ BRTH_PRE       0.003         1.000
+ BRTH_PRE       0.207        -0.476         1.000
+ GEN_ADVE      -0.389         0.003        -0.351         1.000
+ GEN_ADVE       0.268         0.013         0.313        -0.002         1.000
+
+
+SAVEDATA INFORMATION
+
+
+  Save file
+    PNC_exposome_bifactor_fam_expandedENV.dat
+
+  Order and format of variables
+
+    PTD001         F10.3
+    PTD002         F10.3
+    PTD003         F10.3
+    PTD004         F10.3
+    PTD006         F10.3
+    PTD007         F10.3
+    PTD008         F10.3
+    PTD009         F10.3
+    PERCENTM       F10.3
+    PERCENTI       F10.3
+    MEDIANFA       F10.3
+    PERCENTH       F10.3
+    POPDENSI       F10.3
+    PERCENTE       F10.3
+    PERVAC         F10.3
+    MED_AGE        F10.3
+    PERCENTF       F10.3
+    PERCENTW       F10.3
+    PERCENTE       F10.3
+    AVGHOUSE       F10.3
+    PERCENTN       F10.3
+    MED070         F10.3
+    MED242         F10.3
+    RAN_PSYC       F10.3
+    RAN_DEPR       F10.3
+    RAN_BIPO       F10.3
+    RAN_SUI_       F10.3
+    RAN_SUBS       F10.3
+    PARENTS_       F10.3
+    HOUSE_PROBS    F10.3
+    HOUSE_PR_SE    F10.3
+    NBRHD_POVERT   F10.3
+    NBRHD_PO_SE    F10.3
+    DAYTODAY       F10.3
+    DAYTODAY_SE    F10.3
+    BRTH_PREG_CO   F10.3
+    BRTH_PRE_SE    F10.3
+    GEN_ADVERSIT   F10.3
+    GEN_ADVE_SE    F10.3
+    FAMID          I6
+
+  Save file format
+    39F10.3 I6
+
+  Save file record length    10000
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\reduc\documents\pnc_mini_exposome_expandedenv.dgm
+
+     Beginning Time:  14:27:18
+        Ending Time:  14:27:27
+       Elapsed Time:  00:00:09
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen

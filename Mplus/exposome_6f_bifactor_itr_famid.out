@@ -1,0 +1,2215 @@
+Mplus VERSION 8.4
+MUTHEN & MUTHEN
+03/10/2021  11:00 AM
+
+INPUT INSTRUCTIONS
+
+    TITLE: c6x4j2v9b5s2
+
+    DATA:
+    	FILE IS "exposome_MPLUS_famid.csv";
+
+    VARIABLE:
+      NAMES =
+  src_subject_id
+  nsc_p_ss_mean_3_items
+  fes_p_ss_fc
+  macv_p_ss_fs
+  macv_p_ss_fo
+  macv_p_ss_isr
+  macv_p_ss_fr
+  macv_p_ss_r
+  cna_p_ss_sum
+  fes_y_ss_fc
+  crpbi_y_ss_parent
+  crpbi_y_ss_carer
+  meim_p_ss_exp
+  meim_p_ss_com
+  tbi_ss_worst_overall
+  su_risk_p_4
+  su_risk_p_5
+  su_risk_p_6
+  nbrhd_crime_y
+  rules_q1
+  rules_q2
+  rules_q4
+  rules_q5
+  rules_q7
+  dim_yesno_q1
+  dim_yesno_q2
+  dim_yesno_q3
+  dim_yesno_q4
+  accult_q1_p
+  accult_q2_p
+  devhx_5_p
+  devhx_6_p
+  devhx_7_p
+  devhx_10
+  devhx_caffeine_11
+  devhx_11_p
+  devhx_12a_p
+  devhx_13_3_p
+  devhx_15
+  devhx_16_p
+  devhx_17_p
+  devhx_18_p
+  devhx_22_3_p
+  addr1_walkindex
+  addr1_proxrd
+  state_sexism_factor
+  state_racism_factor
+  state_so_factor
+  state_immigrant_factor
+  state_mj_laws
+  mature_entertainment
+  screentime
+  parent_monitor
+  Rx_pregn
+  alc_pregn
+  TobMar_pregn
+  HardDrugs_pregn
+  preg_comp_anemia
+  preg_comp_bp
+  preg_comp_placenta
+  birth_comp_blue
+  birth_comp_reqOxygen
+  birth_comp_convulsions
+  trau_death_fam
+  trau_adults_fighting
+  trau_sexual_abuse
+  trau_all_other
+  nbrhd_DisPoverty
+  nbrhd_crime
+  nbrhd_wealth_property
+  nbrhd_immig_crowding
+  carer_psychopathology
+  father_mental_health
+  mother_mental_health
+  parents_bad_lifestyle
+  extracurriculars
+  nbrhd_density
+  nbrhd_air_pollution
+  lead_exposure_risk
+  events_good_bad_ratio
+  fam_religiosity
+  fam_poverty_events
+  fam_foregone_medical
+  LE_legal
+  LE_discord
+  LE_casualties
+  LE_divorce
+  LE_relocation
+  discrimination_ethnic
+  discrimination_foreigner
+  sch_Enjoy
+  sch_FeelInvolved
+  sch_GoodGrades
+  sch_PositiveFeedback
+  parental_age
+  developmental_delay
+  access_to_alc_tobac
+  famid;
+
+        USEVARIABLES =
+  TobMar_pregn
+  parents_bad_lifestyle
+  trau_adults_fighting
+  HardDrugs_pregn
+  mother_mental_health
+  devhx_6_p
+  fam_poverty_events
+  trau_sexual_abuse
+  carer_psychopathology
+  LE_divorce
+  rules_q5
+  LE_legal
+  fam_foregone_medical
+  alc_pregn
+  trau_all_other
+  trau_death_fam
+  father_mental_health
+  nbrhd_DisPoverty
+  nbrhd_density
+  accult_q1_p
+  nbrhd_immig_crowding
+  lead_exposure_risk
+  addr1_walkindex
+  nsc_p_ss_mean_3_items
+  nbrhd_air_pollution
+  state_so_factor
+  state_sexism_factor
+  state_mj_laws
+  state_immigrant_factor
+  state_racism_factor
+  su_risk_p_6
+  nbrhd_wealth_property
+  sch_FeelInvolved
+  crpbi_y_ss_parent
+  sch_Enjoy
+  dim_yesno_q1
+  sch_GoodGrades
+  parent_monitor
+  discrimination_ethnic
+  sch_PositiveFeedback
+  crpbi_y_ss_carer
+  fes_y_ss_fc
+  dim_yesno_q3
+  dim_yesno_q4
+  dim_yesno_q2
+  LE_discord
+  nbrhd_crime_y
+  LE_casualties
+  rules_q7
+  rules_q1
+  rules_q4
+  macv_p_ss_r
+  macv_p_ss_fr
+  macv_p_ss_fs
+  macv_p_ss_fo
+  fam_religiosity
+  devhx_12a_p
+  devhx_5_p
+  birth_comp_reqOxygen
+  devhx_15
+  devhx_13_3_p
+  preg_comp_placenta
+  preg_comp_bp
+  devhx_11_p
+  birth_comp_blue;
+
+  CATEGORICAL=
+  su_risk_p_6
+  nbrhd_crime_y
+  rules_q1
+  rules_q4
+  rules_q5
+  rules_q7
+  dim_yesno_q1
+  dim_yesno_q2
+  dim_yesno_q3
+  dim_yesno_q4
+  accult_q1_p
+  devhx_5_p
+  devhx_6_p
+  devhx_12a_p
+  devhx_13_3_p
+  state_mj_laws
+  alc_pregn
+  TobMar_pregn
+  HardDrugs_pregn
+  preg_comp_bp
+  preg_comp_placenta
+  birth_comp_blue
+  birth_comp_reqOxygen
+  trau_death_fam
+  trau_adults_fighting
+  trau_sexual_abuse
+  parents_bad_lifestyle
+  fam_poverty_events
+  fam_foregone_medical
+  LE_legal
+  LE_divorce;
+
+  MISSING=ALL(99999);
+
+  cluster=famid;
+  !IDVAR=ids;
+
+    ANALYSIS:
+     ESTIMATOR=wlsmv;
+     TYPE=COMPLEX;
+     ! ALGORITHM=EMA;
+     !CHAINS = 1;
+     ! BCONVERGENCE = 0.08;
+     ! BITERATIONS = 20000 (100);
+     ! PROCESSORS = 3;
+     MODEL = NOCOVARIANCES;
+     ! process=4;
+
+    MODEL:
+
+  House_Probs BY
+  TobMar_pregn
+  parents_bad_lifestyle
+  trau_adults_fighting
+  HardDrugs_pregn
+  mother_mental_health
+  devhx_6_p
+  fam_poverty_events
+  trau_sexual_abuse
+  carer_psychopathology
+  LE_divorce
+  rules_q5
+  LE_legal
+  fam_foregone_medical
+  alc_pregn
+  trau_all_other
+  trau_death_fam
+  father_mental_health
+  accult_q1_p
+  nbrhd_wealth_property;
+
+  Nbrhd_Poverty BY
+  nbrhd_DisPoverty
+  nbrhd_density
+  accult_q1_p
+  nbrhd_immig_crowding
+  lead_exposure_risk
+  addr1_walkindex
+  nsc_p_ss_mean_3_items
+  nbrhd_air_pollution
+  state_immigrant_factor
+  macv_p_ss_fr
+  fam_poverty_events
+  state_so_factor
+  macv_p_ss_fo
+  dim_yesno_q2
+  macv_p_ss_r
+  macv_p_ss_fs
+  nbrhd_crime_y
+  devhx_6_p
+  alc_pregn;
+
+  DayToDay BY
+  sch_FeelInvolved
+  crpbi_y_ss_parent
+  sch_Enjoy
+  dim_yesno_q1
+  sch_GoodGrades
+  parent_monitor
+  discrimination_ethnic
+  sch_PositiveFeedback
+  crpbi_y_ss_carer
+  fes_y_ss_fc
+  dim_yesno_q3
+  dim_yesno_q4
+  dim_yesno_q2
+  LE_discord
+  nbrhd_crime_y
+  LE_casualties
+  LE_legal;
+
+  State_Level BY
+  state_so_factor
+  state_sexism_factor
+  state_mj_laws
+  state_immigrant_factor
+  state_racism_factor
+  su_risk_p_6
+  nbrhd_wealth_property
+  macv_p_ss_r
+  fam_religiosity;
+
+  Fam_Values BY
+  rules_q7
+  rules_q1
+  rules_q4
+  macv_p_ss_r
+  macv_p_ss_fr
+  macv_p_ss_fs
+  macv_p_ss_fo
+  fam_religiosity
+  lead_exposure_risk;
+
+  Brth_Preg_Comp BY
+  devhx_12a_p
+  devhx_5_p
+  birth_comp_reqOxygen
+  devhx_15
+  devhx_13_3_p
+  preg_comp_placenta
+  preg_comp_bp
+  devhx_11_p
+  birth_comp_blue;
+
+  Gen_Adversity BY
+  TobMar_pregn
+  parents_bad_lifestyle
+  trau_adults_fighting
+  HardDrugs_pregn
+  mother_mental_health
+  devhx_6_p
+  fam_poverty_events
+  trau_sexual_abuse
+  carer_psychopathology
+  LE_divorce
+  rules_q5
+  LE_legal
+  fam_foregone_medical
+  alc_pregn
+  trau_all_other
+  trau_death_fam
+  father_mental_health
+  nbrhd_DisPoverty
+  nbrhd_density
+  accult_q1_p
+  nbrhd_immig_crowding
+  lead_exposure_risk
+  addr1_walkindex
+  nsc_p_ss_mean_3_items
+  nbrhd_air_pollution
+  state_so_factor
+  state_sexism_factor
+  state_mj_laws
+  state_immigrant_factor
+  state_racism_factor
+  su_risk_p_6
+  nbrhd_wealth_property
+  sch_FeelInvolved
+  crpbi_y_ss_parent
+  sch_Enjoy
+  dim_yesno_q1
+  sch_GoodGrades
+  parent_monitor
+  discrimination_ethnic
+  sch_PositiveFeedback
+  crpbi_y_ss_carer
+  fes_y_ss_fc
+  dim_yesno_q3
+  dim_yesno_q4
+  dim_yesno_q2
+  LE_discord
+  nbrhd_crime_y
+  LE_casualties
+  rules_q7
+  rules_q1
+  rules_q4
+  macv_p_ss_r
+  macv_p_ss_fr
+  macv_p_ss_fs
+  macv_p_ss_fo
+  fam_religiosity
+  devhx_12a_p
+  devhx_5_p
+  birth_comp_reqOxygen
+  devhx_15
+  devhx_13_3_p
+  preg_comp_placenta
+  preg_comp_bp
+  devhx_11_p
+  birth_comp_blue;
+    	
+    OUTPUT:
+    !MOD(ALL)
+    STDYX;
+    SAVEDATA:
+    FILE IS "ABCD_exposome_bifactor_fam.dat";
+    SAVE=FSCORES;
+    !PLOT:
+    !TYPE=PLOT3;
+    	
+
+
+
+*** WARNING in VARIABLE command
+  Note that only the first 8 characters of variable names are used in the output.
+  Shorten variable names to avoid any confusion.
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+c6x4j2v9b5s2
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                       11235
+
+Number of dependent variables                                   65
+Number of independent variables                                  0
+Number of continuous latent variables                            7
+
+Observed dependent variables
+
+  Continuous
+   MOTHER_MEN  CARER_PSYC  TRAU_ALL_O  FATHER_MEN  NBRHD_DISP  NBRHD_DENS
+   NBRHD_IMMI  LEAD_EXPOS  ADDR1_WALK  NSC_P_SS_M  NBRHD_AIR_  STATE_SO_F
+   STATE_SEXI  STATE_IMMI  STATE_RACI  NBRHD_WEAL  SCH_FEELIN  CRPBI_Y_SS
+   SCH_ENJOY   SCH_GOODGR  PARENT_MON  DISCRIMINA  SCH_POSITI  CRPBI_Y_SS
+   FES_Y_SS_F  LE_DISCORD  LE_CASUALT  MACV_P_SS_  MACV_P_SS_  MACV_P_SS_
+   MACV_P_SS_  FAM_RELIGI  DEVHX_15    DEVHX_11_P
+
+  Binary and ordered categorical (ordinal)
+   TOBMAR_P    PARENTS_    TRAU_ADU    HARDDRUG    DEVHX_6_    FAM_POVE
+   TRAU_SEX    LE_DIVOR    RULES_Q5    LE_LEGAL    FAM_FORE    ALC_PREG
+   TRAU_DEA    ACCULT_Q    STATE_MJ    SU_RISK_    DIM_YESN    DIM_YESN
+   DIM_YESN    DIM_YESN    NBRHD_CR    RULES_Q7    RULES_Q1    RULES_Q4
+   DEVHX_12    DEVHX_5_    BIRTH_CO    DEVHX_13    PREG_COM    PREG_COM
+   BIRTH_CO
+
+Continuous latent variables
+   HOUSE_PR    NBRHD_PO    DAYTODAY    STATE_LE    FAM_VALU    BRTH_PRE
+   GEN_ADVE
+
+Variables with special functions
+
+  Cluster variable      FAMID
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+Link                                                        PROBIT
+
+Input data file(s)
+  exposome_MPLUS_famid.csv
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns           674
+     Number of clusters                       9294
+
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              TOBMAR_P      PARENTS_      TRAU_ADU      HARDDRUG      MOTHER_M
+              ________      ________      ________      ________      ________
+ TOBMAR_P       1.000
+ PARENTS_       1.000         1.000
+ TRAU_ADU       0.973         0.973         0.973
+ HARDDRUG       1.000         1.000         0.973         1.000
+ MOTHER_M       1.000         1.000         0.973         1.000         1.000
+ DEVHX_6_       0.978         0.978         0.952         0.978         0.978
+ FAM_POVE       1.000         1.000         0.973         1.000         1.000
+ TRAU_SEX       1.000         1.000         0.973         1.000         1.000
+ CARER_PS       0.992         0.992         0.966         0.992         0.992
+ LE_DIVOR       0.996         0.996         0.970         0.996         0.996
+ RULES_Q5       0.850         0.850         0.826         0.850         0.850
+ LE_LEGAL       0.996         0.996         0.970         0.996         0.996
+ FAM_FORE       1.000         1.000         0.973         1.000         1.000
+ ALC_PREG       1.000         1.000         0.973         1.000         1.000
+ TRAU_ALL       1.000         1.000         0.973         1.000         1.000
+ TRAU_DEA       0.973         0.973         0.973         0.973         0.973
+ FATHER_M       1.000         1.000         0.973         1.000         1.000
+ NBRHD_DI       0.943         0.943         0.919         0.943         0.943
+ NBRHD_DE       0.944         0.944         0.919         0.944         0.944
+ ACCULT_Q       0.987         0.987         0.961         0.987         0.987
+ NBRHD_IM       0.943         0.943         0.919         0.943         0.943
+ LEAD_EXP       0.943         0.943         0.919         0.943         0.943
+ ADDR1_WA       0.944         0.944         0.919         0.944         0.944
+ NSC_P_SS       0.998         0.998         0.971         0.998         0.998
+ NBRHD_AI       0.944         0.944         0.919         0.944         0.944
+ STATE_SO       1.000         1.000         0.973         1.000         1.000
+ STATE_SE       1.000         1.000         0.973         1.000         1.000
+ STATE_MJ       1.000         1.000         0.973         1.000         1.000
+ STATE_IM       1.000         1.000         0.973         1.000         1.000
+ STATE_RA       1.000         1.000         0.973         1.000         1.000
+ SU_RISK_       0.777         0.777         0.756         0.777         0.777
+ NBRHD_WE       0.943         0.943         0.919         0.943         0.943
+ SCH_FEEL       0.996         0.996         0.970         0.996         0.996
+ CRPBI_Y_       0.996         0.996         0.969         0.996         0.996
+ SCH_ENJO       0.996         0.996         0.970         0.996         0.996
+ DIM_YESN       0.926         0.926         0.901         0.926         0.926
+ SCH_GOOD       0.996         0.996         0.970         0.996         0.996
+ PARENT_M       0.996         0.996         0.970         0.996         0.996
+ DISCRIMI       0.984         0.984         0.958         0.984         0.984
+ SCH_POSI       0.996         0.996         0.970         0.996         0.996
+ CRPBI_Y_       0.923         0.923         0.899         0.923         0.923
+ FES_Y_SS       0.996         0.996         0.970         0.996         0.996
+ DIM_YESN       0.933         0.933         0.909         0.933         0.933
+ DIM_YESN       0.957         0.957         0.932         0.957         0.957
+ DIM_YESN       0.970         0.970         0.945         0.970         0.970
+ LE_DISCO       0.996         0.996         0.970         0.996         0.996
+ NBRHD_CR       0.996         0.996         0.970         0.996         0.996
+ LE_CASUA       0.996         0.996         0.970         0.996         0.996
+ RULES_Q7       0.998         0.998         0.971         0.998         0.998
+ RULES_Q1       0.998         0.998         0.971         0.998         0.998
+ RULES_Q4       0.998         0.998         0.971         0.998         0.998
+ MACV_P_S       0.998         0.998         0.971         0.998         0.998
+ MACV_P_S       0.998         0.998         0.971         0.998         0.998
+ MACV_P_S       0.998         0.998         0.971         0.998         0.998
+ MACV_P_S       0.998         0.998         0.971         0.998         0.998
+ FAM_RELI       0.985         0.985         0.959         0.985         0.985
+ DEVHX_12       0.988         0.988         0.962         0.988         0.988
+ DEVHX_5_       0.997         0.997         0.970         0.997         0.997
+ BIRTH_CO       1.000         1.000         0.973         1.000         1.000
+ DEVHX_15       0.942         0.942         0.917         0.942         0.942
+ DEVHX_13       0.988         0.988         0.961         0.988         0.988
+ PREG_COM       1.000         1.000         0.973         1.000         1.000
+ PREG_COM       1.000         1.000         0.973         1.000         1.000
+ DEVHX_11       0.888         0.888         0.864         0.888         0.888
+ BIRTH_CO       1.000         1.000         0.973         1.000         1.000
+
+
+           Covariance Coverage
+              DEVHX_6_      FAM_POVE      TRAU_SEX      CARER_PS      LE_DIVOR
+              ________      ________      ________      ________      ________
+ DEVHX_6_       0.978
+ FAM_POVE       0.978         1.000
+ TRAU_SEX       0.978         1.000         1.000
+ CARER_PS       0.970         0.992         0.992         0.992
+ LE_DIVOR       0.975         0.996         0.996         0.988         0.996
+ RULES_Q5       0.831         0.850         0.850         0.843         0.848
+ LE_LEGAL       0.975         0.996         0.996         0.988         0.996
+ FAM_FORE       0.978         1.000         1.000         0.992         0.996
+ ALC_PREG       0.978         1.000         1.000         0.992         0.996
+ TRAU_ALL       0.978         1.000         1.000         0.992         0.996
+ TRAU_DEA       0.952         0.973         0.973         0.966         0.970
+ FATHER_M       0.978         1.000         1.000         0.992         0.996
+ NBRHD_DI       0.923         0.943         0.943         0.936         0.940
+ NBRHD_DE       0.923         0.944         0.944         0.936         0.940
+ ACCULT_Q       0.965         0.987         0.987         0.979         0.984
+ NBRHD_IM       0.923         0.943         0.943         0.936         0.940
+ LEAD_EXP       0.923         0.943         0.943         0.936         0.940
+ ADDR1_WA       0.923         0.944         0.944         0.936         0.940
+ NSC_P_SS       0.976         0.998         0.998         0.989         0.995
+ NBRHD_AI       0.923         0.944         0.944         0.936         0.940
+ STATE_SO       0.978         1.000         1.000         0.991         0.996
+ STATE_SE       0.978         1.000         1.000         0.991         0.996
+ STATE_MJ       0.978         1.000         1.000         0.992         0.996
+ STATE_IM       0.978         1.000         1.000         0.991         0.996
+ STATE_RA       0.978         1.000         1.000         0.991         0.996
+ SU_RISK_       0.760         0.777         0.777         0.771         0.775
+ NBRHD_WE       0.923         0.943         0.943         0.936         0.940
+ SCH_FEEL       0.975         0.996         0.996         0.988         0.996
+ CRPBI_Y_       0.974         0.996         0.996         0.988         0.996
+ SCH_ENJO       0.975         0.996         0.996         0.988         0.996
+ DIM_YESN       0.907         0.926         0.926         0.919         0.926
+ SCH_GOOD       0.975         0.996         0.996         0.988         0.996
+ PARENT_M       0.975         0.996         0.996         0.988         0.996
+ DISCRIMI       0.963         0.984         0.984         0.976         0.984
+ SCH_POSI       0.975         0.996         0.996         0.988         0.996
+ CRPBI_Y_       0.906         0.923         0.923         0.916         0.923
+ FES_Y_SS       0.975         0.996         0.996         0.988         0.996
+ DIM_YESN       0.914         0.933         0.933         0.926         0.933
+ DIM_YESN       0.937         0.957         0.957         0.950         0.957
+ DIM_YESN       0.950         0.970         0.970         0.962         0.970
+ LE_DISCO       0.975         0.996         0.996         0.988         0.996
+ NBRHD_CR       0.975         0.996         0.996         0.988         0.996
+ LE_CASUA       0.975         0.996         0.996         0.988         0.996
+ RULES_Q7       0.976         0.998         0.998         0.989         0.995
+ RULES_Q1       0.976         0.998         0.998         0.989         0.995
+ RULES_Q4       0.976         0.998         0.998         0.989         0.995
+ MACV_P_S       0.976         0.998         0.998         0.989         0.995
+ MACV_P_S       0.976         0.998         0.998         0.989         0.995
+ MACV_P_S       0.976         0.998         0.998         0.989         0.995
+ MACV_P_S       0.976         0.998         0.998         0.989         0.995
+ FAM_RELI       0.964         0.985         0.985         0.978         0.985
+ DEVHX_12       0.972         0.988         0.988         0.980         0.985
+ DEVHX_5_       0.978         0.997         0.997         0.989         0.993
+ BIRTH_CO       0.978         1.000         1.000         0.992         0.996
+ DEVHX_15       0.931         0.942         0.942         0.935         0.938
+ DEVHX_13       0.974         0.988         0.988         0.979         0.984
+ PREG_COM       0.978         1.000         1.000         0.992         0.996
+ PREG_COM       0.978         1.000         1.000         0.992         0.996
+ DEVHX_11       0.882         0.888         0.888         0.883         0.885
+ BIRTH_CO       0.978         1.000         1.000         0.992         0.996
+
+
+           Covariance Coverage
+              RULES_Q5      LE_LEGAL      FAM_FORE      ALC_PREG      TRAU_ALL
+              ________      ________      ________      ________      ________
+ RULES_Q5       0.850
+ LE_LEGAL       0.848         0.996
+ FAM_FORE       0.850         0.996         1.000
+ ALC_PREG       0.850         0.996         1.000         1.000
+ TRAU_ALL       0.850         0.996         1.000         1.000         1.000
+ TRAU_DEA       0.826         0.970         0.973         0.973         0.973
+ FATHER_M       0.850         0.996         1.000         1.000         1.000
+ NBRHD_DI       0.801         0.940         0.943         0.943         0.943
+ NBRHD_DE       0.802         0.940         0.944         0.944         0.944
+ ACCULT_Q       0.840         0.984         0.987         0.987         0.987
+ NBRHD_IM       0.801         0.940         0.943         0.943         0.943
+ LEAD_EXP       0.801         0.940         0.943         0.943         0.943
+ ADDR1_WA       0.802         0.940         0.944         0.944         0.944
+ NSC_P_SS       0.849         0.995         0.998         0.998         0.998
+ NBRHD_AI       0.802         0.940         0.944         0.944         0.944
+ STATE_SO       0.849         0.996         1.000         1.000         1.000
+ STATE_SE       0.849         0.996         1.000         1.000         1.000
+ STATE_MJ       0.850         0.996         1.000         1.000         1.000
+ STATE_IM       0.849         0.996         1.000         1.000         1.000
+ STATE_RA       0.849         0.996         1.000         1.000         1.000
+ SU_RISK_       0.660         0.775         0.777         0.777         0.777
+ NBRHD_WE       0.801         0.940         0.943         0.943         0.943
+ SCH_FEEL       0.848         0.996         0.996         0.996         0.996
+ CRPBI_Y_       0.847         0.996         0.996         0.996         0.996
+ SCH_ENJO       0.848         0.996         0.996         0.996         0.996
+ DIM_YESN       0.787         0.926         0.926         0.926         0.926
+ SCH_GOOD       0.848         0.996         0.996         0.996         0.996
+ PARENT_M       0.848         0.996         0.996         0.996         0.996
+ DISCRIMI       0.837         0.984         0.984         0.984         0.984
+ SCH_POSI       0.848         0.996         0.996         0.996         0.996
+ CRPBI_Y_       0.784         0.923         0.923         0.923         0.923
+ FES_Y_SS       0.848         0.996         0.996         0.996         0.996
+ DIM_YESN       0.793         0.933         0.933         0.933         0.933
+ DIM_YESN       0.813         0.957         0.957         0.957         0.957
+ DIM_YESN       0.825         0.970         0.970         0.970         0.970
+ LE_DISCO       0.848         0.996         0.996         0.996         0.996
+ NBRHD_CR       0.848         0.996         0.996         0.996         0.996
+ LE_CASUA       0.847         0.996         0.996         0.996         0.996
+ RULES_Q7       0.850         0.995         0.998         0.998         0.998
+ RULES_Q1       0.850         0.995         0.998         0.998         0.998
+ RULES_Q4       0.850         0.995         0.998         0.998         0.998
+ MACV_P_S       0.849         0.995         0.998         0.998         0.998
+ MACV_P_S       0.849         0.995         0.998         0.998         0.998
+ MACV_P_S       0.849         0.995         0.998         0.998         0.998
+ MACV_P_S       0.849         0.995         0.998         0.998         0.998
+ FAM_RELI       0.838         0.985         0.985         0.985         0.985
+ DEVHX_12       0.840         0.985         0.988         0.988         0.988
+ DEVHX_5_       0.847         0.993         0.997         0.997         0.997
+ BIRTH_CO       0.850         0.996         1.000         1.000         1.000
+ DEVHX_15       0.799         0.938         0.942         0.942         0.942
+ DEVHX_13       0.839         0.984         0.988         0.988         0.988
+ PREG_COM       0.850         0.996         1.000         1.000         1.000
+ PREG_COM       0.850         0.996         1.000         1.000         1.000
+ DEVHX_11       0.755         0.885         0.888         0.888         0.888
+ BIRTH_CO       0.850         0.996         1.000         1.000         1.000
+
+
+           Covariance Coverage
+              TRAU_DEA      FATHER_M      NBRHD_DI      NBRHD_DE      ACCULT_Q
+              ________      ________      ________      ________      ________
+ TRAU_DEA       0.973
+ FATHER_M       0.973         1.000
+ NBRHD_DI       0.919         0.943         0.943
+ NBRHD_DE       0.919         0.944         0.943         0.944
+ ACCULT_Q       0.961         0.987         0.931         0.931         0.987
+ NBRHD_IM       0.919         0.943         0.943         0.943         0.931
+ LEAD_EXP       0.919         0.943         0.943         0.943         0.931
+ ADDR1_WA       0.919         0.944         0.943         0.944         0.931
+ NSC_P_SS       0.971         0.998         0.941         0.941         0.987
+ NBRHD_AI       0.919         0.944         0.943         0.944         0.931
+ STATE_SO       0.973         1.000         0.943         0.944         0.987
+ STATE_SE       0.973         1.000         0.943         0.944         0.987
+ STATE_MJ       0.973         1.000         0.943         0.944         0.987
+ STATE_IM       0.973         1.000         0.943         0.944         0.987
+ STATE_RA       0.973         1.000         0.943         0.944         0.987
+ SU_RISK_       0.756         0.777         0.734         0.734         0.769
+ NBRHD_WE       0.919         0.943         0.943         0.943         0.931
+ SCH_FEEL       0.970         0.996         0.940         0.940         0.984
+ CRPBI_Y_       0.969         0.996         0.939         0.940         0.984
+ SCH_ENJO       0.970         0.996         0.940         0.940         0.984
+ DIM_YESN       0.901         0.926         0.874         0.874         0.915
+ SCH_GOOD       0.970         0.996         0.940         0.940         0.984
+ PARENT_M       0.970         0.996         0.940         0.940         0.984
+ DISCRIMI       0.958         0.984         0.928         0.929         0.972
+ SCH_POSI       0.970         0.996         0.940         0.940         0.984
+ CRPBI_Y_       0.899         0.923         0.871         0.871         0.913
+ FES_Y_SS       0.970         0.996         0.940         0.940         0.984
+ DIM_YESN       0.909         0.933         0.880         0.881         0.922
+ DIM_YESN       0.932         0.957         0.903         0.904         0.946
+ DIM_YESN       0.945         0.970         0.915         0.915         0.959
+ LE_DISCO       0.970         0.996         0.940         0.940         0.984
+ NBRHD_CR       0.970         0.996         0.940         0.940         0.984
+ LE_CASUA       0.970         0.996         0.940         0.940         0.984
+ RULES_Q7       0.971         0.998         0.941         0.942         0.986
+ RULES_Q1       0.971         0.998         0.941         0.942         0.986
+ RULES_Q4       0.971         0.998         0.941         0.942         0.986
+ MACV_P_S       0.971         0.998         0.941         0.941         0.987
+ MACV_P_S       0.971         0.998         0.941         0.941         0.987
+ MACV_P_S       0.971         0.998         0.941         0.941         0.987
+ MACV_P_S       0.971         0.998         0.941         0.941         0.987
+ FAM_RELI       0.959         0.985         0.930         0.930         0.974
+ DEVHX_12       0.962         0.988         0.932         0.933         0.976
+ DEVHX_5_       0.970         0.997         0.940         0.941         0.984
+ BIRTH_CO       0.973         1.000         0.943         0.944         0.987
+ DEVHX_15       0.917         0.942         0.889         0.889         0.930
+ DEVHX_13       0.961         0.988         0.931         0.932         0.975
+ PREG_COM       0.973         1.000         0.943         0.944         0.987
+ PREG_COM       0.973         1.000         0.943         0.944         0.987
+ DEVHX_11       0.864         0.888         0.839         0.840         0.878
+ BIRTH_CO       0.973         1.000         0.943         0.944         0.987
+
+
+           Covariance Coverage
+              NBRHD_IM      LEAD_EXP      ADDR1_WA      NSC_P_SS      NBRHD_AI
+              ________      ________      ________      ________      ________
+ NBRHD_IM       0.943
+ LEAD_EXP       0.943         0.943
+ ADDR1_WA       0.943         0.943         0.944
+ NSC_P_SS       0.941         0.941         0.941         0.998
+ NBRHD_AI       0.943         0.943         0.944         0.941         0.944
+ STATE_SO       0.943         0.943         0.944         0.997         0.944
+ STATE_SE       0.943         0.943         0.944         0.997         0.944
+ STATE_MJ       0.943         0.943         0.944         0.998         0.944
+ STATE_IM       0.943         0.943         0.944         0.997         0.944
+ STATE_RA       0.943         0.943         0.944         0.997         0.944
+ SU_RISK_       0.734         0.734         0.734         0.776         0.734
+ NBRHD_WE       0.943         0.943         0.943         0.941         0.943
+ SCH_FEEL       0.940         0.940         0.940         0.995         0.940
+ CRPBI_Y_       0.939         0.939         0.940         0.995         0.940
+ SCH_ENJO       0.940         0.940         0.940         0.995         0.940
+ DIM_YESN       0.874         0.874         0.874         0.925         0.874
+ SCH_GOOD       0.940         0.940         0.940         0.995         0.940
+ PARENT_M       0.940         0.940         0.940         0.995         0.940
+ DISCRIMI       0.928         0.928         0.929         0.983         0.929
+ SCH_POSI       0.940         0.940         0.940         0.995         0.940
+ CRPBI_Y_       0.871         0.871         0.871         0.923         0.871
+ FES_Y_SS       0.940         0.940         0.940         0.995         0.940
+ DIM_YESN       0.880         0.880         0.881         0.932         0.881
+ DIM_YESN       0.903         0.903         0.904         0.956         0.904
+ DIM_YESN       0.915         0.915         0.915         0.969         0.915
+ LE_DISCO       0.940         0.940         0.940         0.995         0.940
+ NBRHD_CR       0.940         0.940         0.940         0.995         0.940
+ LE_CASUA       0.940         0.940         0.940         0.995         0.940
+ RULES_Q7       0.941         0.941         0.942         0.997         0.942
+ RULES_Q1       0.941         0.941         0.942         0.997         0.942
+ RULES_Q4       0.941         0.941         0.942         0.997         0.942
+ MACV_P_S       0.941         0.941         0.941         0.998         0.941
+ MACV_P_S       0.941         0.941         0.941         0.998         0.941
+ MACV_P_S       0.941         0.941         0.941         0.998         0.941
+ MACV_P_S       0.941         0.941         0.941         0.998         0.941
+ FAM_RELI       0.930         0.930         0.930         0.985         0.930
+ DEVHX_12       0.932         0.932         0.933         0.986         0.933
+ DEVHX_5_       0.940         0.940         0.941         0.994         0.941
+ BIRTH_CO       0.943         0.943         0.944         0.998         0.944
+ DEVHX_15       0.889         0.889         0.889         0.939         0.889
+ DEVHX_13       0.931         0.931         0.932         0.985         0.932
+ PREG_COM       0.943         0.943         0.944         0.998         0.944
+ PREG_COM       0.943         0.943         0.944         0.998         0.944
+ DEVHX_11       0.839         0.839         0.840         0.886         0.840
+ BIRTH_CO       0.943         0.943         0.944         0.998         0.944
+
+
+           Covariance Coverage
+              STATE_SO      STATE_SE      STATE_MJ      STATE_IM      STATE_RA
+              ________      ________      ________      ________      ________
+ STATE_SO       1.000
+ STATE_SE       1.000         1.000
+ STATE_MJ       1.000         1.000         1.000
+ STATE_IM       1.000         1.000         1.000         1.000
+ STATE_RA       1.000         1.000         1.000         1.000         1.000
+ SU_RISK_       0.777         0.777         0.777         0.777         0.777
+ NBRHD_WE       0.943         0.943         0.943         0.943         0.943
+ SCH_FEEL       0.996         0.996         0.996         0.996         0.996
+ CRPBI_Y_       0.996         0.996         0.996         0.996         0.996
+ SCH_ENJO       0.996         0.996         0.996         0.996         0.996
+ DIM_YESN       0.926         0.926         0.926         0.926         0.926
+ SCH_GOOD       0.996         0.996         0.996         0.996         0.996
+ PARENT_M       0.996         0.996         0.996         0.996         0.996
+ DISCRIMI       0.984         0.984         0.984         0.984         0.984
+ SCH_POSI       0.996         0.996         0.996         0.996         0.996
+ CRPBI_Y_       0.923         0.923         0.923         0.923         0.923
+ FES_Y_SS       0.996         0.996         0.996         0.996         0.996
+ DIM_YESN       0.933         0.933         0.933         0.933         0.933
+ DIM_YESN       0.957         0.957         0.957         0.957         0.957
+ DIM_YESN       0.970         0.970         0.970         0.970         0.970
+ LE_DISCO       0.996         0.996         0.996         0.996         0.996
+ NBRHD_CR       0.996         0.996         0.996         0.996         0.996
+ LE_CASUA       0.996         0.996         0.996         0.996         0.996
+ RULES_Q7       0.997         0.997         0.997         0.997         0.997
+ RULES_Q1       0.997         0.997         0.997         0.997         0.997
+ RULES_Q4       0.997         0.997         0.997         0.997         0.997
+ MACV_P_S       0.997         0.997         0.998         0.997         0.997
+ MACV_P_S       0.997         0.997         0.998         0.997         0.997
+ MACV_P_S       0.997         0.997         0.998         0.997         0.997
+ MACV_P_S       0.997         0.997         0.998         0.997         0.997
+ FAM_RELI       0.985         0.985         0.985         0.985         0.985
+ DEVHX_12       0.988         0.988         0.988         0.988         0.988
+ DEVHX_5_       0.996         0.996         0.997         0.996         0.996
+ BIRTH_CO       1.000         1.000         1.000         1.000         1.000
+ DEVHX_15       0.941         0.941         0.941         0.941         0.941
+ DEVHX_13       0.987         0.987         0.987         0.987         0.987
+ PREG_COM       1.000         1.000         1.000         1.000         1.000
+ PREG_COM       1.000         1.000         1.000         1.000         1.000
+ DEVHX_11       0.888         0.888         0.888         0.888         0.888
+ BIRTH_CO       1.000         1.000         1.000         1.000         1.000
+
+
+           Covariance Coverage
+              SU_RISK_      NBRHD_WE      SCH_FEEL      CRPBI_Y_      SCH_ENJO
+              ________      ________      ________      ________      ________
+ SU_RISK_       0.777
+ NBRHD_WE       0.734         0.943
+ SCH_FEEL       0.775         0.940         0.996
+ CRPBI_Y_       0.775         0.939         0.996         0.996
+ SCH_ENJO       0.775         0.940         0.996         0.996         0.996
+ DIM_YESN       0.721         0.874         0.926         0.926         0.926
+ SCH_GOOD       0.775         0.940         0.996         0.996         0.996
+ PARENT_M       0.775         0.940         0.996         0.996         0.996
+ DISCRIMI       0.766         0.928         0.984         0.983         0.984
+ SCH_POSI       0.775         0.940         0.996         0.996         0.996
+ CRPBI_Y_       0.720         0.871         0.923         0.923         0.923
+ FES_Y_SS       0.775         0.940         0.996         0.996         0.996
+ DIM_YESN       0.728         0.880         0.933         0.933         0.933
+ DIM_YESN       0.748         0.903         0.957         0.957         0.957
+ DIM_YESN       0.756         0.915         0.970         0.970         0.970
+ LE_DISCO       0.775         0.940         0.996         0.996         0.996
+ NBRHD_CR       0.775         0.940         0.996         0.996         0.996
+ LE_CASUA       0.775         0.940         0.996         0.996         0.996
+ RULES_Q7       0.777         0.941         0.995         0.994         0.995
+ RULES_Q1       0.777         0.941         0.995         0.994         0.995
+ RULES_Q4       0.777         0.941         0.995         0.994         0.995
+ MACV_P_S       0.776         0.941         0.995         0.995         0.995
+ MACV_P_S       0.776         0.941         0.995         0.995         0.995
+ MACV_P_S       0.776         0.941         0.995         0.995         0.995
+ MACV_P_S       0.776         0.941         0.995         0.995         0.995
+ FAM_RELI       0.769         0.930         0.984         0.984         0.984
+ DEVHX_12       0.768         0.932         0.985         0.984         0.985
+ DEVHX_5_       0.774         0.940         0.993         0.993         0.993
+ BIRTH_CO       0.777         0.943         0.996         0.996         0.996
+ DEVHX_15       0.735         0.889         0.938         0.938         0.938
+ DEVHX_13       0.767         0.931         0.984         0.983         0.984
+ PREG_COM       0.777         0.943         0.996         0.996         0.996
+ PREG_COM       0.777         0.943         0.996         0.996         0.996
+ DEVHX_11       0.697         0.839         0.885         0.885         0.885
+ BIRTH_CO       0.777         0.943         0.996         0.996         0.996
+
+
+           Covariance Coverage
+              DIM_YESN      SCH_GOOD      PARENT_M      DISCRIMI      SCH_POSI
+              ________      ________      ________      ________      ________
+ DIM_YESN       0.926
+ SCH_GOOD       0.926         0.996
+ PARENT_M       0.926         0.996         0.996
+ DISCRIMI       0.917         0.984         0.984         0.984
+ SCH_POSI       0.926         0.996         0.996         0.984         0.996
+ CRPBI_Y_       0.861         0.923         0.923         0.912         0.923
+ FES_Y_SS       0.926         0.996         0.996         0.984         0.996
+ DIM_YESN       0.883         0.933         0.933         0.924         0.933
+ DIM_YESN       0.901         0.957         0.957         0.947         0.957
+ DIM_YESN       0.914         0.970         0.970         0.960         0.970
+ LE_DISCO       0.926         0.996         0.996         0.984         0.996
+ NBRHD_CR       0.926         0.996         0.996         0.984         0.996
+ LE_CASUA       0.926         0.996         0.996         0.984         0.996
+ RULES_Q7       0.925         0.995         0.995         0.983         0.995
+ RULES_Q1       0.925         0.995         0.995         0.983         0.995
+ RULES_Q4       0.925         0.995         0.995         0.983         0.995
+ MACV_P_S       0.925         0.995         0.995         0.983         0.995
+ MACV_P_S       0.925         0.995         0.995         0.983         0.995
+ MACV_P_S       0.925         0.995         0.995         0.983         0.995
+ MACV_P_S       0.925         0.995         0.995         0.983         0.995
+ FAM_RELI       0.916         0.984         0.984         0.972         0.984
+ DEVHX_12       0.915         0.985         0.985         0.972         0.985
+ DEVHX_5_       0.923         0.993         0.993         0.981         0.993
+ BIRTH_CO       0.926         0.996         0.996         0.984         0.996
+ DEVHX_15       0.874         0.938         0.938         0.927         0.938
+ DEVHX_13       0.915         0.984         0.984         0.972         0.984
+ PREG_COM       0.926         0.996         0.996         0.984         0.996
+ PREG_COM       0.926         0.996         0.996         0.984         0.996
+ DEVHX_11       0.827         0.885         0.885         0.875         0.885
+ BIRTH_CO       0.926         0.996         0.996         0.984         0.996
+
+
+           Covariance Coverage
+              CRPBI_Y_      FES_Y_SS      DIM_YESN      DIM_YESN      DIM_YESN
+              ________      ________      ________      ________      ________
+ CRPBI_Y_       0.923
+ FES_Y_SS       0.923         0.996
+ DIM_YESN       0.866         0.933         0.933
+ DIM_YESN       0.889         0.957         0.908         0.957
+ DIM_YESN       0.901         0.970         0.917         0.939         0.970
+ LE_DISCO       0.923         0.996         0.933         0.957         0.970
+ NBRHD_CR       0.923         0.996         0.933         0.957         0.970
+ LE_CASUA       0.923         0.996         0.933         0.957         0.970
+ RULES_Q7       0.922         0.995         0.932         0.956         0.969
+ RULES_Q1       0.922         0.995         0.932         0.956         0.969
+ RULES_Q4       0.922         0.995         0.932         0.956         0.969
+ MACV_P_S       0.923         0.995         0.932         0.956         0.969
+ MACV_P_S       0.923         0.995         0.932         0.956         0.969
+ MACV_P_S       0.923         0.995         0.932         0.956         0.969
+ MACV_P_S       0.923         0.995         0.932         0.956         0.969
+ FAM_RELI       0.913         0.984         0.923         0.946         0.959
+ DEVHX_12       0.914         0.985         0.923         0.946         0.959
+ DEVHX_5_       0.921         0.993         0.930         0.954         0.967
+ BIRTH_CO       0.923         0.996         0.933         0.957         0.970
+ DEVHX_15       0.873         0.938         0.880         0.902         0.915
+ DEVHX_13       0.914         0.984         0.922         0.945         0.958
+ PREG_COM       0.923         0.996         0.933         0.957         0.970
+ PREG_COM       0.923         0.996         0.933         0.957         0.970
+ DEVHX_11       0.825         0.885         0.830         0.851         0.864
+ BIRTH_CO       0.923         0.996         0.933         0.957         0.970
+
+
+           Covariance Coverage
+              LE_DISCO      NBRHD_CR      LE_CASUA      RULES_Q7      RULES_Q1
+              ________      ________      ________      ________      ________
+ LE_DISCO       0.996
+ NBRHD_CR       0.996         0.996
+ LE_CASUA       0.996         0.996         0.996
+ RULES_Q7       0.995         0.995         0.995         0.998
+ RULES_Q1       0.995         0.995         0.995         0.998         0.998
+ RULES_Q4       0.995         0.995         0.995         0.998         0.998
+ MACV_P_S       0.995         0.995         0.995         0.997         0.997
+ MACV_P_S       0.995         0.995         0.995         0.997         0.997
+ MACV_P_S       0.995         0.995         0.995         0.997         0.997
+ MACV_P_S       0.995         0.995         0.995         0.997         0.997
+ FAM_RELI       0.985         0.984         0.984         0.985         0.985
+ DEVHX_12       0.985         0.985         0.985         0.986         0.986
+ DEVHX_5_       0.993         0.993         0.993         0.994         0.994
+ BIRTH_CO       0.996         0.996         0.996         0.998         0.998
+ DEVHX_15       0.938         0.938         0.938         0.939         0.939
+ DEVHX_13       0.984         0.984         0.984         0.985         0.985
+ PREG_COM       0.996         0.996         0.996         0.998         0.998
+ PREG_COM       0.996         0.996         0.996         0.998         0.998
+ DEVHX_11       0.885         0.885         0.885         0.886         0.886
+ BIRTH_CO       0.996         0.996         0.996         0.998         0.998
+
+
+           Covariance Coverage
+              RULES_Q4      MACV_P_S      MACV_P_S      MACV_P_S      MACV_P_S
+              ________      ________      ________      ________      ________
+ RULES_Q4       0.998
+ MACV_P_S       0.997         0.998
+ MACV_P_S       0.997         0.998         0.998
+ MACV_P_S       0.997         0.998         0.998         0.998
+ MACV_P_S       0.997         0.998         0.998         0.998         0.998
+ FAM_RELI       0.985         0.985         0.985         0.985         0.985
+ DEVHX_12       0.986         0.986         0.986         0.986         0.986
+ DEVHX_5_       0.994         0.994         0.994         0.994         0.994
+ BIRTH_CO       0.998         0.998         0.998         0.998         0.998
+ DEVHX_15       0.939         0.939         0.939         0.939         0.939
+ DEVHX_13       0.985         0.985         0.985         0.985         0.985
+ PREG_COM       0.998         0.998         0.998         0.998         0.998
+ PREG_COM       0.998         0.998         0.998         0.998         0.998
+ DEVHX_11       0.886         0.886         0.886         0.886         0.886
+ BIRTH_CO       0.998         0.998         0.998         0.998         0.998
+
+
+           Covariance Coverage
+              FAM_RELI      DEVHX_12      DEVHX_5_      BIRTH_CO      DEVHX_15
+              ________      ________      ________      ________      ________
+ FAM_RELI       0.985
+ DEVHX_12       0.974         0.988
+ DEVHX_5_       0.982         0.987         0.997
+ BIRTH_CO       0.985         0.988         0.997         1.000
+ DEVHX_15       0.928         0.938         0.941         0.942         0.942
+ DEVHX_13       0.973         0.983         0.987         0.988         0.939
+ PREG_COM       0.985         0.988         0.997         1.000         0.942
+ PREG_COM       0.985         0.988         0.997         1.000         0.942
+ DEVHX_11       0.876         0.885         0.888         0.888         0.867
+ BIRTH_CO       0.985         0.988         0.997         1.000         0.942
+
+
+           Covariance Coverage
+              DEVHX_13      PREG_COM      PREG_COM      DEVHX_11      BIRTH_CO
+              ________      ________      ________      ________      ________
+ DEVHX_13       0.988
+ PREG_COM       0.988         1.000
+ PREG_COM       0.988         1.000         1.000
+ DEVHX_11       0.887         0.888         0.888         0.888
+ BIRTH_CO       0.988         1.000         1.000         0.888         1.000
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    TOBMAR_P
+      Category 1    0.844         9478.000
+      Category 2    0.081          907.000
+      Category 3    0.057          643.000
+      Category 4    0.010          108.000
+      Category 5    0.009           99.000
+    PARENTS_
+      Category 1    0.766         8606.000
+      Category 2    0.120         1346.000
+      Category 3    0.062          693.000
+      Category 4    0.032          365.000
+      Category 5    0.010          109.000
+      Category 6    0.006           68.000
+      Category 7    0.004           48.000
+    TRAU_ADU
+      Category 1    0.921        10074.000
+      Category 2    0.079          863.000
+    HARDDRUG
+      Category 1    0.980        11010.000
+      Category 2    0.012          135.000
+      Category 3    0.006           62.000
+      Category 4    0.001           10.000
+      Category 5    0.001           12.000
+      Category 6    0.000            1.000
+      Category 7    0.000            5.000
+    DEVHX_6_
+      Category 1    0.382         4195.000
+      Category 2    0.618         6795.000
+    FAM_POVE
+      Category 1    0.845         9488.000
+      Category 2    0.076          849.000
+      Category 3    0.042          473.000
+      Category 4    0.019          213.000
+      Category 5    0.013          147.000
+      Category 6    0.006           65.000
+    TRAU_SEX
+      Category 1    0.981        11022.000
+      Category 2    0.016          178.000
+      Category 3    0.001           10.000
+      Category 4    0.002           25.000
+    LE_DIVOR
+      Category 1    0.749         8388.000
+      Category 2    0.158         1773.000
+      Category 3    0.092         1034.000
+    RULES_Q5
+      Category 1    0.016          153.000
+      Category 2    0.221         2110.000
+      Category 3    0.763         7284.000
+    LE_LEGAL
+      Category 1    0.776         8686.000
+      Category 2    0.133         1494.000
+      Category 3    0.052          581.000
+      Category 4    0.027          297.000
+      Category 5    0.012          137.000
+    FAM_FORE
+      Category 1    0.888         9978.000
+      Category 2    0.071          800.000
+      Category 3    0.041          457.000
+    ALC_PREG
+      Category 1    0.751         8438.000
+      Category 2    0.226         2537.000
+      Category 3    0.023          260.000
+    TRAU_DEA
+      Category 1    0.759         8300.000
+      Category 2    0.241         2637.000
+    ACCULT_Q
+      Category 1    0.019          209.000
+      Category 2    0.031          346.000
+      Category 3    0.062          688.000
+      Category 4    0.888         9844.000
+    STATE_MJ
+      Category 1    0.187         2104.000
+      Category 2    0.792         8894.000
+      Category 3    0.021          236.000
+    SU_RISK_
+      Category 1    0.714         6227.000
+      Category 2    0.286         2499.000
+    DIM_YESN
+      Category 1    0.955         9935.000
+      Category 2    0.045          472.000
+    DIM_YESN
+      Category 1    0.961        10078.000
+      Category 2    0.039          408.000
+    DIM_YESN
+      Category 1    0.939        10101.000
+      Category 2    0.061          654.000
+    DIM_YESN
+      Category 1    0.984        10723.000
+      Category 2    0.016          177.000
+    NBRHD_CR
+      Category 1    0.024          265.000
+      Category 2    0.046          513.000
+      Category 3    0.155         1740.000
+      Category 4    0.308         3450.000
+      Category 5    0.467         5227.000
+    RULES_Q7
+      Category 1    0.224         2515.000
+      Category 2    0.776         8692.000
+    RULES_Q1
+      Category 1    0.207         2317.000
+      Category 2    0.793         8890.000
+    RULES_Q4
+      Category 1    0.155         1741.000
+      Category 2    0.845         9466.000
+    DEVHX_12
+      Category 1    0.811         9001.000
+      Category 2    0.189         2102.000
+    DEVHX_5_
+      Category 1    0.807         9037.000
+      Category 2    0.193         2161.000
+    BIRTH_CO
+      Category 1    0.781         8773.000
+      Category 2    0.179         2012.000
+      Category 3    0.038          425.000
+      Category 4    0.002           25.000
+    DEVHX_13
+      Category 1    0.618         6856.000
+      Category 2    0.382         4239.000
+    PREG_COM
+      Category 1    0.847         9516.000
+      Category 2    0.131         1474.000
+      Category 3    0.018          198.000
+      Category 4    0.003           29.000
+      Category 5    0.000            5.000
+      Category 6    0.001           13.000
+    PREG_COM
+      Category 1    0.825         9271.000
+      Category 2    0.117         1319.000
+      Category 3    0.048          542.000
+      Category 4    0.009          103.000
+    BIRTH_CO
+      Category 1    0.923        10369.000
+      Category 2    0.056          628.000
+      Category 3    0.015          169.000
+      Category 4    0.006           69.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     MOTHER_MENTAL_H       0.732       1.864       0.000   61.98%       0.000      0.000      0.000
+           11235.000       1.356       3.631       7.000    0.11%       0.000      2.000
+     CARER_PSYCHOPAT       0.000       2.011      -0.633    7.11%      -0.554     -0.383     -0.262
+           11142.000       0.542       4.988       4.980    0.01%      -0.101      0.417
+     TRAU_ALL_OTHER        0.169      11.241       0.000   87.51%       0.000      0.000      0.000
+           11235.000       0.445     181.844      12.000    0.17%       0.000      0.000
+     FATHER_MENTAL_H       0.490       2.565       0.000   73.86%       0.000      0.000      0.000
+           11235.000       1.025       7.294       7.000    0.07%       0.000      1.000
+     NBRHD_DISPOVERT       0.000       0.770      -1.892    0.01%      -0.833     -0.397     -0.162
+           10599.000       0.953       0.363       3.730    0.03%       0.070      0.808
+     NBRHD_DENSITY         0.002      -0.493      -3.523    0.01%      -0.721     -0.097      0.119
+           10603.000       0.900       0.428       3.481    0.01%       0.311      0.755
+     NBRHD_IMMIG_CRO       0.000       0.806      -2.389    0.01%      -0.752     -0.371     -0.159
+           10599.000       0.851       0.444       3.252    0.03%       0.063      0.691
+     LEAD_EXPOSURE_R       0.000       0.460      -1.464    0.02%      -0.954     -0.511     -0.212
+           10599.000       0.943      -1.052       2.162    0.02%       0.155      1.027
+     ADDR1_WALKINDEX      10.626      -0.013       1.170    0.06%       6.670      9.000     10.670
+           10603.000      16.557      -1.054      19.830    0.06%      12.170     14.670
+     NSC_P_SS_MEAN_3       3.891      -0.868       1.000    1.61%       3.000      4.000      4.000
+           11208.000       0.907       0.381       5.000   20.49%       4.333      5.000
+     NBRHD_AIR_POLLU       0.000       0.325      -2.407    0.02%      -0.696     -0.263     -0.046
+           10603.000       0.590      -0.237       2.708    0.02%       0.133      0.666
+     STATE_SO_FACTOR      -0.289       0.201      -1.397   16.08%      -1.377     -0.619     -0.163
+           11232.000       0.759      -1.232       1.096    6.49%      -0.128      0.414
+     STATE_SEXISM_FA      -0.256       0.213      -1.847    4.99%      -0.980     -0.831     -0.369
+           11232.000       0.829      -1.107       1.278    8.64%      -0.052      0.615
+     STATE_IMMIGRANT      -0.476      -0.496      -1.746   16.08%      -0.765     -0.535     -0.454
+           11232.000       0.477      -0.367       0.639    3.36%      -0.264      0.127
+     STATE_RACISM_FA      -0.184      -0.524      -1.981    4.99%      -0.648     -0.309     -0.309
+           11232.000       0.556       0.005       1.112    3.21%      -0.287      0.582
+     NBRHD_WEALTH_PR       0.000       1.339      -1.934    0.06%      -0.749     -0.334     -0.152
+           10599.000       0.947       2.650       4.245    0.02%       0.045      0.576
+     SCH_FEELINVOLVE       3.414      -0.998       1.000    0.06%       3.000      3.250      3.500
+           11195.000       0.242       1.150       4.000   18.37%       3.750      3.750
+     CRPBI_Y_SS_PARE       2.805      -1.889       1.000    0.03%       2.600      2.800      3.000
+           11189.000       0.083       4.052       3.000   54.45%       3.000      3.000
+     SCH_ENJOY             1.471      -0.652      -0.667    0.60%       1.000      1.333      1.667
+           11195.000       0.465      -0.144       2.333   18.30%       1.667      2.000
+     SCH_GOODGRADES        1.712      -0.901      -0.667    0.22%       1.333      1.667      1.667
+           11195.000       0.323       0.672       3.000    0.01%       2.000      2.333
+     PARENT_MONITOR        4.486      -1.306       1.000    0.02%       4.200      4.400      4.600
+           11195.000       0.207       2.512       5.000   17.63%       4.600      4.800
+     DISCRIMINATION_       1.260       3.142       1.000   66.33%       1.000      1.000      1.000
+           11055.000       0.294      11.905       5.000    0.20%       1.000      1.500
+     SCH_POSITIVEFEE       3.335      -0.905       1.000    0.77%       3.000      3.000      3.500
+           11195.000       0.416       0.561       4.000   33.78%       3.500      4.000
+     CRPBI_Y_SS_CARE       2.761      -1.760       1.000    0.11%       2.600      2.800      2.800
+           10375.000       0.109       3.442       3.000   49.40%       3.000      3.000
+     FES_Y_SS_FC           1.917       1.039       0.000   28.01%       0.000      1.000      1.000
+           11195.000       3.531       0.611       9.000    0.22%       2.000      3.000
+     LE_DISCORD            0.702       1.628       0.000   54.97%       0.000      0.000      0.000
+           11195.000       0.942       2.906       6.000    0.06%       1.000      1.000
+     LE_CASUALTIES         2.118       0.788       0.000   10.09%       1.000      2.000      2.000
+           11194.000       2.138       0.437       8.000    0.13%       2.000      3.000
+     MACV_P_SS_R           3.242      -0.308       1.000   11.81%       1.570      3.000      3.570
+           11208.000       2.065      -1.382       5.000   13.96%       4.000      4.710
+     MACV_P_SS_FR          3.267      -0.224       1.000    0.79%       2.600      3.000      3.400
+           11208.000       0.637      -0.058       5.000    1.90%       3.400      4.000
+     MACV_P_SS_FS          4.052      -1.001       1.000    0.70%       3.500      4.000      4.000
+           11208.000       0.446       2.363       5.000    9.34%       4.330      4.670
+     MACV_P_SS_FO          3.504      -0.260       1.000    0.74%       3.000      3.400      3.600
+           11208.000       0.491       0.564       5.000    2.79%       3.600      4.000
+     FAM_RELIGIOSITY       2.149      -0.096       0.000    1.36%       1.000      2.000      2.000
+           11070.000       1.303      -1.217       4.000    6.40%       2.500      3.500
+     DEVHX_15              0.251       3.029       0.000   86.17%       0.000      0.000      0.000
+           10578.000       0.501       8.675       4.511    0.04%       0.000      0.000
+     DEVHX_11_P           15.358       2.405       0.000    0.41%      14.000     14.000     14.000
+            9976.000      29.212       9.830      50.000    0.20%      14.000     16.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                      288
+
+Chi-Square Test of Model Fit
+
+          Value                          25781.905*
+          Degrees of Freedom                  1933
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.033
+          90 Percent C.I.                    0.033  0.033
+          Probability RMSEA <= .05           1.000
+
+CFI/TLI
+
+          CFI                                0.849
+          TLI                                0.838
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                         160256.238
+          Degrees of Freedom                  2080
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.060
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.16267438D+01
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ HOUSE_PR BY
+    TOBMAR_PRE         1.000      0.000    999.000    999.000
+    PARENTS_BA         1.044      0.030     34.407      0.000
+    TRAU_ADULT         0.864      0.039     22.419      0.000
+    HARDDRUGS_         1.015      0.055     18.527      0.000
+    MOTHER_MEN         1.021      0.035     29.008      0.000
+    DEVHX_6_P         -0.393      0.030    -13.286      0.000
+    FAM_POVERT         0.363      0.032     11.220      0.000
+    TRAU_SEXUA         0.634      0.056     11.356      0.000
+    CARER_PSYC         0.495      0.020     25.241      0.000
+    LE_DIVORCE         0.508      0.031     16.246      0.000
+    RULES_Q5          -0.546      0.032    -17.221      0.000
+    LE_LEGAL           0.375      0.028     13.393      0.000
+    FAM_FOREGO         0.354      0.038      9.418      0.000
+    ALC_PREGN          0.780      0.035     22.112      0.000
+    TRAU_ALL_O         0.161      0.009     18.250      0.000
+    TRAU_DEATH         0.439      0.033     13.311      0.000
+    FATHER_MEN         0.694      0.028     24.569      0.000
+    ACCULT_Q1_         0.548      0.043     12.771      0.000
+    NBRHD_WEAL        -0.012      0.025     -0.499      0.618
+
+ NBRHD_PO BY
+    NBRHD_DISP         1.000      0.000    999.000    999.000
+    NBRHD_DENS         1.294      0.033     39.068      0.000
+    ACCULT_Q1_        -0.988      0.036    -27.659      0.000
+    NBRHD_IMMI         0.816      0.018     45.430      0.000
+    LEAD_EXPOS         0.880      0.023     38.145      0.000
+    ADDR1_WALK         4.322      0.136     31.714      0.000
+    NSC_P_SS_M        -0.722      0.021    -33.868      0.000
+    NBRHD_AIR_         0.529      0.018     29.592      0.000
+    STATE_IMMI        -0.421      0.017    -24.829      0.000
+    MACV_P_SS_         0.202      0.018     11.543      0.000
+    FAM_POVERT         0.230      0.030      7.664      0.000
+    STATE_SO_F        -0.453      0.020    -22.233      0.000
+    MACV_P_SS_         0.183      0.015     11.805      0.000
+    DIM_YESNO_         0.243      0.062      3.916      0.000
+    MACV_P_SS_         0.305      0.032      9.538      0.000
+    MACV_P_SS_         0.132      0.014      9.138      0.000
+    NBRHD_CRIM        -0.404      0.021    -19.272      0.000
+    DEVHX_6_P         -0.150      0.027     -5.630      0.000
+    ALC_PREGN         -0.072      0.029     -2.542      0.011
+
+ DAYTODAY BY
+    SCH_FEELIN         1.000      0.000    999.000    999.000
+    CRPBI_Y_SS         0.577      0.012     48.764      0.000
+    SCH_ENJOY          1.309      0.029     45.869      0.000
+    DIM_YESNO_        -0.990      0.072    -13.767      0.000
+    SCH_GOODGR         1.148      0.024     47.411      0.000
+    PARENT_MON         0.823      0.018     46.464      0.000
+    DISCRIMINA        -0.492      0.017    -28.189      0.000
+    SCH_POSITI         1.210      0.025     47.895      0.000
+    CRPBI_Y_SS         0.583      0.014     42.629      0.000
+    FES_Y_SS_F        -2.724      0.077    -35.274      0.000
+    DIM_YESNO_        -0.993      0.076    -13.154      0.000
+    DIM_YESNO_        -1.023      0.064    -16.025      0.000
+    DIM_YESNO_        -0.642      0.098     -6.539      0.000
+    LE_DISCORD        -0.845      0.035    -24.163      0.000
+    NBRHD_CRIM         0.941      0.038     24.726      0.000
+    LE_CASUALT        -0.906      0.057    -15.894      0.000
+    LE_LEGAL          -0.640      0.047    -13.617      0.000
+
+ STATE_LE BY
+    STATE_SO_F         1.000      0.000    999.000    999.000
+    STATE_SEXI         1.007      0.016     61.391      0.000
+    STATE_MJ_L         0.927      0.023     41.129      0.000
+    STATE_IMMI         0.560      0.012     47.291      0.000
+    STATE_RACI         0.645      0.015     43.309      0.000
+    SU_RISK_P_         0.920      0.023     39.765      0.000
+    NBRHD_WEAL        -0.401      0.016    -25.136      0.000
+    MACV_P_SS_         0.503      0.026     19.243      0.000
+    FAM_RELIGI         0.386      0.020     18.933      0.000
+
+ FAM_VALU BY
+    RULES_Q7           1.000      0.000    999.000    999.000
+    RULES_Q1           0.965      0.006    158.501      0.000
+    RULES_Q4           1.014      0.007    142.137      0.000
+    MACV_P_SS_         0.652      0.023     28.163      0.000
+    MACV_P_SS_         0.394      0.010     39.404      0.000
+    MACV_P_SS_         0.322      0.008     40.673      0.000
+    MACV_P_SS_         0.324      0.009     37.110      0.000
+    FAM_RELIGI         0.415      0.016     25.149      0.000
+    LEAD_EXPOS        -0.145      0.013    -11.585      0.000
+
+ BRTH_PRE BY
+    DEVHX_12A_         1.000      0.000    999.000    999.000
+    DEVHX_5_P          0.902      0.019     48.633      0.000
+    BIRTH_COMP         0.758      0.017     44.807      0.000
+    DEVHX_15           0.444      0.011     39.348      0.000
+    DEVHX_13_3         0.557      0.020     28.024      0.000
+    PREG_COMP_         0.531      0.022     23.833      0.000
+    PREG_COMP_         0.491      0.022     22.733      0.000
+    DEVHX_11_P         2.453      0.073     33.522      0.000
+    BIRTH_COMP         0.417      0.025     16.886      0.000
+
+ GEN_ADVE BY
+    TOBMAR_PRE         1.000      0.000    999.000    999.000
+    PARENTS_BA         0.936      0.043     21.583      0.000
+    TRAU_ADULT         0.970      0.056     17.304      0.000
+    HARDDRUGS_         0.472      0.072      6.574      0.000
+    MOTHER_MEN         0.359      0.035     10.229      0.000
+    DEVHX_6_P         -1.275      0.058    -21.989      0.000
+    FAM_POVERT         1.420      0.065     21.882      0.000
+    TRAU_SEXUA         0.467      0.079      5.927      0.000
+    CARER_PSYC         0.367      0.024     15.251      0.000
+    LE_DIVORCE         0.969      0.052     18.670      0.000
+    RULES_Q5          -0.823      0.046    -18.035      0.000
+    LE_LEGAL           1.277      0.059     21.632      0.000
+    FAM_FOREGO         1.261      0.063     19.918      0.000
+    ALC_PREGN         -0.386      0.053     -7.270      0.000
+    TRAU_ALL_O         0.124      0.016      7.842      0.000
+    TRAU_DEATH         0.448      0.045      9.976      0.000
+    FATHER_MEN         0.138      0.032      4.355      0.000
+    NBRHD_DISP         1.209      0.061     19.736      0.000
+    NBRHD_DENS         0.164      0.033      4.943      0.000
+    ACCULT_Q1_        -0.331      0.053     -6.258      0.000
+    NBRHD_IMMI         0.634      0.042     15.022      0.000
+    LEAD_EXPOS         0.577      0.041     13.938      0.000
+    ADDR1_WALK         0.221      0.142      1.559      0.119
+    NSC_P_SS_M        -0.798      0.046    -17.492      0.000
+    NBRHD_AIR_         0.283      0.027     10.401      0.000
+    STATE_SO_F         0.365      0.034     10.695      0.000
+    STATE_SEXI         0.294      0.034      8.754      0.000
+    STATE_MJ_L         0.555      0.044     12.692      0.000
+    STATE_IMMI         0.328      0.026     12.696      0.000
+    STATE_RACI         0.398      0.030     13.205      0.000
+    SU_RISK_P_         0.216      0.050      4.350      0.000
+    NBRHD_WEAL        -1.353      0.061    -22.251      0.000
+    SCH_FEELIN        -0.179      0.016    -10.867      0.000
+    CRPBI_Y_SS        -0.103      0.010    -10.739      0.000
+    SCH_ENJOY         -0.235      0.023    -10.413      0.000
+    DIM_YESNO_         1.209      0.074     16.378      0.000
+    SCH_GOODGR        -0.016      0.017     -0.917      0.359
+    PARENT_MON        -0.224      0.016    -13.701      0.000
+    DISCRIMINA         0.407      0.021     18.909      0.000
+    SCH_POSITI         0.055      0.019      2.933      0.003
+    CRPBI_Y_SS        -0.076      0.010     -7.312      0.000
+    FES_Y_SS_F         1.086      0.073     14.865      0.000
+    DIM_YESNO_         1.005      0.074     13.559      0.000
+    DIM_YESNO_         0.939      0.064     14.668      0.000
+    DIM_YESNO_         0.755      0.081      9.284      0.000
+    LE_DISCORD         0.636      0.038     16.803      0.000
+    NBRHD_CRIM        -0.864      0.047    -18.324      0.000
+    LE_CASUALT         0.947      0.058     16.268      0.000
+    RULES_Q7           0.200      0.045      4.458      0.000
+    RULES_Q1           0.302      0.046      6.567      0.000
+    RULES_Q4           0.028      0.048      0.592      0.554
+    MACV_P_SS_         0.637      0.060     10.679      0.000
+    MACV_P_SS_         0.428      0.032     13.234      0.000
+    MACV_P_SS_         0.091      0.022      4.208      0.000
+    MACV_P_SS_         0.291      0.025     11.431      0.000
+    FAM_RELIGI         0.021      0.038      0.549      0.583
+    DEVHX_12A_        -0.116      0.049     -2.342      0.019
+    DEVHX_5_P         -0.508      0.057     -8.881      0.000
+    BIRTH_COMP        -0.033      0.044     -0.751      0.453
+    DEVHX_15           0.082      0.026      3.201      0.001
+    DEVHX_13_3        -0.097      0.041     -2.361      0.018
+    PREG_COMP_        -0.102      0.048     -2.102      0.036
+    PREG_COMP_         0.238      0.047      5.024      0.000
+    DEVHX_11_P        -1.355      0.201     -6.750      0.000
+    BIRTH_COMP         0.177      0.054      3.285      0.001
+
+ Intercepts
+    MOTHER_MEN         0.732      0.020     36.396      0.000
+    CARER_PSYC         0.000      0.012      0.000      1.000
+    TRAU_ALL_O         0.169      0.012     13.876      0.000
+    FATHER_MEN         0.490      0.020     24.343      0.000
+    NBRHD_DISP         0.000      0.013     -0.014      0.988
+    NBRHD_DENS         0.002      0.011      0.187      0.851
+    NBRHD_IMMI         0.000      0.012     -0.004      0.997
+    LEAD_EXPOS         0.000      0.012      0.000      1.000
+    ADDR1_WALK        10.626      0.045    234.585      0.000
+    NSC_P_SS_M         3.891      0.013    310.191      0.000
+    NBRHD_AIR_         0.000      0.009     -0.007      0.995
+    STATE_SO_F        -0.289      0.010    -30.093      0.000
+    STATE_SEXI        -0.256      0.010    -25.489      0.000
+    STATE_IMMI        -0.476      0.008    -57.677      0.000
+    STATE_RACI        -0.184      0.009    -20.970      0.000
+    NBRHD_WEAL         0.000      0.014      0.008      0.993
+    SCH_FEELIN         3.414      0.006    590.654      0.000
+    CRPBI_Y_SS         2.805      0.004    639.001      0.000
+    SCH_ENJOY          1.471      0.008    193.114      0.000
+    SCH_GOODGR         1.712      0.007    257.882      0.000
+    PARENT_MON         4.486      0.006    791.347      0.000
+    DISCRIMINA         1.260      0.010    128.012      0.000
+    SCH_POSITI         3.335      0.008    439.318      0.000
+    CRPBI_Y_SS         2.761      0.005    549.733      0.000
+    FES_Y_SS_F         1.917      0.024     79.399      0.000
+    LE_DISCORD         0.702      0.014     49.592      0.000
+    LE_CASUALT         2.118      0.017    128.148      0.000
+    MACV_P_SS_         3.242      0.017    188.635      0.000
+    MACV_P_SS_         3.267      0.009    373.962      0.000
+    MACV_P_SS_         4.052      0.008    491.521      0.000
+    MACV_P_SS_         3.504      0.008    456.505      0.000
+    FAM_RELIGI         2.149      0.013    170.461      0.000
+    DEVHX_15           0.251      0.021     11.923      0.000
+    DEVHX_11_P        15.358      0.088    174.698      0.000
+
+ Thresholds
+    TOBMAR_P$1         1.009      0.016     62.616      0.000
+    TOBMAR_P$2         1.435      0.020     73.221      0.000
+    TOBMAR_P$3         2.087      0.030     69.413      0.000
+    TOBMAR_P$4         2.373      0.039     60.656      0.000
+    PARENTS_$1         0.726      0.015     48.789      0.000
+    PARENTS_$2         1.205      0.018     68.219      0.000
+    PARENTS_$3         1.621      0.022     72.635      0.000
+    PARENTS_$4         2.053      0.030     68.656      0.000
+    PARENTS_$5         2.314      0.038     61.015      0.000
+    PARENTS_$6         2.630      0.053     49.727      0.000
+    TRAU_ADU$1         1.412      0.020     72.053      0.000
+    HARDDRUG$1         2.053      0.029     69.683      0.000
+    HARDDRUG$2         2.408      0.041     59.048      0.000
+    HARDDRUG$3         2.808      0.065     43.219      0.000
+    HARDDRUG$4         2.947      0.077     38.403      0.000
+    HARDDRUG$5         3.272      0.115     28.351      0.000
+    HARDDRUG$6         3.323      0.125     26.642      0.000
+    DEVHX_6_$1        -0.301      0.014    -22.068      0.000
+    FAM_POVE$1         1.013      0.016     62.327      0.000
+    FAM_POVE$2         1.406      0.020     71.725      0.000
+    FAM_POVE$3         1.776      0.025     70.789      0.000
+    FAM_POVE$4         2.078      0.032     64.492      0.000
+    FAM_POVE$5         2.525      0.050     50.821      0.000
+    TRAU_SEX$1         2.076      0.029     70.583      0.000
+    TRAU_SEX$2         2.735      0.056     49.237      0.000
+    TRAU_SEX$3         2.844      0.064     44.685      0.000
+    LE_DIVOR$1         0.672      0.014     46.665      0.000
+    LE_DIVOR$2         1.326      0.018     72.738      0.000
+    RULES_Q5$1        -2.144      0.035    -60.884      0.000
+    RULES_Q5$2        -0.716      0.016    -44.995      0.000
+    LE_LEGAL$1         0.758      0.014     54.772      0.000
+    LE_LEGAL$2         1.337      0.017     76.813      0.000
+    LE_LEGAL$3         1.765      0.023     78.315      0.000
+    LE_LEGAL$4         2.250      0.033     67.394      0.000
+    FAM_FORE$1         1.217      0.018     68.633      0.000
+    FAM_FORE$2         1.743      0.024     71.883      0.000
+    ALC_PREG$1         0.678      0.014     47.219      0.000
+    ALC_PREG$2         1.993      0.027     73.088      0.000
+    TRAU_DEA$1         0.703      0.015     48.050      0.000
+    ACCULT_Q$1        -2.078      0.032    -65.768      0.000
+    ACCULT_Q$2        -1.644      0.022    -74.561      0.000
+    ACCULT_Q$3        -1.215      0.018    -69.057      0.000
+    STATE_MJ$1        -0.888      0.016    -55.932      0.000
+    STATE_MJ$2         2.033      0.029     70.594      0.000
+    SU_RISK_$1         0.564      0.016     34.515      0.000
+    DIM_YESN$1         1.692      0.022     77.160      0.000
+    DIM_YESN$1         1.763      0.023     77.557      0.000
+    DIM_YESN$1         1.548      0.020     79.158      0.000
+    DIM_YESN$1         2.138      0.030     71.786      0.000
+    NBRHD_CR$1        -1.983      0.027    -74.175      0.000
+    NBRHD_CR$2        -1.480      0.019    -79.098      0.000
+    NBRHD_CR$3        -0.756      0.014    -55.091      0.000
+    NBRHD_CR$4         0.083      0.012      6.744      0.000
+    RULES_Q7$1        -0.757      0.015    -51.108      0.000
+    RULES_Q1$1        -0.818      0.015    -54.064      0.000
+    RULES_Q4$1        -1.014      0.016    -62.540      0.000
+    DEVHX_12$1         0.880      0.017     52.098      0.000
+    DEVHX_5_$1         0.867      0.018     47.311      0.000
+    BIRTH_CO$1         0.775      0.015     53.005      0.000
+    BIRTH_CO$2         1.750      0.025     69.504      0.000
+    BIRTH_CO$3         2.844      0.071     40.154      0.000
+    DEVHX_13$1         0.300      0.014     21.371      0.000
+    PREG_COM$1         1.024      0.017     61.548      0.000
+    PREG_COM$2         2.018      0.031     64.241      0.000
+    PREG_COM$3         2.637      0.058     45.424      0.000
+    PREG_COM$4         2.947      0.084     35.059      0.000
+    PREG_COM$5         3.047      0.101     30.248      0.000
+    PREG_COM$1         0.935      0.016     57.946      0.000
+    PREG_COM$2         1.577      0.023     69.403      0.000
+    PREG_COM$3         2.359      0.044     53.226      0.000
+    BIRTH_CO$1         1.425      0.018     79.526      0.000
+    BIRTH_CO$2         2.030      0.027     75.062      0.000
+    BIRTH_CO$3         2.504      0.043     58.241      0.000
+
+ Variances
+    HOUSE_PROB         0.344      0.018     18.606      0.000
+    NBRHD_POVE         0.326      0.013     24.303      0.000
+    DAYTODAY           0.085      0.003     32.005      0.000
+    STATE_LEVE         0.581      0.021     27.427      0.000
+    FAM_VALUES         0.885      0.008    114.405      0.000
+    BRTH_PREG_         0.732      0.019     39.162      0.000
+    GEN_ADVERS         0.182      0.015     11.931      0.000
+
+ Residual Variances
+    MOTHER_MEN         0.974      0.016     59.607      0.000
+    CARER_PSYC         0.433      0.006     69.299      0.000
+    TRAU_ALL_O         0.433      0.001    309.120      0.000
+    FATHER_MEN         0.856      0.013     67.103      0.000
+    NBRHD_DISP         0.361      0.008     47.311      0.000
+    NBRHD_DENS         0.349      0.010     34.320      0.000
+    NBRHD_IMMI         0.561      0.009     61.141      0.000
+    LEAD_EXPOS         0.611      0.013     45.350      0.000
+    ADDR1_WALK        10.468      0.229     45.699      0.000
+    NSC_P_SS_M         0.621      0.011     57.405      0.000
+    NBRHD_AIR_         0.485      0.008     57.958      0.000
+    STATE_SO_F         0.086      0.008     11.475      0.000
+    STATE_SEXI         0.224      0.007     30.378      0.000
+    STATE_IMMI         0.218      0.005     44.814      0.000
+    STATE_RACI         0.285      0.005     54.371      0.000
+    NBRHD_WEAL         0.520      0.011     47.267      0.000
+    SCH_FEELIN         0.152      0.002     72.805      0.000
+    CRPBI_Y_SS         0.053      0.001     78.391      0.000
+    SCH_ENJOY          0.310      0.005     67.819      0.000
+    SCH_GOODGR         0.212      0.003     67.013      0.000
+    PARENT_MON         0.141      0.002     76.371      0.000
+    DISCRIMINA         0.243      0.003     92.254      0.000
+    SCH_POSITI         0.291      0.004     67.593      0.000
+    CRPBI_Y_SS         0.079      0.001     73.837      0.000
+    FES_Y_SS_F         2.687      0.040     66.436      0.000
+    LE_DISCORD         0.808      0.011     75.861      0.000
+    LE_CASUALT         1.905      0.027     69.781      0.000
+    MACV_P_SS_         1.438      0.036     40.478      0.000
+    MACV_P_SS_         0.453      0.008     56.851      0.000
+    MACV_P_SS_         0.347      0.005     69.779      0.000
+    MACV_P_SS_         0.371      0.006     63.196      0.000
+    FAM_RELIGI         1.065      0.024     43.482      0.000
+    DEVHX_15           0.355      0.005     65.371      0.000
+    DEVHX_11_P        24.472      0.313     78.219      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ HOUSE_PR BY
+    TOBMAR_PRE         0.587      0.016     37.213      0.000
+    PARENTS_BA         0.613      0.014     44.153      0.000
+    TRAU_ADULT         0.507      0.021     23.925      0.000
+    HARDDRUGS_         0.596      0.030     19.843      0.000
+    MOTHER_MEN         0.514      0.011     47.867      0.000
+    DEVHX_6_P         -0.231      0.018    -12.748      0.000
+    FAM_POVERT         0.213      0.020     10.879      0.000
+    TRAU_SEXUA         0.372      0.032     11.600      0.000
+    CARER_PSYC         0.394      0.011     34.736      0.000
+    LE_DIVORCE         0.298      0.018     16.768      0.000
+    RULES_Q5          -0.320      0.019    -17.169      0.000
+    LE_LEGAL           0.220      0.017     13.096      0.000
+    FAM_FOREGO         0.208      0.022      9.293      0.000
+    ALC_PREGN          0.457      0.017     27.222      0.000
+    TRAU_ALL_O         0.142      0.007     20.224      0.000
+    TRAU_DEATH         0.258      0.019     13.809      0.000
+    FATHER_MEN         0.402      0.012     34.560      0.000
+    ACCULT_Q1_         0.321      0.023     13.851      0.000
+    NBRHD_WEAL        -0.007      0.015     -0.498      0.619
+
+ NBRHD_PO BY
+    NBRHD_DISP         0.584      0.010     56.771      0.000
+    NBRHD_DENS         0.779      0.008     95.356      0.000
+    ACCULT_Q1_        -0.564      0.019    -29.726      0.000
+    NBRHD_IMMI         0.505      0.010     50.927      0.000
+    LEAD_EXPOS         0.517      0.010     49.306      0.000
+    ADDR1_WALK         0.606      0.010     59.781      0.000
+    NSC_P_SS_M        -0.433      0.011    -38.867      0.000
+    NBRHD_AIR_         0.393      0.011     37.373      0.000
+    STATE_IMMI        -0.347      0.011    -31.930      0.000
+    MACV_P_SS_         0.145      0.012     11.654      0.000
+    FAM_POVERT         0.132      0.017      7.522      0.000
+    STATE_SO_F        -0.297      0.011    -27.228      0.000
+    MACV_P_SS_         0.149      0.012     12.070      0.000
+    DIM_YESNO_         0.138      0.035      3.923      0.000
+    MACV_P_SS_         0.121      0.012      9.840      0.000
+    MACV_P_SS_         0.113      0.012      9.311      0.000
+    NBRHD_CRIM        -0.230      0.012    -19.272      0.000
+    DEVHX_6_P         -0.086      0.015     -5.547      0.000
+    ALC_PREGN         -0.041      0.016     -2.520      0.012
+
+ DAYTODAY BY
+    SCH_FEELIN         0.592      0.007     82.594      0.000
+    CRPBI_Y_SS         0.584      0.007     81.684      0.000
+    SCH_ENJOY          0.559      0.008     70.699      0.000
+    DIM_YESNO_        -0.288      0.021    -13.857      0.000
+    SCH_GOODGR         0.588      0.007     78.799      0.000
+    PARENT_MON         0.526      0.008     66.733      0.000
+    DISCRIMINA        -0.264      0.009    -30.142      0.000
+    SCH_POSITI         0.546      0.008     69.285      0.000
+    CRPBI_Y_SS         0.515      0.008     63.890      0.000
+    FES_Y_SS_F        -0.422      0.009    -47.253      0.000
+    DIM_YESNO_        -0.289      0.022    -13.158      0.000
+    DIM_YESNO_        -0.298      0.019    -16.029      0.000
+    DIM_YESNO_        -0.187      0.028     -6.579      0.000
+    LE_DISCORD        -0.253      0.010    -26.055      0.000
+    NBRHD_CRIM         0.274      0.011     25.406      0.000
+    LE_CASUALT        -0.180      0.011    -16.381      0.000
+    LE_LEGAL          -0.186      0.014    -13.720      0.000
+
+ STATE_LE BY
+    STATE_SO_F         0.875      0.006    134.708      0.000
+    STATE_SEXI         0.843      0.007    115.451      0.000
+    STATE_MJ_L         0.707      0.008     87.170      0.000
+    STATE_IMMI         0.618      0.008     82.218      0.000
+    STATE_RACI         0.659      0.008     86.398      0.000
+    SU_RISK_P_         0.701      0.013     54.005      0.000
+    NBRHD_WEAL        -0.314      0.012    -26.543      0.000
+    MACV_P_SS_         0.267      0.012     22.927      0.000
+    FAM_RELIGI         0.258      0.012     21.589      0.000
+
+ FAM_VALU BY
+    RULES_Q7           0.941      0.004    228.809      0.000
+    RULES_Q1           0.908      0.005    178.171      0.000
+    RULES_Q4           0.953      0.005    211.237      0.000
+    MACV_P_SS_         0.427      0.011     37.893      0.000
+    MACV_P_SS_         0.465      0.010     45.109      0.000
+    MACV_P_SS_         0.454      0.010     45.434      0.000
+    MACV_P_SS_         0.436      0.011     41.250      0.000
+    FAM_RELIGI         0.342      0.012     29.331      0.000
+    LEAD_EXPOS        -0.141      0.012    -11.906      0.000
+
+ BRTH_PRE BY
+    DEVHX_12A_         0.856      0.011     78.325      0.000
+    DEVHX_5_P          0.772      0.013     61.011      0.000
+    BIRTH_COMP         0.649      0.012     53.084      0.000
+    DEVHX_15           0.537      0.009     60.072      0.000
+    DEVHX_13_3         0.477      0.016     29.683      0.000
+    PREG_COMP_         0.454      0.018     25.016      0.000
+    PREG_COMP_         0.420      0.018     23.416      0.000
+    DEVHX_11_P         0.388      0.010     38.846      0.000
+    BIRTH_COMP         0.357      0.021     17.354      0.000
+
+ GEN_ADVE BY
+    TOBMAR_PRE         0.427      0.018     23.862      0.000
+    PARENTS_BA         0.400      0.017     23.647      0.000
+    TRAU_ADULT         0.414      0.022     18.827      0.000
+    HARDDRUGS_         0.201      0.032      6.333      0.000
+    MOTHER_MEN         0.132      0.013      9.783      0.000
+    DEVHX_6_P         -0.545      0.015    -36.704      0.000
+    FAM_POVERT         0.606      0.016     39.072      0.000
+    TRAU_SEXUA         0.200      0.034      5.932      0.000
+    CARER_PSYC         0.213      0.013     16.161      0.000
+    LE_DIVORCE         0.414      0.017     24.770      0.000
+    RULES_Q5          -0.351      0.019    -18.908      0.000
+    LE_LEGAL           0.546      0.014     38.686      0.000
+    FAM_FOREGO         0.539      0.018     30.705      0.000
+    ALC_PREGN         -0.165      0.019     -8.555      0.000
+    TRAU_ALL_O         0.079      0.010      7.974      0.000
+    TRAU_DEATH         0.191      0.019     10.245      0.000
+    FATHER_MEN         0.058      0.014      4.274      0.000
+    NBRHD_DISP         0.529      0.012     44.363      0.000
+    NBRHD_DENS         0.074      0.015      5.082      0.000
+    ACCULT_Q1_        -0.141      0.021     -6.805      0.000
+    NBRHD_IMMI         0.294      0.014     21.686      0.000
+    LEAD_EXPOS         0.254      0.014     18.103      0.000
+    ADDR1_WALK         0.023      0.015      1.564      0.118
+    NSC_P_SS_M        -0.358      0.013    -28.555      0.000
+    NBRHD_AIR_         0.158      0.013     11.675      0.000
+    STATE_SO_F         0.179      0.015     12.106      0.000
+    STATE_SEXI         0.138      0.015      9.460      0.000
+    STATE_MJ_L         0.237      0.016     14.747      0.000
+    STATE_IMMI         0.202      0.014     14.780      0.000
+    STATE_RACI         0.228      0.014     16.236      0.000
+    SU_RISK_P_         0.092      0.021      4.446      0.000
+    NBRHD_WEAL        -0.594      0.011    -54.749      0.000
+    SCH_FEELIN        -0.156      0.012    -12.547      0.000
+    CRPBI_Y_SS        -0.153      0.012    -12.304      0.000
+    SCH_ENJOY         -0.147      0.012    -11.843      0.000
+    DIM_YESNO_         0.516      0.023     22.627      0.000
+    SCH_GOODGR        -0.012      0.013     -0.918      0.358
+    PARENT_MON        -0.210      0.012    -17.538      0.000
+    DISCRIMINA         0.320      0.010     31.571      0.000
+    SCH_POSITI         0.037      0.012      2.951      0.003
+    CRPBI_Y_SS        -0.099      0.013     -7.791      0.000
+    FES_Y_SS_F         0.247      0.012     19.941      0.000
+    DIM_YESNO_         0.429      0.026     16.300      0.000
+    DIM_YESNO_         0.401      0.022     18.233      0.000
+    DIM_YESNO_         0.322      0.031     10.270      0.000
+    LE_DISCORD         0.280      0.011     25.347      0.000
+    NBRHD_CRIM        -0.369      0.013    -29.154      0.000
+    LE_CASUALT         0.277      0.012     23.929      0.000
+    RULES_Q7           0.085      0.019      4.544      0.000
+    RULES_Q1           0.129      0.019      6.802      0.000
+    RULES_Q4           0.012      0.020      0.592      0.554
+    MACV_P_SS_         0.189      0.015     12.983      0.000
+    MACV_P_SS_         0.229      0.013     17.211      0.000
+    MACV_P_SS_         0.058      0.013      4.319      0.000
+    MACV_P_SS_         0.177      0.013     13.484      0.000
+    FAM_RELIGI         0.008      0.014      0.550      0.582
+    DEVHX_12A_        -0.050      0.021     -2.355      0.019
+    DEVHX_5_P         -0.217      0.023     -9.496      0.000
+    BIRTH_COMP        -0.014      0.019     -0.752      0.452
+    DEVHX_15           0.049      0.015      3.241      0.001
+    DEVHX_13_3        -0.042      0.018     -2.364      0.018
+    PREG_COMP_        -0.043      0.021     -2.114      0.035
+    PREG_COMP_         0.102      0.020      5.106      0.000
+    DEVHX_11_P        -0.107      0.015     -7.025      0.000
+    BIRTH_COMP         0.076      0.023      3.307      0.001
+
+ Intercepts
+    MOTHER_MEN         0.628      0.021     30.009      0.000
+    CARER_PSYC         0.000      0.017      0.000      1.000
+    TRAU_ALL_O         0.253      0.019     13.665      0.000
+    FATHER_MEN         0.484      0.023     21.400      0.000
+    NBRHD_DISP         0.000      0.013     -0.014      0.988
+    NBRHD_DENS         0.002      0.012      0.187      0.851
+    NBRHD_IMMI         0.000      0.013     -0.004      0.997
+    LEAD_EXPOS         0.000      0.013      0.000      1.000
+    ADDR1_WALK         2.611      0.032     81.684      0.000
+    NSC_P_SS_M         4.085      0.029    140.679      0.000
+    NBRHD_AIR_         0.000      0.011     -0.007      0.995
+    STATE_SO_F        -0.332      0.011    -30.338      0.000
+    STATE_SEXI        -0.281      0.011    -25.794      0.000
+    STATE_IMMI        -0.689      0.016    -43.342      0.000
+    STATE_RACI        -0.247      0.013    -19.349      0.000
+    NBRHD_WEAL         0.000      0.014      0.008      0.993
+    SCH_FEELIN         6.933      0.040    175.208      0.000
+    CRPBI_Y_SS         9.756      0.049    199.347      0.000
+    SCH_ENJOY          2.156      0.016    138.402      0.000
+    SCH_GOODGR         3.009      0.018    170.129      0.000
+    PARENT_MON         9.851      0.050    195.214      0.000
+    DISCRIMINA         2.324      0.028     82.468      0.000
+    SCH_POSITI         5.170      0.033    158.866      0.000
+    CRPBI_Y_SS         8.375      0.044    189.304      0.000
+    FES_Y_SS_F         1.020      0.019     54.070      0.000
+    LE_DISCORD         0.723      0.018     39.600      0.000
+    LE_CASUALT         1.449      0.019     77.536      0.000
+    MACV_P_SS_         2.256      0.031     72.576      0.000
+    MACV_P_SS_         4.092      0.032    126.567      0.000
+    MACV_P_SS_         6.064      0.033    186.065      0.000
+    MACV_P_SS_         5.003      0.035    144.164      0.000
+    FAM_RELIGI         1.883      0.024     78.220      0.000
+    DEVHX_15           0.354      0.033     10.820      0.000
+    DEVHX_11_P         2.841      0.027    103.463      0.000
+
+ Thresholds
+    TOBMAR_P$1         1.009      0.016     62.616      0.000
+    TOBMAR_P$2         1.435      0.020     73.221      0.000
+    TOBMAR_P$3         2.087      0.030     69.413      0.000
+    TOBMAR_P$4         2.373      0.039     60.656      0.000
+    PARENTS_$1         0.726      0.015     48.789      0.000
+    PARENTS_$2         1.205      0.018     68.219      0.000
+    PARENTS_$3         1.621      0.022     72.635      0.000
+    PARENTS_$4         2.053      0.030     68.656      0.000
+    PARENTS_$5         2.314      0.038     61.015      0.000
+    PARENTS_$6         2.630      0.053     49.727      0.000
+    TRAU_ADU$1         1.412      0.020     72.053      0.000
+    HARDDRUG$1         2.053      0.029     69.683      0.000
+    HARDDRUG$2         2.408      0.041     59.048      0.000
+    HARDDRUG$3         2.808      0.065     43.219      0.000
+    HARDDRUG$4         2.947      0.077     38.403      0.000
+    HARDDRUG$5         3.272      0.115     28.351      0.000
+    HARDDRUG$6         3.323      0.125     26.642      0.000
+    DEVHX_6_$1        -0.301      0.014    -22.068      0.000
+    FAM_POVE$1         1.013      0.016     62.327      0.000
+    FAM_POVE$2         1.406      0.020     71.725      0.000
+    FAM_POVE$3         1.776      0.025     70.789      0.000
+    FAM_POVE$4         2.078      0.032     64.492      0.000
+    FAM_POVE$5         2.525      0.050     50.821      0.000
+    TRAU_SEX$1         2.076      0.029     70.583      0.000
+    TRAU_SEX$2         2.735      0.056     49.237      0.000
+    TRAU_SEX$3         2.844      0.064     44.685      0.000
+    LE_DIVOR$1         0.672      0.014     46.665      0.000
+    LE_DIVOR$2         1.326      0.018     72.738      0.000
+    RULES_Q5$1        -2.144      0.035    -60.884      0.000
+    RULES_Q5$2        -0.716      0.016    -44.995      0.000
+    LE_LEGAL$1         0.758      0.014     54.772      0.000
+    LE_LEGAL$2         1.337      0.017     76.813      0.000
+    LE_LEGAL$3         1.765      0.023     78.315      0.000
+    LE_LEGAL$4         2.250      0.033     67.394      0.000
+    FAM_FORE$1         1.217      0.018     68.633      0.000
+    FAM_FORE$2         1.743      0.024     71.883      0.000
+    ALC_PREG$1         0.678      0.014     47.219      0.000
+    ALC_PREG$2         1.993      0.027     73.088      0.000
+    TRAU_DEA$1         0.703      0.015     48.050      0.000
+    ACCULT_Q$1        -2.078      0.032    -65.768      0.000
+    ACCULT_Q$2        -1.644      0.022    -74.561      0.000
+    ACCULT_Q$3        -1.215      0.018    -69.057      0.000
+    STATE_MJ$1        -0.888      0.016    -55.932      0.000
+    STATE_MJ$2         2.033      0.029     70.594      0.000
+    SU_RISK_$1         0.564      0.016     34.515      0.000
+    DIM_YESN$1         1.692      0.022     77.160      0.000
+    DIM_YESN$1         1.763      0.023     77.557      0.000
+    DIM_YESN$1         1.548      0.020     79.158      0.000
+    DIM_YESN$1         2.138      0.030     71.786      0.000
+    NBRHD_CR$1        -1.983      0.027    -74.175      0.000
+    NBRHD_CR$2        -1.480      0.019    -79.098      0.000
+    NBRHD_CR$3        -0.756      0.014    -55.091      0.000
+    NBRHD_CR$4         0.083      0.012      6.744      0.000
+    RULES_Q7$1        -0.757      0.015    -51.108      0.000
+    RULES_Q1$1        -0.818      0.015    -54.064      0.000
+    RULES_Q4$1        -1.014      0.016    -62.540      0.000
+    DEVHX_12$1         0.880      0.017     52.098      0.000
+    DEVHX_5_$1         0.867      0.018     47.311      0.000
+    BIRTH_CO$1         0.775      0.015     53.005      0.000
+    BIRTH_CO$2         1.750      0.025     69.504      0.000
+    BIRTH_CO$3         2.844      0.071     40.154      0.000
+    DEVHX_13$1         0.300      0.014     21.371      0.000
+    PREG_COM$1         1.024      0.017     61.548      0.000
+    PREG_COM$2         2.018      0.031     64.241      0.000
+    PREG_COM$3         2.637      0.058     45.424      0.000
+    PREG_COM$4         2.947      0.084     35.059      0.000
+    PREG_COM$5         3.047      0.101     30.248      0.000
+    PREG_COM$1         0.935      0.016     57.946      0.000
+    PREG_COM$2         1.577      0.023     69.403      0.000
+    PREG_COM$3         2.359      0.044     53.226      0.000
+    BIRTH_CO$1         1.425      0.018     79.526      0.000
+    BIRTH_CO$2         2.030      0.027     75.062      0.000
+    BIRTH_CO$3         2.504      0.043     58.241      0.000
+
+ Variances
+    HOUSE_PROB         1.000      0.000    999.000    999.000
+    NBRHD_POVE         1.000      0.000    999.000    999.000
+    DAYTODAY           1.000      0.000    999.000    999.000
+    STATE_LEVE         1.000      0.000    999.000    999.000
+    FAM_VALUES         1.000      0.000    999.000    999.000
+    BRTH_PREG_         1.000      0.000    999.000    999.000
+    GEN_ADVERS         1.000      0.000    999.000    999.000
+
+ Residual Variances
+    MOTHER_MEN         0.718      0.010     68.378      0.000
+    CARER_PSYC         0.799      0.009     91.834      0.000
+    TRAU_ALL_O         0.974      0.002    483.620      0.000
+    FATHER_MEN         0.835      0.009     92.673      0.000
+    NBRHD_DISP         0.379      0.009     41.292      0.000
+    NBRHD_DENS         0.388      0.012     31.675      0.000
+    NBRHD_IMMI         0.659      0.009     72.989      0.000
+    LEAD_EXPOS         0.648      0.011     57.365      0.000
+    ADDR1_WALK         0.632      0.012     51.905      0.000
+    NSC_P_SS_M         0.685      0.010     69.918      0.000
+    NBRHD_AIR_         0.821      0.008    102.924      0.000
+    STATE_SO_F         0.114      0.012      9.504      0.000
+    STATE_SEXI         0.270      0.012     23.059      0.000
+    STATE_IMMI         0.457      0.010     43.677      0.000
+    STATE_RACI         0.513      0.008     61.414      0.000
+    NBRHD_WEAL         0.549      0.011     48.664      0.000
+    SCH_FEELIN         0.626      0.008     78.978      0.000
+    CRPBI_Y_SS         0.635      0.008     83.143      0.000
+    SCH_ENJOY          0.666      0.008     78.485      0.000
+    SCH_GOODGR         0.655      0.009     75.103      0.000
+    PARENT_MON         0.679      0.008     87.544      0.000
+    DISCRIMINA         0.828      0.006    130.025      0.000
+    SCH_POSITI         0.700      0.009     79.496      0.000
+    CRPBI_Y_SS         0.725      0.008     91.118      0.000
+    FES_Y_SS_F         0.761      0.008     96.080      0.000
+    LE_DISCORD         0.858      0.007    131.241      0.000
+    LE_CASUALT         0.891      0.006    137.492      0.000
+    MACV_P_SS_         0.696      0.013     55.521      0.000
+    MACV_P_SS_         0.711      0.010     69.522      0.000
+    MACV_P_SS_         0.778      0.009     85.215      0.000
+    MACV_P_SS_         0.757      0.010     77.979      0.000
+    FAM_RELIGI         0.817      0.011     76.528      0.000
+    DEVHX_15           0.709      0.010     74.441      0.000
+    DEVHX_11_P         0.838      0.008     99.545      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed   Residual
+    Variable        Estimate       S.E.  Est./S.E.    P-Value    Variance
+
+    TOBMAR_P           0.527      0.016     32.895      0.000      0.473
+    PARENTS_           0.535      0.014     38.026      0.000      0.465
+    TRAU_ADU           0.429      0.021     20.210      0.000      0.571
+    HARDDRUG           0.395      0.034     11.765      0.000      0.605
+    MOTHER_M           0.282      0.010     26.863      0.000
+    DEVHX_6_           0.357      0.015     23.784      0.000      0.643
+    FAM_POVE           0.430      0.016     26.138      0.000      0.570
+    TRAU_SEX           0.178      0.025      7.268      0.000      0.822
+    CARER_PS           0.201      0.009     23.104      0.000
+    LE_DIVOR           0.260      0.013     19.824      0.000      0.740
+    RULES_Q5           0.226      0.014     16.136      0.000      0.774
+    LE_LEGAL           0.381      0.013     28.983      0.000      0.619
+    FAM_FORE           0.333      0.018     18.781      0.000      0.667
+    ALC_PREG           0.238      0.017     14.066      0.000      0.762
+    TRAU_ALL           0.026      0.002     13.149      0.000
+    TRAU_DEA           0.103      0.010      9.859      0.000      0.897
+    FATHER_M           0.165      0.009     18.302      0.000
+    NBRHD_DI           0.621      0.009     67.646      0.000
+    NBRHD_DE           0.612      0.012     49.910      0.000
+    ACCULT_Q           0.441      0.024     18.707      0.000      0.559
+    NBRHD_IM           0.341      0.009     37.804      0.000
+    LEAD_EXP           0.352      0.011     31.149      0.000
+    ADDR1_WA           0.368      0.012     30.199      0.000
+    NSC_P_SS           0.315      0.010     32.212      0.000
+    NBRHD_AI           0.179      0.008     22.464      0.000
+    STATE_SO           0.886      0.012     74.139      0.000
+    STATE_SE           0.730      0.012     62.319      0.000
+    STATE_MJ           0.556      0.010     57.196      0.000      0.444
+    STATE_IM           0.543      0.010     51.939      0.000
+    STATE_RA           0.487      0.008     58.218      0.000
+    SU_RISK_           0.500      0.017     29.103      0.000      0.500
+    NBRHD_WE           0.451      0.011     40.036      0.000
+    SCH_FEEL           0.374      0.008     47.203      0.000
+    CRPBI_Y_           0.365      0.008     47.744      0.000
+    SCH_ENJO           0.334      0.008     39.302      0.000
+    DIM_YESN           0.349      0.022     15.715      0.000      0.651
+    SCH_GOOD           0.345      0.009     39.630      0.000
+    PARENT_M           0.321      0.008     41.373      0.000
+    DISCRIMI           0.172      0.006     27.101      0.000
+    SCH_POSI           0.300      0.009     34.036      0.000
+    CRPBI_Y_           0.275      0.008     34.564      0.000
+    FES_Y_SS           0.239      0.008     30.180      0.000
+    DIM_YESN           0.268      0.021     12.569      0.000      0.732
+    DIM_YESN           0.250      0.018     14.164      0.000      0.750
+    DIM_YESN           0.158      0.021      7.602      0.000      0.842
+    LE_DISCO           0.142      0.007     21.800      0.000
+    NBRHD_CR           0.264      0.010     27.819      0.000      0.736
+    LE_CASUA           0.109      0.006     16.843      0.000
+    RULES_Q7           0.892      0.007    123.279      0.000      0.108
+    RULES_Q1           0.841      0.008     99.617      0.000      0.159
+    RULES_Q4           0.909      0.009    106.060      0.000      0.091
+    MACV_P_S           0.304      0.013     24.240      0.000
+    MACV_P_S           0.289      0.010     28.290      0.000
+    MACV_P_S           0.222      0.009     24.332      0.000
+    MACV_P_S           0.243      0.010     25.078      0.000
+    FAM_RELI           0.183      0.011     17.161      0.000
+    DEVHX_12           0.735      0.019     39.387      0.000      0.265
+    DEVHX_5_           0.643      0.020     32.460      0.000      0.357
+    BIRTH_CO           0.421      0.016     26.564      0.000      0.579
+    DEVHX_15           0.291      0.010     30.551      0.000
+    DEVHX_13           0.229      0.015     14.933      0.000      0.771
+    PREG_COM           0.208      0.017     12.475      0.000      0.792
+    PREG_COM           0.187      0.015     12.223      0.000      0.813
+    DEVHX_11           0.162      0.008     19.290      0.000
+    BIRTH_CO           0.133      0.015      8.859      0.000      0.867
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.115E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              HOUSE_PR      HOUSE_PR      NBRHD_PO      NBRHD_PO      DAYTODAY
+              ________      ________      ________      ________      ________
+                0.015         0.365         0.002         0.260         0.000
+
+
+           Means
+              DAYTODAY      STATE_LE      STATE_LE      FAM_VALU      FAM_VALU
+              ________      ________      ________      ________      ________
+                0.138         0.002         0.249        -0.060         0.461
+
+
+           Means
+              BRTH_PRE      BRTH_PRE      GEN_ADVE      GEN_ADVE
+              ________      ________      ________      ________
+                0.064         0.492         0.007         0.221
+
+
+           Covariances
+              HOUSE_PR      HOUSE_PR      NBRHD_PO      NBRHD_PO      DAYTODAY
+              ________      ________      ________      ________      ________
+ HOUSE_PR       0.198
+ HOUSE_PR      -0.010         0.001
+ NBRHD_PO      -0.017        -0.001         0.253
+ NBRHD_PO       0.000         0.000        -0.001         0.001
+ DAYTODAY      -0.008         0.001         0.004         0.000         0.067
+ DAYTODAY       0.000         0.000         0.000         0.000         0.000
+ STATE_LE      -0.016         0.000        -0.037         0.000         0.006
+ STATE_LE      -0.001         0.000         0.000         0.000         0.000
+ FAM_VALU      -0.057         0.002         0.005         0.001         0.010
+ FAM_VALU      -0.008         0.000         0.001         0.000         0.001
+ BRTH_PRE       0.011        -0.001        -0.049         0.001        -0.002
+ BRTH_PRE      -0.002         0.000         0.006         0.000         0.000
+ GEN_ADVE       0.018        -0.006         0.026         0.000        -0.007
+ GEN_ADVE      -0.002         0.000        -0.001         0.000         0.001
+
+
+           Covariances
+              DAYTODAY      STATE_LE      STATE_LE      FAM_VALU      FAM_VALU
+              ________      ________      ________      ________      ________
+ DAYTODAY       0.000
+ STATE_LE       0.000         0.534
+ STATE_LE       0.000         0.000         0.000
+ FAM_VALU       0.000         0.047         0.000         0.643
+ FAM_VALU       0.000         0.011         0.000         0.099         0.023
+ BRTH_PRE       0.000         0.008         0.000         0.001         0.000
+ BRTH_PRE       0.000         0.000         0.000         0.001         0.000
+ GEN_ADVE       0.000         0.028        -0.001         0.014         0.006
+ GEN_ADVE       0.000         0.000         0.000         0.000         0.000
+
+
+           Covariances
+              BRTH_PRE      BRTH_PRE      GEN_ADVE      GEN_ADVE
+              ________      ________      ________      ________
+ BRTH_PRE       0.427
+ BRTH_PRE      -0.042         0.007
+ GEN_ADVE       0.004         0.004         0.129
+ GEN_ADVE       0.000         0.000        -0.004         0.000
+
+
+           Correlations
+              HOUSE_PR      HOUSE_PR      NBRHD_PO      NBRHD_PO      DAYTODAY
+              ________      ________      ________      ________      ________
+ HOUSE_PR       1.000
+ HOUSE_PR      -0.808         1.000
+ NBRHD_PO      -0.074        -0.079         1.000
+ NBRHD_PO      -0.012         0.080        -0.057         1.000
+ DAYTODAY      -0.069         0.092         0.031        -0.007         1.000
+ DAYTODAY      -0.014         0.047        -0.009         0.049         0.007
+ STATE_LE      -0.049         0.010        -0.100        -0.002         0.032
+ STATE_LE      -0.174         0.294        -0.071         0.573         0.051
+ FAM_VALU      -0.159         0.093         0.013         0.028         0.049
+ FAM_VALU      -0.114         0.036         0.016         0.042         0.029
+ BRTH_PRE       0.039        -0.029        -0.148         0.056        -0.010
+ BRTH_PRE      -0.044        -0.030         0.140        -0.048         0.015
+ GEN_ADVE       0.110        -0.580         0.142        -0.029        -0.071
+ GEN_ADVE      -0.383         0.692        -0.117         0.580         0.169
+
+
+           Correlations
+              DAYTODAY      STATE_LE      STATE_LE      FAM_VALU      FAM_VALU
+              ________      ________      ________      ________      ________
+ DAYTODAY       1.000
+ STATE_LE      -0.001         1.000
+ STATE_LE       0.101        -0.001         1.000
+ FAM_VALU       0.007         0.079         0.055         1.000
+ FAM_VALU       0.068         0.100         0.061         0.804         1.000
+ BRTH_PRE       0.001         0.016         0.000         0.003        -0.001
+ BRTH_PRE       0.005        -0.006        -0.019         0.017         0.025
+ GEN_ADVE      -0.033         0.105        -0.246         0.049         0.116
+ GEN_ADVE       0.169        -0.029         0.569         0.038         0.008
+
+
+           Correlations
+              BRTH_PRE      BRTH_PRE      GEN_ADVE      GEN_ADVE
+              ________      ________      ________      ________
+ BRTH_PRE       1.000
+ BRTH_PRE      -0.775         1.000
+ GEN_ADVE       0.016         0.118         1.000
+ GEN_ADVE      -0.024        -0.038        -0.694         1.000
+
+
+SAVEDATA INFORMATION
+
+
+  Save file
+    ABCD_exposome_bifactor_fam.dat
+
+  Order and format of variables
+
+    TOBMAR_P       F10.3
+    PARENTS_       F10.3
+    TRAU_ADU       F10.3
+    HARDDRUG       F10.3
+    MOTHER_M       F10.3
+    DEVHX_6_       F10.3
+    FAM_POVE       F10.3
+    TRAU_SEX       F10.3
+    CARER_PS       F10.3
+    LE_DIVOR       F10.3
+    RULES_Q5       F10.3
+    LE_LEGAL       F10.3
+    FAM_FORE       F10.3
+    ALC_PREG       F10.3
+    TRAU_ALL       F10.3
+    TRAU_DEA       F10.3
+    FATHER_M       F10.3
+    NBRHD_DI       F10.3
+    NBRHD_DE       F10.3
+    ACCULT_Q       F10.3
+    NBRHD_IM       F10.3
+    LEAD_EXP       F10.3
+    ADDR1_WA       F10.3
+    NSC_P_SS       F10.3
+    NBRHD_AI       F10.3
+    STATE_SO       F10.3
+    STATE_SE       F10.3
+    STATE_MJ       F10.3
+    STATE_IM       F10.3
+    STATE_RA       F10.3
+    SU_RISK_       F10.3
+    NBRHD_WE       F10.3
+    SCH_FEEL       F10.3
+    CRPBI_Y_       F10.3
+    SCH_ENJO       F10.3
+    DIM_YESN       F10.3
+    SCH_GOOD       F10.3
+    PARENT_M       F10.3
+    DISCRIMI       F10.3
+    SCH_POSI       F10.3
+    CRPBI_Y_       F10.3
+    FES_Y_SS       F10.3
+    DIM_YESN       F10.3
+    DIM_YESN       F10.3
+    DIM_YESN       F10.3
+    LE_DISCO       F10.3
+    NBRHD_CR       F10.3
+    LE_CASUA       F10.3
+    RULES_Q7       F10.3
+    RULES_Q1       F10.3
+    RULES_Q4       F10.3
+    MACV_P_S       F10.3
+    MACV_P_S       F10.3
+    MACV_P_S       F10.3
+    MACV_P_S       F10.3
+    FAM_RELI       F10.3
+    DEVHX_12       F10.3
+    DEVHX_5_       F10.3
+    BIRTH_CO       F10.3
+    DEVHX_15       F10.3
+    DEVHX_13       F10.3
+    PREG_COM       F10.3
+    PREG_COM       F10.3
+    DEVHX_11       F10.3
+    BIRTH_CO       F10.3
+    HOUSE_PROBS    F10.3
+    HOUSE_PR_SE    F10.3
+    NBRHD_POVERT   F10.3
+    NBRHD_PO_SE    F10.3
+    DAYTODAY       F10.3
+    DAYTODAY_SE    F10.3
+    STATE_LEVEL    F10.3
+    STATE_LE_SE    F10.3
+    FAM_VALUES     F10.3
+    FAM_VALU_SE    F10.3
+    BRTH_PREG_CO   F10.3
+    BRTH_PRE_SE    F10.3
+    GEN_ADVERSIT   F10.3
+    GEN_ADVE_SE    F10.3
+    FAMID          I6
+
+  Save file format
+    79F10.3 I6
+
+  Save file record length    10000
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\reduc\documents\exposome_6f_bifactor_itr_famid.dgm
+
+     Beginning Time:  11:00:13
+        Ending Time:  11:02:31
+       Elapsed Time:  00:02:18
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen

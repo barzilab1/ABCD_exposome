@@ -3,7 +3,13 @@ library(psych)
 library(qgraph)
 library(Matrix)
 
-x <- read.csv("outputs/exposome_main_final.csv")
+
+###################################
+# EFAs to identify clustering among 
+# variables and  further reduction 
+###################################
+
+x <- read.csv("data/exposome_main_final_2.csv")
 
 temp <- x$su_risk_p_6
 temp[temp == 2] <- NA
@@ -52,7 +58,7 @@ temp2[temp2>60] <- NA
 temp5[temp5>24] <- NA
 temp6[temp6>60 | temp6<2] <- NA
 temp7[temp7>60 | temp7<6] <- NA
-temp8[temp8>72 | temp8<4] <- NA
+temp8[temp8>72 | temp8<3] <- NA
 #x$devhx_15 <- temp1
 x$devhx_16_p <- temp2
 #x$devhx_17_p <- temp3
@@ -85,11 +91,9 @@ x$reshist_state_mj_laws <- temp
 
 mature_entertainment <- rowMeans(scale(x[,79:80]),na.rm=TRUE)
 screentime <- rowMeans(scale(x[,67:78]),na.rm=TRUE)
-#tv_time <- rowMeans(x[,c(67,73)],na.rm=TRUE)
-#weekday_screentime <- rowMeans(x[,68:72],na.rm=TRUE)
-#weekend_screentime <- rowMeans(x[,74:78],na.rm=TRUE)
 
-parent_monitor <- x$pmq_y_ss_mean    #rowMeans(x[,81:85],na.rm=TRUE)
+
+parent_monitor <- x$pmq_y_ss_mean
 
 Rx_before_during <- rowSums(x[,c(185,193)],na.rm=TRUE)
 alc_before_during <- rowSums(x[,c(187,195)],na.rm=TRUE)
@@ -114,9 +118,7 @@ mother_mental_health <- rowSums(x[,c(129,171,141,159,165,177,147)],na.rm=TRUE)
 parents_bad_lifestyle <- rowSums(x[,c(120,132,150,123,135,153)],na.rm=TRUE)
 
 extracurriculars <- rowMeans(scale(x[,2:30]),na.rm=TRUE)
-#art_crafts_chess <- rowSums(x[,c(2,5,8,19,23,24,26,27,28,29,30)],na.rm=TRUE)
-#basketball_football_baseball <- rowSums(x[,c(3,4,7,14,22)],na.rm=TRUE)
-#snowboard_music_iceskate <- rowSums(x[,c(16,25,11,9,20,13,15,17,18,21,12,6,10)],na.rm=TRUE)
+
 
 neighborhood_density <- rowMeans(scale(x[,c(258,287)]),na.rm=TRUE)
 neighborhood_air_pollution <- rowMeans(scale(x[,c(288,289,292)]),na.rm=TRUE)
@@ -170,50 +172,54 @@ x <- x[,!grepl("ple_",colnames(x))]
 x <- x[,!grepl("dim_matrix_",colnames(x))]
 
 x <- data.frame(x,
-mature_entertainment,
-screentime,
-parent_monitor,
-Rx_before_during,
-alc_before_during,
-TobMar_before_during,
-HardDrugs_before_during,
-preg_comp_anemia,
-preg_comp_bp,
-preg_comp_placenta,
-birth_comp_blue,
-birth_comp_reqOxygen,
-birth_comp_convulsions,
-trauma_death_family,
-trauma_adults_fighting,
-trauma_sexual_abuse,
-trauma_all_other,
-sc,
-caregiver_psychopathology,
-father_mental_health,
-mother_mental_health,
-parents_bad_lifestyle,
-extracurriculars,
-neighborhood_density,
-neighborhood_air_pollution,
-lead_exposure_risk,
-events_good_bad_ratio,
-family_religiosity,
-family_poverty_events,
-family_foregone_medical,
-life_events_legal,
-life_events_discord,
-life_events_casualties,
-life_events_divorce,
-life_events_relocation,
-discrimination_ethnic,
-discrimination_foreigner,
-school_Enjoy,
-school_FeelInvolved,
-school_GoodGrades,
-school_PositiveFeedback,
-parental_age,
-developmental_delay,
-access_to_alc_tobac)
+                mature_entertainment,
+                screentime,
+                parent_monitor,
+                Rx_before_during,
+                alc_before_during,
+                TobMar_before_during,
+                HardDrugs_before_during,
+                preg_comp_anemia,
+                preg_comp_bp,
+                preg_comp_placenta,
+                birth_comp_blue,
+                birth_comp_reqOxygen,
+                birth_comp_convulsions,
+                trauma_death_family,
+                trauma_adults_fighting,
+                trauma_sexual_abuse,
+                trauma_all_other,
+                sc,
+                caregiver_psychopathology,
+                father_mental_health,
+                mother_mental_health,
+                parents_bad_lifestyle,
+                extracurriculars,
+                neighborhood_density,
+                neighborhood_air_pollution,
+                lead_exposure_risk,
+                events_good_bad_ratio,
+                family_religiosity,
+                family_poverty_events,
+                family_foregone_medical,
+                life_events_legal,
+                life_events_discord,
+                life_events_casualties,
+                life_events_divorce,
+                life_events_relocation,
+                discrimination_ethnic,
+                discrimination_foreigner,
+                school_Enjoy,
+                school_FeelInvolved,
+                school_GoodGrades,
+                school_PositiveFeedback,
+                parental_age,
+                developmental_delay,
+                access_to_alc_tobac)
+
+
+
+
 
 ids <- x[,1]
 
@@ -246,22 +252,22 @@ targ <- list(as.numeric(matrix(gsub(1,NA,targ),items,factors)))
 TargetList <- rbind(matrix(unlist(first),1,items*factors),matrix(unlist(targ),1,items*factors))
 
 repeat {
-
-sol <- fa(xcor,factors,rotate="TargetQ",Target=targ,maxit=50000)
-
-targ <- round(abs(sol$loadings) + TT,0)
-
-targt <- matrix(as.numeric(gsub(1,9,targ)),items,factors)
-targw <- matrix(0,items,factors)
-targw[targt == 0] <- 1
-targphi <- matrix(9,items,items)
-targwphi <- matrix(0,items,items)
-
-targ <- list(as.numeric(matrix(gsub(1,NA,targ),items,factors)))
-
-TargetList <- rbind(TargetList,matrix(unlist(targ),1,items*factors))
-
-if (dim(TargetList)[1] != dim(unique(TargetList))[1]) break }
+  
+  sol <- fa(xcor,factors,rotate="TargetQ",Target=targ,maxit=50000)
+  
+  targ <- round(abs(sol$loadings) + TT,0)
+  
+  targt <- matrix(as.numeric(gsub(1,9,targ)),items,factors)
+  targw <- matrix(0,items,factors)
+  targw[targt == 0] <- 1
+  targphi <- matrix(9,items,items)
+  targwphi <- matrix(0,items,items)
+  
+  targ <- list(as.numeric(matrix(gsub(1,NA,targ),items,factors)))
+  
+  TargetList <- rbind(TargetList,matrix(unlist(targ),1,items*factors))
+  
+  if (dim(TargetList)[1] != dim(unique(TargetList))[1]) break }
 
 fa.sort(sol)
 
@@ -275,8 +281,8 @@ write.csv(fa.sort(sol$loadings),"final_exposome_EFA_results.csv")  #write final 
 
 # pull in Mplus scores
 
-ids <- read.csv("data/exposome_MPLUS_famid.csv",header=FALSE)[,1]
-x <- read.table("data/ABCD_exposome_bifactor_fam.dat",header=FALSE)
+ids <- read.csv("exposome_MPLUS_famid.csv",header=FALSE)[,1]
+x <- read.table("ABCD_exposome_bifactor_fam.dat",header=FALSE)
 
 x <- data.frame(ids,scale(x[,c(66,68,70,72,74,76,78)]))
 

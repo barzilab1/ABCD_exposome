@@ -1,0 +1,2429 @@
+Mplus VERSION 8.4
+MUTHEN & MUTHEN
+03/23/2021   6:19 PM
+
+INPUT INSTRUCTIONS
+
+    TITLE: c6x4j2v9b5s2
+
+    DATA:
+    	FILE IS "ABCD_psy_MPLUS.csv";
+
+    VARIABLE:
+      NAMES =
+  src_subject_id
+  famid
+  prodromal_1_y
+  prodromal_2_y
+  prodromal_3_y
+  prodromal_4_y
+  prodromal_5_y
+  prodromal_6_y
+  prodromal_7_y
+  prodromal_8_y
+  prodromal_9_y
+  prodromal_10_y
+  prodromal_11_y
+  prodromal_12_y
+  prodromal_13_y
+  prodromal_14_y
+  prodromal_15_y
+  prodromal_16_y
+  prodromal_17_y
+  prodromal_18_y
+  prodromal_19_y
+  prodromal_20_y
+  prodromal_21_y
+  gen_child_behav_1
+  gen_child_behav_2
+  gen_child_behav_3
+  gen_child_behav_4
+  gen_child_behav_5
+  gen_child_behav_6
+  gen_child_behav_7
+  gen_child_behav_8
+  gen_child_behav_9
+  gen_child_behav_10
+  bpm_1_y
+  bpm_2_y
+  bpm_3_y
+  bpm_4_y
+  bpm_5_y
+  bpm_6_y
+  bpm_7_y
+  bpm_8_y
+  bpm_9_y
+  bpm_10_y
+  bpm_11_y
+  bpm_12_y
+  bpm_13_y
+  bpm_14_y
+  bpm_15_y
+  bpm_16_y
+  bpm_17_y
+  bpm_18_y
+  bpm_19_y
+  poa_nihtb_1_y
+  poa_nihtb_2_y
+  poa_nihtb_3_y
+  poa_nihtb_4_y
+  poa_nihtb_5_y
+  poa_nihtb_6_y
+  poa_nihtb_7_y
+  poa_nihtb_8_y
+  poa_nihtb_9_y
+  ksads_14_87_p
+  ksads_14_85_p
+  ksads_14_88_p
+  ksads_14_90_p
+  ksads_15_95_p
+  ksads_15_96_p
+  ksads_15_94_p
+  ksads_15_93_p
+  ksads_16_98_p
+  ksads_16_99_p
+  ksads_16_104_p
+  ksads_16_105_p
+  ksads_16_107_p
+  ksads_16_106_p
+  ksads_14_7983_p
+  ksads_14_7781_p;
+
+        USEVARIABLES =
+  prodromal_1_y
+  prodromal_2_y
+  prodromal_3_y
+  prodromal_4_y
+  prodromal_5_y
+  prodromal_6_y
+  prodromal_7_y
+  prodromal_8_y
+  prodromal_9_y
+  prodromal_10_y
+  prodromal_11_y
+  prodromal_12_y
+  prodromal_13_y
+  prodromal_14_y
+  prodromal_15_y
+  prodromal_16_y
+  prodromal_17_y
+  prodromal_18_y
+  prodromal_19_y
+  prodromal_20_y
+  prodromal_21_y
+  gen_child_behav_1
+  gen_child_behav_2
+  gen_child_behav_3
+  gen_child_behav_4
+  gen_child_behav_5
+  gen_child_behav_6
+  gen_child_behav_7
+  gen_child_behav_8
+  gen_child_behav_9
+  gen_child_behav_10
+  bpm_1_y
+  bpm_2_y
+  bpm_3_y
+  bpm_4_y
+  bpm_5_y
+  bpm_6_y
+  bpm_7_y
+  bpm_8_y
+  bpm_9_y
+  bpm_10_y
+  bpm_11_y
+  bpm_12_y
+  bpm_13_y
+  bpm_14_y
+  bpm_15_y
+  bpm_16_y
+  bpm_17_y
+  bpm_18_y
+  bpm_19_y
+  poa_nihtb_1_y
+  poa_nihtb_2_y
+  poa_nihtb_3_y
+  poa_nihtb_4_y
+  poa_nihtb_5_y
+  poa_nihtb_6_y
+  poa_nihtb_7_y
+  poa_nihtb_8_y
+  poa_nihtb_9_y
+  ksads_14_87_p
+  ksads_14_85_p
+  ksads_14_88_p
+  ksads_14_90_p
+  ksads_15_95_p
+  ksads_15_96_p
+  ksads_15_94_p
+  ksads_15_93_p
+  ksads_16_98_p
+  ksads_16_99_p
+  ksads_16_104_p
+  ksads_16_105_p
+  ksads_16_107_p
+  ksads_16_106_p
+  ksads_14_7983_p
+  ksads_14_7781_p;
+
+  CATEGORICAL=
+  prodromal_1_y
+  prodromal_2_y
+  prodromal_3_y
+  prodromal_4_y
+  prodromal_5_y
+  prodromal_6_y
+  prodromal_7_y
+  prodromal_8_y
+  prodromal_9_y
+  prodromal_10_y
+  prodromal_11_y
+  prodromal_12_y
+  prodromal_13_y
+  prodromal_14_y
+  prodromal_15_y
+  prodromal_16_y
+  prodromal_17_y
+  prodromal_18_y
+  prodromal_19_y
+  prodromal_20_y
+  prodromal_21_y
+  gen_child_behav_1
+  gen_child_behav_2
+  gen_child_behav_3
+  gen_child_behav_4
+  gen_child_behav_5
+  gen_child_behav_6
+  gen_child_behav_7
+  gen_child_behav_8
+  gen_child_behav_9
+  gen_child_behav_10
+  bpm_1_y
+  bpm_2_y
+  bpm_3_y
+  bpm_4_y
+  bpm_5_y
+  bpm_6_y
+  bpm_7_y
+  bpm_8_y
+  bpm_9_y
+  bpm_10_y
+  bpm_11_y
+  bpm_12_y
+  bpm_13_y
+  bpm_14_y
+  bpm_15_y
+  bpm_16_y
+  bpm_17_y
+  bpm_18_y
+  bpm_19_y
+  poa_nihtb_1_y
+  poa_nihtb_2_y
+  poa_nihtb_3_y
+  poa_nihtb_4_y
+  poa_nihtb_5_y
+  poa_nihtb_6_y
+  poa_nihtb_7_y
+  poa_nihtb_8_y
+  poa_nihtb_9_y
+  ksads_14_87_p
+  ksads_14_85_p
+  ksads_14_88_p
+  ksads_14_90_p
+  ksads_15_95_p
+  ksads_15_96_p
+  ksads_15_94_p
+  ksads_15_93_p
+  ksads_16_98_p
+  ksads_16_99_p
+  ksads_16_104_p
+  ksads_16_105_p
+  ksads_16_107_p
+  ksads_16_106_p
+  ksads_14_7983_p
+  ksads_14_7781_p;
+
+  MISSING=ALL(99999);
+
+  cluster=famid;
+  !IDVAR=ids;
+
+    ANALYSIS:
+     ESTIMATOR=wlsmv;
+     TYPE=COMPLEX;
+     ! ALGORITHM=EMA;
+     !CHAINS = 1;
+     ! BCONVERGENCE = 0.08;
+     ! BITERATIONS = 20000 (100);
+     ! PROCESSORS = 3;
+     MODEL = NOCOVARIANCES;
+     ! process=4;
+
+    MODEL:
+
+  Psychosis BY
+  prodromal_1_y
+  prodromal_2_y
+  prodromal_3_y
+  prodromal_4_y
+  prodromal_5_y
+  prodromal_6_y
+  prodromal_7_y
+  prodromal_8_y
+  prodromal_9_y
+  prodromal_10_y
+  prodromal_11_y
+  prodromal_12_y
+  prodromal_13_y
+  prodromal_14_y
+  prodromal_15_y
+  prodromal_16_y
+  prodromal_17_y
+  prodromal_18_y
+  prodromal_19_y
+  prodromal_20_y
+  prodromal_21_y;
+
+  Mania BY
+  gen_child_behav_1
+  gen_child_behav_2
+  gen_child_behav_3
+  gen_child_behav_4
+  gen_child_behav_5
+  gen_child_behav_6
+  gen_child_behav_7
+  gen_child_behav_8
+  gen_child_behav_9
+  gen_child_behav_10;
+
+  YouthReport BY
+  bpm_1_y
+  bpm_2_y
+  bpm_3_y
+  bpm_4_y
+  bpm_5_y
+  bpm_6_y
+  bpm_7_y
+  bpm_8_y
+  bpm_9_y
+  bpm_10_y
+  bpm_11_y
+  bpm_12_y
+  bpm_13_y
+  bpm_14_y
+  bpm_15_y
+  bpm_16_y
+  bpm_17_y
+  bpm_18_y
+  bpm_19_y;
+
+  PositiveAffect BY
+  poa_nihtb_1_y
+  poa_nihtb_2_y
+  poa_nihtb_3_y
+  poa_nihtb_4_y
+  poa_nihtb_5_y
+  poa_nihtb_6_y
+  poa_nihtb_7_y
+  poa_nihtb_8_y
+  poa_nihtb_9_y;
+
+  Externalizing BY
+  ksads_14_87_p
+  ksads_14_85_p
+  ksads_14_88_p
+  ksads_14_90_p
+  ksads_15_95_p
+  ksads_15_96_p
+  ksads_15_94_p
+  ksads_15_93_p
+  ksads_16_98_p
+  ksads_16_99_p
+  ksads_16_104_p
+  ksads_16_105_p
+  ksads_16_107_p
+  ksads_16_106_p
+  ksads_14_7983_p
+  ksads_14_7781_p;
+
+  General BY
+  prodromal_1_y
+  prodromal_2_y
+  prodromal_3_y
+  prodromal_4_y
+  prodromal_5_y
+  prodromal_6_y
+  prodromal_7_y
+  prodromal_8_y
+  prodromal_9_y
+  prodromal_10_y
+  prodromal_11_y
+  prodromal_12_y
+  prodromal_13_y
+  prodromal_14_y
+  prodromal_15_y
+  prodromal_16_y
+  prodromal_17_y
+  prodromal_18_y
+  prodromal_19_y
+  prodromal_20_y
+  prodromal_21_y
+  gen_child_behav_1
+  gen_child_behav_2
+  gen_child_behav_3
+  gen_child_behav_4
+  gen_child_behav_5
+  gen_child_behav_6
+  gen_child_behav_7
+  gen_child_behav_8
+  gen_child_behav_9
+  gen_child_behav_10
+  bpm_1_y
+  bpm_2_y
+  bpm_3_y
+  bpm_4_y
+  bpm_5_y
+  bpm_6_y
+  bpm_7_y
+  bpm_8_y
+  bpm_9_y
+  bpm_10_y
+  bpm_11_y
+  bpm_12_y
+  bpm_13_y
+  bpm_14_y
+  bpm_15_y
+  bpm_16_y
+  bpm_17_y
+  bpm_18_y
+  bpm_19_y
+  poa_nihtb_1_y
+  poa_nihtb_2_y
+  poa_nihtb_3_y
+  poa_nihtb_4_y
+  poa_nihtb_5_y
+  poa_nihtb_6_y
+  poa_nihtb_7_y
+  poa_nihtb_8_y
+  poa_nihtb_9_y
+  ksads_14_87_p
+  ksads_14_85_p
+  ksads_14_88_p
+  ksads_14_90_p
+  ksads_15_95_p
+  ksads_15_96_p
+  ksads_15_94_p
+  ksads_15_93_p
+  ksads_16_98_p
+  ksads_16_99_p
+  ksads_16_104_p
+  ksads_16_105_p
+  ksads_16_107_p
+  ksads_16_106_p
+  ksads_14_7983_p
+  ksads_14_7781_p;
+
+    OUTPUT:
+    !MOD(ALL)
+    STDYX;
+    SAVEDATA:
+    FILE IS "ABCD_psychopathology_bifactor.dat";
+    SAVE=FSCORES;
+    !PLOT:
+    !TYPE=PLOT3;
+
+
+
+*** WARNING in VARIABLE command
+  Note that only the first 8 characters of variable names are used in the output.
+  Shorten variable names to avoid any confusion.
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+c6x4j2v9b5s2
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                       11203
+
+Number of dependent variables                                   75
+Number of independent variables                                  0
+Number of continuous latent variables                            6
+
+Observed dependent variables
+
+  Binary and ordered categorical (ordinal)
+   PRODROMA    PRODROMA    PRODROMA    PRODROMA    PRODROMA    PRODROMA
+   PRODROMA    PRODROMA    PRODROMA    PRODROMA    PRODROMA    PRODROMA
+   PRODROMA    PRODROMA    PRODROMA    PRODROMA    PRODROMA    PRODROMA
+   PRODROMA    PRODROMA    PRODROMA    GEN_CHIL    GEN_CHIL    GEN_CHIL
+   GEN_CHIL    GEN_CHIL    GEN_CHIL    GEN_CHIL    GEN_CHIL    GEN_CHIL
+   GEN_CHIL    BPM_1_Y     BPM_2_Y     BPM_3_Y     BPM_4_Y     BPM_5_Y
+   BPM_6_Y     BPM_7_Y     BPM_8_Y     BPM_9_Y     BPM_10_Y    BPM_11_Y
+   BPM_12_Y    BPM_13_Y    BPM_14_Y    BPM_15_Y    BPM_16_Y    BPM_17_Y
+   BPM_18_Y    BPM_19_Y    POA_NIHT    POA_NIHT    POA_NIHT    POA_NIHT
+   POA_NIHT    POA_NIHT    POA_NIHT    POA_NIHT    POA_NIHT    KSADS_14
+   KSADS_14    KSADS_14    KSADS_14    KSADS_15    KSADS_15    KSADS_15
+   KSADS_15    KSADS_16    KSADS_16    KSADS_16    KSADS_16    KSADS_16
+   KSADS_16    KSADS_14    KSADS_14
+
+Continuous latent variables
+   PSYCHOSI    MANIA       YOUTHREP    POSITIVE    EXTERNAL    GENERAL
+
+Variables with special functions
+
+  Cluster variable      FAMID
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+Link                                                        PROBIT
+
+Input data file(s)
+  ABCD_psy_MPLUS.csv
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns           901
+     Number of clusters                       9263
+
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              PRODROMA      PRODROMA      PRODROMA      PRODROMA      PRODROMA
+              ________      ________      ________      ________      ________
+ PRODROMA       0.999
+ PRODROMA       0.999         0.999
+ PRODROMA       0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ BPM_1_Y        0.940         0.940         0.940         0.940         0.940
+ BPM_2_Y        0.975         0.975         0.975         0.975         0.975
+ BPM_3_Y        0.973         0.973         0.973         0.973         0.973
+ BPM_4_Y        0.986         0.986         0.986         0.985         0.985
+ BPM_5_Y        0.989         0.989         0.989         0.989         0.989
+ BPM_6_Y        0.992         0.992         0.992         0.992         0.992
+ BPM_7_Y        0.985         0.985         0.985         0.985         0.985
+ BPM_8_Y        0.991         0.991         0.991         0.991         0.991
+ BPM_9_Y        0.976         0.976         0.976         0.976         0.976
+ BPM_10_Y       0.983         0.983         0.983         0.983         0.983
+ BPM_11_Y       0.976         0.976         0.976         0.975         0.976
+ BPM_12_Y       0.981         0.981         0.981         0.981         0.981
+ BPM_13_Y       0.984         0.984         0.984         0.984         0.984
+ BPM_14_Y       0.987         0.987         0.987         0.987         0.987
+ BPM_15_Y       0.969         0.969         0.969         0.969         0.969
+ BPM_16_Y       0.985         0.985         0.985         0.985         0.985
+ BPM_17_Y       0.992         0.992         0.992         0.991         0.991
+ BPM_18_Y       0.987         0.987         0.987         0.987         0.987
+ BPM_19_Y       0.989         0.989         0.989         0.989         0.989
+ POA_NIHT       0.955         0.955         0.955         0.955         0.955
+ POA_NIHT       0.973         0.973         0.973         0.972         0.972
+ POA_NIHT       0.988         0.988         0.988         0.988         0.988
+ POA_NIHT       0.979         0.979         0.979         0.979         0.979
+ POA_NIHT       0.981         0.981         0.981         0.981         0.981
+ POA_NIHT       0.976         0.976         0.976         0.976         0.976
+ POA_NIHT       0.982         0.982         0.982         0.982         0.982
+ POA_NIHT       0.982         0.982         0.982         0.982         0.982
+ POA_NIHT       0.981         0.981         0.981         0.981         0.981
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.985         0.986
+ KSADS_16       0.986         0.986         0.986         0.985         0.986
+ KSADS_16       0.986         0.986         0.986         0.985         0.986
+ KSADS_16       0.986         0.986         0.986         0.985         0.986
+ KSADS_16       0.986         0.986         0.986         0.985         0.986
+ KSADS_16       0.986         0.986         0.986         0.985         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+
+
+           Covariance Coverage
+              PRODROMA      PRODROMA      PRODROMA      PRODROMA      PRODROMA
+              ________      ________      ________      ________      ________
+ PRODROMA       0.999
+ PRODROMA       0.999         0.999
+ PRODROMA       0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ BPM_1_Y        0.940         0.940         0.940         0.940         0.940
+ BPM_2_Y        0.975         0.975         0.975         0.975         0.975
+ BPM_3_Y        0.973         0.973         0.973         0.973         0.973
+ BPM_4_Y        0.985         0.985         0.985         0.985         0.985
+ BPM_5_Y        0.989         0.989         0.989         0.989         0.989
+ BPM_6_Y        0.992         0.992         0.992         0.992         0.992
+ BPM_7_Y        0.985         0.985         0.985         0.985         0.985
+ BPM_8_Y        0.991         0.991         0.991         0.991         0.991
+ BPM_9_Y        0.976         0.976         0.976         0.976         0.976
+ BPM_10_Y       0.983         0.983         0.983         0.983         0.983
+ BPM_11_Y       0.975         0.976         0.976         0.976         0.976
+ BPM_12_Y       0.981         0.981         0.981         0.981         0.981
+ BPM_13_Y       0.984         0.984         0.984         0.984         0.984
+ BPM_14_Y       0.987         0.987         0.987         0.987         0.987
+ BPM_15_Y       0.969         0.969         0.969         0.969         0.969
+ BPM_16_Y       0.985         0.985         0.985         0.985         0.985
+ BPM_17_Y       0.991         0.991         0.991         0.991         0.991
+ BPM_18_Y       0.987         0.987         0.987         0.987         0.987
+ BPM_19_Y       0.989         0.989         0.989         0.989         0.989
+ POA_NIHT       0.955         0.955         0.955         0.955         0.955
+ POA_NIHT       0.972         0.972         0.972         0.972         0.972
+ POA_NIHT       0.988         0.988         0.988         0.988         0.988
+ POA_NIHT       0.979         0.979         0.979         0.979         0.979
+ POA_NIHT       0.981         0.981         0.981         0.981         0.981
+ POA_NIHT       0.976         0.976         0.976         0.976         0.976
+ POA_NIHT       0.982         0.982         0.982         0.982         0.982
+ POA_NIHT       0.982         0.982         0.982         0.982         0.982
+ POA_NIHT       0.981         0.981         0.981         0.981         0.981
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.985         0.986         0.986         0.986         0.986
+ KSADS_16       0.985         0.986         0.986         0.986         0.986
+ KSADS_16       0.985         0.986         0.986         0.986         0.986
+ KSADS_16       0.985         0.986         0.986         0.986         0.986
+ KSADS_16       0.985         0.986         0.986         0.986         0.986
+ KSADS_16       0.985         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+
+
+           Covariance Coverage
+              PRODROMA      PRODROMA      PRODROMA      PRODROMA      PRODROMA
+              ________      ________      ________      ________      ________
+ PRODROMA       0.999
+ PRODROMA       0.999         0.999
+ PRODROMA       0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ BPM_1_Y        0.940         0.940         0.940         0.940         0.940
+ BPM_2_Y        0.975         0.975         0.975         0.975         0.975
+ BPM_3_Y        0.973         0.973         0.973         0.973         0.973
+ BPM_4_Y        0.985         0.985         0.985         0.985         0.985
+ BPM_5_Y        0.989         0.989         0.989         0.989         0.989
+ BPM_6_Y        0.992         0.992         0.992         0.992         0.992
+ BPM_7_Y        0.985         0.985         0.985         0.985         0.985
+ BPM_8_Y        0.991         0.991         0.991         0.991         0.991
+ BPM_9_Y        0.976         0.976         0.976         0.976         0.976
+ BPM_10_Y       0.983         0.983         0.983         0.983         0.983
+ BPM_11_Y       0.976         0.976         0.975         0.976         0.976
+ BPM_12_Y       0.981         0.981         0.981         0.981         0.981
+ BPM_13_Y       0.984         0.984         0.984         0.984         0.984
+ BPM_14_Y       0.987         0.987         0.987         0.987         0.987
+ BPM_15_Y       0.969         0.969         0.969         0.969         0.969
+ BPM_16_Y       0.985         0.985         0.985         0.985         0.985
+ BPM_17_Y       0.991         0.991         0.991         0.991         0.991
+ BPM_18_Y       0.987         0.987         0.987         0.987         0.987
+ BPM_19_Y       0.989         0.989         0.989         0.989         0.989
+ POA_NIHT       0.955         0.955         0.955         0.955         0.955
+ POA_NIHT       0.972         0.972         0.972         0.972         0.972
+ POA_NIHT       0.988         0.988         0.988         0.988         0.988
+ POA_NIHT       0.979         0.979         0.979         0.979         0.979
+ POA_NIHT       0.981         0.981         0.981         0.981         0.981
+ POA_NIHT       0.976         0.976         0.976         0.976         0.976
+ POA_NIHT       0.982         0.982         0.982         0.982         0.982
+ POA_NIHT       0.982         0.982         0.982         0.982         0.982
+ POA_NIHT       0.981         0.981         0.981         0.981         0.981
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.985         0.986         0.986
+ KSADS_16       0.986         0.986         0.985         0.986         0.986
+ KSADS_16       0.986         0.986         0.985         0.986         0.986
+ KSADS_16       0.986         0.986         0.985         0.986         0.986
+ KSADS_16       0.986         0.986         0.985         0.986         0.986
+ KSADS_16       0.986         0.986         0.985         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+
+
+           Covariance Coverage
+              PRODROMA      PRODROMA      PRODROMA      PRODROMA      PRODROMA
+              ________      ________      ________      ________      ________
+ PRODROMA       0.999
+ PRODROMA       0.999         0.999
+ PRODROMA       0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ PRODROMA       0.999         0.999         0.999         0.999         0.999
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ GEN_CHIL       0.998         0.998         0.998         0.998         0.998
+ BPM_1_Y        0.940         0.940         0.940         0.940         0.940
+ BPM_2_Y        0.975         0.975         0.975         0.975         0.975
+ BPM_3_Y        0.973         0.973         0.973         0.973         0.973
+ BPM_4_Y        0.985         0.985         0.985         0.985         0.985
+ BPM_5_Y        0.989         0.989         0.989         0.989         0.989
+ BPM_6_Y        0.992         0.992         0.992         0.992         0.992
+ BPM_7_Y        0.985         0.985         0.985         0.985         0.985
+ BPM_8_Y        0.991         0.991         0.991         0.991         0.991
+ BPM_9_Y        0.976         0.976         0.976         0.976         0.976
+ BPM_10_Y       0.983         0.983         0.983         0.983         0.983
+ BPM_11_Y       0.976         0.976         0.976         0.976         0.976
+ BPM_12_Y       0.981         0.981         0.981         0.981         0.981
+ BPM_13_Y       0.984         0.984         0.984         0.984         0.984
+ BPM_14_Y       0.987         0.987         0.987         0.987         0.987
+ BPM_15_Y       0.969         0.969         0.969         0.969         0.969
+ BPM_16_Y       0.985         0.985         0.985         0.985         0.985
+ BPM_17_Y       0.991         0.991         0.991         0.991         0.991
+ BPM_18_Y       0.987         0.987         0.987         0.987         0.987
+ BPM_19_Y       0.989         0.989         0.989         0.989         0.989
+ POA_NIHT       0.955         0.955         0.955         0.955         0.955
+ POA_NIHT       0.972         0.972         0.972         0.972         0.972
+ POA_NIHT       0.988         0.988         0.988         0.988         0.988
+ POA_NIHT       0.979         0.979         0.979         0.979         0.979
+ POA_NIHT       0.981         0.981         0.981         0.981         0.981
+ POA_NIHT       0.976         0.976         0.976         0.976         0.976
+ POA_NIHT       0.982         0.982         0.982         0.982         0.982
+ POA_NIHT       0.982         0.982         0.982         0.982         0.982
+ POA_NIHT       0.981         0.981         0.981         0.981         0.981
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+
+
+           Covariance Coverage
+              PRODROMA      GEN_CHIL      GEN_CHIL      GEN_CHIL      GEN_CHIL
+              ________      ________      ________      ________      ________
+ PRODROMA       0.999
+ GEN_CHIL       0.998         0.999
+ GEN_CHIL       0.998         0.999         0.999
+ GEN_CHIL       0.998         0.999         0.999         0.999
+ GEN_CHIL       0.998         0.999         0.999         0.999         0.999
+ GEN_CHIL       0.998         0.999         0.999         0.999         0.999
+ GEN_CHIL       0.998         0.999         0.999         0.999         0.999
+ GEN_CHIL       0.998         0.999         0.999         0.999         0.999
+ GEN_CHIL       0.998         0.999         0.999         0.999         0.999
+ GEN_CHIL       0.998         0.999         0.999         0.999         0.999
+ GEN_CHIL       0.998         0.999         0.999         0.999         0.999
+ BPM_1_Y        0.940         0.939         0.939         0.939         0.939
+ BPM_2_Y        0.975         0.974         0.974         0.974         0.974
+ BPM_3_Y        0.973         0.972         0.972         0.972         0.972
+ BPM_4_Y        0.985         0.985         0.985         0.985         0.985
+ BPM_5_Y        0.989         0.988         0.988         0.988         0.988
+ BPM_6_Y        0.992         0.991         0.991         0.991         0.991
+ BPM_7_Y        0.985         0.984         0.984         0.984         0.984
+ BPM_8_Y        0.991         0.990         0.990         0.990         0.990
+ BPM_9_Y        0.976         0.975         0.975         0.975         0.975
+ BPM_10_Y       0.983         0.982         0.982         0.982         0.982
+ BPM_11_Y       0.976         0.975         0.975         0.975         0.975
+ BPM_12_Y       0.981         0.980         0.980         0.980         0.980
+ BPM_13_Y       0.984         0.983         0.983         0.983         0.983
+ BPM_14_Y       0.987         0.986         0.986         0.986         0.986
+ BPM_15_Y       0.969         0.968         0.968         0.968         0.968
+ BPM_16_Y       0.985         0.984         0.984         0.984         0.984
+ BPM_17_Y       0.991         0.991         0.991         0.991         0.991
+ BPM_18_Y       0.987         0.986         0.986         0.986         0.986
+ BPM_19_Y       0.989         0.988         0.988         0.988         0.988
+ POA_NIHT       0.955         0.954         0.954         0.954         0.954
+ POA_NIHT       0.972         0.972         0.972         0.972         0.972
+ POA_NIHT       0.988         0.987         0.987         0.987         0.987
+ POA_NIHT       0.979         0.978         0.978         0.978         0.978
+ POA_NIHT       0.981         0.980         0.980         0.980         0.980
+ POA_NIHT       0.976         0.975         0.975         0.975         0.975
+ POA_NIHT       0.982         0.981         0.981         0.981         0.981
+ POA_NIHT       0.982         0.981         0.981         0.981         0.981
+ POA_NIHT       0.981         0.980         0.980         0.980         0.980
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.985         0.985         0.985         0.985
+ KSADS_16       0.986         0.985         0.985         0.985         0.985
+ KSADS_16       0.986         0.985         0.985         0.985         0.985
+ KSADS_16       0.986         0.985         0.985         0.985         0.985
+ KSADS_16       0.986         0.985         0.985         0.985         0.985
+ KSADS_16       0.986         0.985         0.985         0.985         0.985
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+
+
+           Covariance Coverage
+              GEN_CHIL      GEN_CHIL      GEN_CHIL      GEN_CHIL      GEN_CHIL
+              ________      ________      ________      ________      ________
+ GEN_CHIL       0.999
+ GEN_CHIL       0.999         0.999
+ GEN_CHIL       0.999         0.999         0.999
+ GEN_CHIL       0.999         0.999         0.999         0.999
+ GEN_CHIL       0.999         0.999         0.999         0.999         0.999
+ GEN_CHIL       0.999         0.999         0.999         0.999         0.999
+ BPM_1_Y        0.939         0.939         0.939         0.939         0.939
+ BPM_2_Y        0.974         0.974         0.974         0.974         0.974
+ BPM_3_Y        0.972         0.972         0.972         0.972         0.972
+ BPM_4_Y        0.985         0.985         0.985         0.985         0.985
+ BPM_5_Y        0.988         0.988         0.988         0.988         0.988
+ BPM_6_Y        0.991         0.991         0.991         0.991         0.991
+ BPM_7_Y        0.984         0.984         0.984         0.984         0.984
+ BPM_8_Y        0.990         0.990         0.990         0.990         0.990
+ BPM_9_Y        0.975         0.975         0.975         0.975         0.975
+ BPM_10_Y       0.982         0.982         0.982         0.982         0.982
+ BPM_11_Y       0.975         0.975         0.975         0.975         0.975
+ BPM_12_Y       0.980         0.980         0.980         0.980         0.980
+ BPM_13_Y       0.983         0.983         0.983         0.983         0.983
+ BPM_14_Y       0.986         0.986         0.986         0.986         0.986
+ BPM_15_Y       0.968         0.968         0.968         0.968         0.968
+ BPM_16_Y       0.984         0.984         0.984         0.984         0.984
+ BPM_17_Y       0.991         0.991         0.991         0.991         0.991
+ BPM_18_Y       0.986         0.986         0.986         0.986         0.986
+ BPM_19_Y       0.988         0.988         0.988         0.988         0.988
+ POA_NIHT       0.954         0.954         0.954         0.954         0.954
+ POA_NIHT       0.972         0.972         0.972         0.972         0.972
+ POA_NIHT       0.987         0.987         0.987         0.987         0.987
+ POA_NIHT       0.978         0.978         0.978         0.978         0.978
+ POA_NIHT       0.980         0.980         0.980         0.980         0.980
+ POA_NIHT       0.975         0.975         0.975         0.975         0.975
+ POA_NIHT       0.981         0.981         0.981         0.981         0.981
+ POA_NIHT       0.981         0.981         0.981         0.981         0.981
+ POA_NIHT       0.980         0.980         0.980         0.980         0.980
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.985         0.985         0.985         0.985         0.985
+ KSADS_16       0.985         0.985         0.985         0.985         0.985
+ KSADS_16       0.985         0.985         0.985         0.985         0.985
+ KSADS_16       0.985         0.985         0.985         0.985         0.985
+ KSADS_16       0.985         0.985         0.985         0.985         0.985
+ KSADS_16       0.985         0.985         0.985         0.985         0.985
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+
+
+           Covariance Coverage
+              GEN_CHIL      BPM_1_Y       BPM_2_Y       BPM_3_Y       BPM_4_Y
+              ________      ________      ________      ________      ________
+ GEN_CHIL       0.999
+ BPM_1_Y        0.939         0.940
+ BPM_2_Y        0.974         0.924         0.975
+ BPM_3_Y        0.972         0.924         0.953         0.973
+ BPM_4_Y        0.985         0.931         0.964         0.964         0.986
+ BPM_5_Y        0.988         0.935         0.968         0.967         0.979
+ BPM_6_Y        0.991         0.936         0.970         0.968         0.981
+ BPM_7_Y        0.984         0.932         0.964         0.962         0.975
+ BPM_8_Y        0.990         0.936         0.969         0.967         0.978
+ BPM_9_Y        0.975         0.926         0.956         0.956         0.966
+ BPM_10_Y       0.982         0.930         0.963         0.962         0.973
+ BPM_11_Y       0.975         0.926         0.955         0.955         0.965
+ BPM_12_Y       0.980         0.930         0.960         0.960         0.971
+ BPM_13_Y       0.983         0.932         0.963         0.962         0.974
+ BPM_14_Y       0.986         0.933         0.966         0.964         0.977
+ BPM_15_Y       0.968         0.921         0.951         0.950         0.959
+ BPM_16_Y       0.984         0.932         0.965         0.963         0.974
+ BPM_17_Y       0.991         0.936         0.969         0.968         0.980
+ BPM_18_Y       0.986         0.933         0.966         0.964         0.976
+ BPM_19_Y       0.988         0.935         0.968         0.966         0.978
+ POA_NIHT       0.954         0.908         0.936         0.936         0.945
+ POA_NIHT       0.972         0.920         0.951         0.950         0.961
+ POA_NIHT       0.987         0.932         0.965         0.964         0.975
+ POA_NIHT       0.978         0.926         0.957         0.956         0.968
+ POA_NIHT       0.980         0.928         0.960         0.958         0.970
+ POA_NIHT       0.975         0.924         0.955         0.954         0.965
+ POA_NIHT       0.981         0.929         0.960         0.959         0.971
+ POA_NIHT       0.981         0.929         0.960         0.959         0.971
+ POA_NIHT       0.980         0.928         0.959         0.959         0.970
+ KSADS_14       0.986         0.928         0.962         0.960         0.972
+ KSADS_14       0.986         0.928         0.962         0.960         0.972
+ KSADS_14       0.986         0.928         0.962         0.960         0.972
+ KSADS_14       0.986         0.928         0.962         0.960         0.972
+ KSADS_15       0.986         0.928         0.962         0.960         0.972
+ KSADS_15       0.986         0.928         0.962         0.960         0.972
+ KSADS_15       0.986         0.928         0.962         0.960         0.972
+ KSADS_15       0.986         0.928         0.962         0.960         0.972
+ KSADS_16       0.985         0.928         0.962         0.960         0.972
+ KSADS_16       0.985         0.928         0.962         0.960         0.972
+ KSADS_16       0.985         0.928         0.962         0.960         0.972
+ KSADS_16       0.985         0.928         0.962         0.960         0.972
+ KSADS_16       0.985         0.928         0.962         0.960         0.972
+ KSADS_16       0.985         0.928         0.962         0.960         0.972
+ KSADS_14       0.986         0.928         0.962         0.960         0.972
+ KSADS_14       0.986         0.928         0.962         0.960         0.972
+
+
+           Covariance Coverage
+              BPM_5_Y       BPM_6_Y       BPM_7_Y       BPM_8_Y       BPM_9_Y
+              ________      ________      ________      ________      ________
+ BPM_5_Y        0.989
+ BPM_6_Y        0.984         0.992
+ BPM_7_Y        0.977         0.981         0.985
+ BPM_8_Y        0.982         0.986         0.980         0.991
+ BPM_9_Y        0.968         0.972         0.967         0.971         0.976
+ BPM_10_Y       0.976         0.979         0.973         0.977         0.966
+ BPM_11_Y       0.968         0.971         0.966         0.970         0.960
+ BPM_12_Y       0.974         0.977         0.971         0.975         0.965
+ BPM_13_Y       0.976         0.979         0.973         0.978         0.967
+ BPM_14_Y       0.979         0.982         0.976         0.980         0.968
+ BPM_15_Y       0.962         0.965         0.960         0.965         0.954
+ BPM_16_Y       0.976         0.980         0.975         0.979         0.966
+ BPM_17_Y       0.983         0.986         0.981         0.985         0.971
+ BPM_18_Y       0.979         0.982         0.975         0.981         0.969
+ BPM_19_Y       0.981         0.984         0.978         0.983         0.969
+ POA_NIHT       0.947         0.950         0.945         0.949         0.938
+ POA_NIHT       0.964         0.967         0.961         0.966         0.953
+ POA_NIHT       0.979         0.982         0.975         0.980         0.966
+ POA_NIHT       0.971         0.973         0.967         0.972         0.960
+ POA_NIHT       0.973         0.975         0.969         0.974         0.961
+ POA_NIHT       0.968         0.970         0.964         0.969         0.957
+ POA_NIHT       0.974         0.976         0.970         0.975         0.962
+ POA_NIHT       0.974         0.976         0.970         0.975         0.962
+ POA_NIHT       0.973         0.975         0.969         0.974         0.961
+ KSADS_14       0.976         0.979         0.972         0.977         0.963
+ KSADS_14       0.976         0.979         0.972         0.977         0.963
+ KSADS_14       0.976         0.979         0.972         0.977         0.963
+ KSADS_14       0.976         0.979         0.972         0.977         0.963
+ KSADS_15       0.976         0.979         0.972         0.977         0.963
+ KSADS_15       0.976         0.979         0.972         0.977         0.963
+ KSADS_15       0.976         0.979         0.972         0.977         0.963
+ KSADS_15       0.976         0.979         0.972         0.977         0.963
+ KSADS_16       0.976         0.978         0.972         0.977         0.962
+ KSADS_16       0.976         0.978         0.972         0.977         0.962
+ KSADS_16       0.976         0.978         0.972         0.977         0.962
+ KSADS_16       0.976         0.978         0.972         0.977         0.962
+ KSADS_16       0.976         0.978         0.972         0.977         0.962
+ KSADS_16       0.976         0.978         0.972         0.977         0.962
+ KSADS_14       0.976         0.979         0.972         0.977         0.963
+ KSADS_14       0.976         0.979         0.972         0.977         0.963
+
+
+           Covariance Coverage
+              BPM_10_Y      BPM_11_Y      BPM_12_Y      BPM_13_Y      BPM_14_Y
+              ________      ________      ________      ________      ________
+ BPM_10_Y       0.983
+ BPM_11_Y       0.965         0.976
+ BPM_12_Y       0.970         0.967         0.981
+ BPM_13_Y       0.973         0.968         0.972         0.984
+ BPM_14_Y       0.975         0.968         0.973         0.977         0.987
+ BPM_15_Y       0.959         0.955         0.959         0.961         0.963
+ BPM_16_Y       0.973         0.966         0.972         0.974         0.976
+ BPM_17_Y       0.978         0.972         0.977         0.979         0.982
+ BPM_18_Y       0.974         0.968         0.974         0.976         0.978
+ BPM_19_Y       0.976         0.970         0.975         0.978         0.980
+ POA_NIHT       0.944         0.939         0.942         0.945         0.947
+ POA_NIHT       0.960         0.954         0.958         0.961         0.963
+ POA_NIHT       0.974         0.967         0.972         0.974         0.977
+ POA_NIHT       0.966         0.960         0.965         0.967         0.969
+ POA_NIHT       0.969         0.961         0.966         0.969         0.971
+ POA_NIHT       0.964         0.957         0.962         0.964         0.967
+ POA_NIHT       0.969         0.962         0.968         0.970         0.972
+ POA_NIHT       0.970         0.963         0.968         0.970         0.973
+ POA_NIHT       0.968         0.961         0.967         0.968         0.971
+ KSADS_14       0.970         0.963         0.968         0.971         0.974
+ KSADS_14       0.970         0.963         0.968         0.971         0.974
+ KSADS_14       0.970         0.963         0.968         0.971         0.974
+ KSADS_14       0.970         0.963         0.968         0.971         0.974
+ KSADS_15       0.970         0.963         0.968         0.971         0.974
+ KSADS_15       0.970         0.963         0.968         0.971         0.974
+ KSADS_15       0.970         0.963         0.968         0.971         0.974
+ KSADS_15       0.970         0.963         0.968         0.971         0.974
+ KSADS_16       0.970         0.962         0.968         0.971         0.974
+ KSADS_16       0.970         0.962         0.968         0.971         0.974
+ KSADS_16       0.970         0.962         0.968         0.971         0.974
+ KSADS_16       0.970         0.962         0.968         0.971         0.974
+ KSADS_16       0.970         0.962         0.968         0.971         0.974
+ KSADS_16       0.970         0.962         0.968         0.971         0.974
+ KSADS_14       0.970         0.963         0.968         0.971         0.974
+ KSADS_14       0.970         0.963         0.968         0.971         0.974
+
+
+           Covariance Coverage
+              BPM_15_Y      BPM_16_Y      BPM_17_Y      BPM_18_Y      BPM_19_Y
+              ________      ________      ________      ________      ________
+ BPM_15_Y       0.969
+ BPM_16_Y       0.962         0.985
+ BPM_17_Y       0.965         0.980         0.992
+ BPM_18_Y       0.962         0.977         0.982         0.987
+ BPM_19_Y       0.963         0.979         0.984         0.980         0.989
+ POA_NIHT       0.933         0.945         0.949         0.946         0.948
+ POA_NIHT       0.948         0.961         0.966         0.963         0.965
+ POA_NIHT       0.960         0.975         0.981         0.977         0.979
+ POA_NIHT       0.953         0.967         0.973         0.969         0.971
+ POA_NIHT       0.955         0.969         0.975         0.971         0.973
+ POA_NIHT       0.951         0.964         0.970         0.966         0.968
+ POA_NIHT       0.957         0.970         0.975         0.972         0.974
+ POA_NIHT       0.957         0.970         0.976         0.972         0.974
+ POA_NIHT       0.956         0.969         0.975         0.971         0.973
+ KSADS_14       0.956         0.972         0.978         0.974         0.976
+ KSADS_14       0.956         0.972         0.978         0.974         0.976
+ KSADS_14       0.956         0.972         0.978         0.974         0.976
+ KSADS_14       0.956         0.972         0.978         0.974         0.976
+ KSADS_15       0.956         0.972         0.978         0.974         0.976
+ KSADS_15       0.956         0.972         0.978         0.974         0.976
+ KSADS_15       0.956         0.972         0.978         0.974         0.976
+ KSADS_15       0.956         0.972         0.978         0.974         0.976
+ KSADS_16       0.956         0.972         0.978         0.974         0.976
+ KSADS_16       0.956         0.972         0.978         0.974         0.976
+ KSADS_16       0.956         0.972         0.978         0.974         0.976
+ KSADS_16       0.956         0.972         0.978         0.974         0.976
+ KSADS_16       0.956         0.972         0.978         0.974         0.976
+ KSADS_16       0.956         0.972         0.978         0.974         0.976
+ KSADS_14       0.956         0.972         0.978         0.974         0.976
+ KSADS_14       0.956         0.972         0.978         0.974         0.976
+
+
+           Covariance Coverage
+              POA_NIHT      POA_NIHT      POA_NIHT      POA_NIHT      POA_NIHT
+              ________      ________      ________      ________      ________
+ POA_NIHT       0.955
+ POA_NIHT       0.939         0.973
+ POA_NIHT       0.949         0.966         0.988
+ POA_NIHT       0.944         0.959         0.973         0.979
+ POA_NIHT       0.944         0.962         0.974         0.968         0.981
+ POA_NIHT       0.941         0.958         0.968         0.963         0.965
+ POA_NIHT       0.946         0.962         0.975         0.968         0.970
+ POA_NIHT       0.945         0.962         0.974         0.968         0.971
+ POA_NIHT       0.946         0.961         0.974         0.968         0.969
+ KSADS_14       0.943         0.959         0.974         0.966         0.968
+ KSADS_14       0.943         0.959         0.974         0.966         0.968
+ KSADS_14       0.943         0.959         0.974         0.966         0.968
+ KSADS_14       0.943         0.959         0.974         0.966         0.968
+ KSADS_15       0.943         0.959         0.974         0.966         0.968
+ KSADS_15       0.943         0.959         0.974         0.966         0.968
+ KSADS_15       0.943         0.959         0.974         0.966         0.968
+ KSADS_15       0.943         0.959         0.974         0.966         0.968
+ KSADS_16       0.943         0.959         0.974         0.965         0.968
+ KSADS_16       0.943         0.959         0.974         0.965         0.968
+ KSADS_16       0.943         0.959         0.974         0.965         0.968
+ KSADS_16       0.943         0.959         0.974         0.965         0.968
+ KSADS_16       0.943         0.959         0.974         0.965         0.968
+ KSADS_16       0.943         0.959         0.974         0.965         0.968
+ KSADS_14       0.943         0.959         0.974         0.966         0.968
+ KSADS_14       0.943         0.959         0.974         0.966         0.968
+
+
+           Covariance Coverage
+              POA_NIHT      POA_NIHT      POA_NIHT      POA_NIHT      KSADS_14
+              ________      ________      ________      ________      ________
+ POA_NIHT       0.976
+ POA_NIHT       0.968         0.982
+ POA_NIHT       0.966         0.971         0.982
+ POA_NIHT       0.966         0.971         0.970         0.981
+ KSADS_14       0.963         0.969         0.969         0.968         0.986
+ KSADS_14       0.963         0.969         0.969         0.968         0.986
+ KSADS_14       0.963         0.969         0.969         0.968         0.986
+ KSADS_14       0.963         0.969         0.969         0.968         0.986
+ KSADS_15       0.963         0.969         0.969         0.968         0.986
+ KSADS_15       0.963         0.969         0.969         0.968         0.986
+ KSADS_15       0.963         0.969         0.969         0.968         0.986
+ KSADS_15       0.963         0.969         0.969         0.968         0.986
+ KSADS_16       0.963         0.969         0.969         0.968         0.986
+ KSADS_16       0.963         0.969         0.969         0.968         0.986
+ KSADS_16       0.963         0.969         0.969         0.968         0.986
+ KSADS_16       0.963         0.969         0.969         0.968         0.986
+ KSADS_16       0.963         0.969         0.969         0.968         0.986
+ KSADS_16       0.963         0.969         0.969         0.968         0.986
+ KSADS_14       0.963         0.969         0.969         0.968         0.986
+ KSADS_14       0.963         0.969         0.969         0.968         0.986
+
+
+           Covariance Coverage
+              KSADS_14      KSADS_14      KSADS_14      KSADS_15      KSADS_15
+              ________      ________      ________      ________      ________
+ KSADS_14       0.986
+ KSADS_14       0.986         0.986
+ KSADS_14       0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_15       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+
+
+           Covariance Coverage
+              KSADS_15      KSADS_15      KSADS_16      KSADS_16      KSADS_16
+              ________      ________      ________      ________      ________
+ KSADS_15       0.986
+ KSADS_15       0.986         0.986
+ KSADS_16       0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_16       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+
+
+           Covariance Coverage
+              KSADS_16      KSADS_16      KSADS_16      KSADS_14      KSADS_14
+              ________      ________      ________      ________      ________
+ KSADS_16       0.986
+ KSADS_16       0.986         0.986
+ KSADS_16       0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986
+ KSADS_14       0.986         0.986         0.986         0.986         0.986
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    PRODROMA
+      Category 1    0.956        10705.000
+      Category 2    0.044          490.000
+    PRODROMA
+      Category 1    0.831         9299.000
+      Category 2    0.169         1896.000
+    PRODROMA
+      Category 1    0.911        10198.000
+      Category 2    0.089          997.000
+    PRODROMA
+      Category 1    0.918        10280.000
+      Category 2    0.082          913.000
+    PRODROMA
+      Category 1    0.969        10845.000
+      Category 2    0.031          349.000
+    PRODROMA
+      Category 1    0.854         9559.000
+      Category 2    0.146         1634.000
+    PRODROMA
+      Category 1    0.919        10283.000
+      Category 2    0.081          911.000
+    PRODROMA
+      Category 1    0.837         9366.000
+      Category 2    0.163         1828.000
+    PRODROMA
+      Category 1    0.897        10045.000
+      Category 2    0.103         1149.000
+    PRODROMA
+      Category 1    0.893         9995.000
+      Category 2    0.107         1199.000
+    PRODROMA
+      Category 1    0.855         9566.000
+      Category 2    0.145         1628.000
+    PRODROMA
+      Category 1    0.932        10433.000
+      Category 2    0.068          761.000
+    PRODROMA
+      Category 1    0.953        10672.000
+      Category 2    0.047          521.000
+    PRODROMA
+      Category 1    0.916        10256.000
+      Category 2    0.084          938.000
+    PRODROMA
+      Category 1    0.924        10338.000
+      Category 2    0.076          856.000
+    PRODROMA
+      Category 1    0.951        10645.000
+      Category 2    0.049          549.000
+    PRODROMA
+      Category 1    0.910        10190.000
+      Category 2    0.090         1004.000
+    PRODROMA
+      Category 1    0.908        10166.000
+      Category 2    0.092         1028.000
+    PRODROMA
+      Category 1    0.908        10167.000
+      Category 2    0.092         1027.000
+    PRODROMA
+      Category 1    0.932        10438.000
+      Category 2    0.068          756.000
+    PRODROMA
+      Category 1    0.899        10061.000
+      Category 2    0.101         1133.000
+    GEN_CHIL
+      Category 1    0.868         9708.000
+      Category 2    0.102         1143.000
+      Category 3    0.021          236.000
+      Category 4    0.009          103.000
+    GEN_CHIL
+      Category 1    0.959        10733.000
+      Category 2    0.036          398.000
+      Category 3    0.004           48.000
+      Category 4    0.001           11.000
+    GEN_CHIL
+      Category 1    0.799         8938.000
+      Category 2    0.172         1923.000
+      Category 3    0.024          264.000
+      Category 4    0.006           65.000
+    GEN_CHIL
+      Category 1    0.939        10503.000
+      Category 2    0.049          552.000
+      Category 3    0.010          111.000
+      Category 4    0.002           24.000
+    GEN_CHIL
+      Category 1    0.940        10522.000
+      Category 2    0.049          543.000
+      Category 3    0.009           99.000
+      Category 4    0.002           26.000
+    GEN_CHIL
+      Category 1    0.891         9968.000
+      Category 2    0.087          977.000
+      Category 3    0.017          188.000
+      Category 4    0.005           57.000
+    GEN_CHIL
+      Category 1    0.856         9581.000
+      Category 2    0.116         1301.000
+      Category 3    0.022          241.000
+      Category 4    0.006           67.000
+    GEN_CHIL
+      Category 1    0.917        10258.000
+      Category 2    0.070          780.000
+      Category 3    0.011          124.000
+      Category 4    0.003           28.000
+    GEN_CHIL
+      Category 1    0.888         9938.000
+      Category 2    0.093         1044.000
+      Category 3    0.016          175.000
+      Category 4    0.003           33.000
+    GEN_CHIL
+      Category 1    0.865         9683.000
+      Category 2    0.106         1188.000
+      Category 3    0.022          242.000
+      Category 4    0.007           77.000
+    BPM_1_Y
+      Category 1    0.713         7507.000
+      Category 2    0.255         2687.000
+      Category 3    0.032          342.000
+    BPM_2_Y
+      Category 1    0.455         4973.000
+      Category 2    0.436         4768.000
+      Category 3    0.108         1184.000
+    BPM_3_Y
+      Category 1    0.659         7179.000
+      Category 2    0.292         3183.000
+      Category 3    0.050          540.000
+    BPM_4_Y
+      Category 1    0.513         5666.000
+      Category 2    0.363         4005.000
+      Category 3    0.124         1371.000
+    BPM_5_Y
+      Category 1    0.437         4843.000
+      Category 2    0.344         3813.000
+      Category 3    0.219         2426.000
+    BPM_6_Y
+      Category 1    0.953        10591.000
+      Category 2    0.042          462.000
+      Category 3    0.006           62.000
+    BPM_7_Y
+      Category 1    0.781         8620.000
+      Category 2    0.210         2321.000
+      Category 3    0.009           97.000
+    BPM_8_Y
+      Category 1    0.921        10221.000
+      Category 2    0.073          812.000
+      Category 3    0.006           68.000
+    BPM_9_Y
+      Category 1    0.884         9663.000
+      Category 2    0.098         1075.000
+      Category 3    0.018          194.000
+    BPM_10_Y
+      Category 1    0.570         6275.000
+      Category 2    0.372         4094.000
+      Category 3    0.059          649.000
+    BPM_11_Y
+      Category 1    0.739         8073.000
+      Category 2    0.217         2369.000
+      Category 3    0.045          489.000
+    BPM_12_Y
+      Category 1    0.860         9457.000
+      Category 2    0.114         1258.000
+      Category 3    0.025          279.000
+    BPM_13_Y
+      Category 1    0.605         6672.000
+      Category 2    0.300         3304.000
+      Category 3    0.095         1050.000
+    BPM_14_Y
+      Category 1    0.494         5461.000
+      Category 2    0.361         3993.000
+      Category 3    0.145         1605.000
+    BPM_15_Y
+      Category 1    0.597         6482.000
+      Category 2    0.309         3355.000
+      Category 3    0.094         1023.000
+    BPM_16_Y
+      Category 1    0.637         7034.000
+      Category 2    0.274         3019.000
+      Category 3    0.089          982.000
+    BPM_17_Y
+      Category 1    0.941        10454.000
+      Category 2    0.052          579.000
+      Category 3    0.007           76.000
+    BPM_18_Y
+      Category 1    0.846         9361.000
+      Category 2    0.132         1458.000
+      Category 3    0.022          242.000
+    BPM_19_Y
+      Category 1    0.580         6430.000
+      Category 2    0.311         3445.000
+      Category 3    0.109         1210.000
+    POA_NIHT
+      Category 1    0.193         2063.000
+      Category 2    0.425         4546.000
+      Category 3    0.382         4093.000
+    POA_NIHT
+      Category 1    0.126         1370.000
+      Category 2    0.434         4730.000
+      Category 3    0.440         4796.000
+    POA_NIHT
+      Category 1    0.053          582.000
+      Category 2    0.385         4256.000
+      Category 3    0.563         6229.000
+    POA_NIHT
+      Category 1    0.067          735.000
+      Category 2    0.375         4111.000
+      Category 3    0.558         6123.000
+    POA_NIHT
+      Category 1    0.141         1546.000
+      Category 2    0.423         4648.000
+      Category 3    0.437         4801.000
+    POA_NIHT
+      Category 1    0.136         1483.000
+      Category 2    0.417         4559.000
+      Category 3    0.448         4896.000
+    POA_NIHT
+      Category 1    0.083          917.000
+      Category 2    0.358         3940.000
+      Category 3    0.559         6145.000
+    POA_NIHT
+      Category 1    0.123         1354.000
+      Category 2    0.376         4142.000
+      Category 3    0.501         5508.000
+    POA_NIHT
+      Category 1    0.088          965.000
+      Category 2    0.393         4321.000
+      Category 3    0.519         5705.000
+    KSADS_14
+      Category 1    0.850         9390.000
+      Category 2    0.150         1660.000
+    KSADS_14
+      Category 1    0.946        10458.000
+      Category 2    0.054          592.000
+    KSADS_14
+      Category 1    0.964        10653.000
+      Category 2    0.036          397.000
+    KSADS_14
+      Category 1    0.827         9139.000
+      Category 2    0.173         1911.000
+    KSADS_15
+      Category 1    0.948        10480.000
+      Category 2    0.052          570.000
+    KSADS_15
+      Category 1    0.753         8326.000
+      Category 2    0.247         2724.000
+    KSADS_15
+      Category 1    0.715         7900.000
+      Category 2    0.285         3150.000
+    KSADS_15
+      Category 1    0.908        10037.000
+      Category 2    0.092         1013.000
+    KSADS_16
+      Category 1    0.952        10514.000
+      Category 2    0.048          535.000
+    KSADS_16
+      Category 1    0.823         9093.000
+      Category 2    0.177         1956.000
+    KSADS_16
+      Category 1    0.950        10498.000
+      Category 2    0.050          551.000
+    KSADS_16
+      Category 1    0.939        10370.000
+      Category 2    0.061          679.000
+    KSADS_16
+      Category 1    0.980        10823.000
+      Category 2    0.020          226.000
+    KSADS_16
+      Category 1    0.991        10954.000
+      Category 2    0.009           95.000
+    KSADS_14
+      Category 1    0.747         8253.000
+      Category 2    0.061          674.000
+      Category 3    0.192         2123.000
+    KSADS_14
+      Category 1    0.876         9684.000
+      Category 2    0.051          562.000
+      Category 3    0.073          804.000
+
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                      275
+
+Chi-Square Test of Model Fit
+
+          Value                          31613.726*
+          Degrees of Freedom                  2625
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.031
+          90 Percent C.I.                    0.031  0.032
+          Probability RMSEA <= .05           1.000
+
+CFI/TLI
+
+          CFI                                0.906
+          TLI                                0.901
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                         311682.065
+          Degrees of Freedom                  2775
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.079
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.21359585D+01
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ PSYCHOSI BY
+    PRODROMAL_         1.000      0.000    999.000    999.000
+    PRODROMAL_         1.039      0.043     24.218      0.000
+    PRODROMAL_         1.041      0.044     23.862      0.000
+    PRODROMAL_         1.161      0.046     25.273      0.000
+    PRODROMAL_         0.965      0.049     19.622      0.000
+    PRODROMAL_         0.937      0.041     22.965      0.000
+    PRODROMAL_         1.166      0.048     24.363      0.000
+    PRODROMAL_         0.959      0.040     23.724      0.000
+    PRODROMAL_         0.953      0.043     22.181      0.000
+    PRODROMAL_         1.112      0.044     25.237      0.000
+    PRODROMAL_         1.112      0.043     25.801      0.000
+    PRODROMAL_         1.039      0.044     23.522      0.000
+    PRODROMAL_         0.962      0.044     21.915      0.000
+    PRODROMAL_         1.098      0.044     24.746      0.000
+    PRODROMAL_         0.855      0.043     19.889      0.000
+    PRODROMAL_         1.146      0.049     23.595      0.000
+    PRODROMAL_         1.072      0.045     23.850      0.000
+    PRODROMAL_         0.924      0.041     22.321      0.000
+    PRODROMAL_         1.187      0.047     25.040      0.000
+    PRODROMAL_         1.232      0.049     25.348      0.000
+    PRODROMAL_         0.965      0.043     22.645      0.000
+
+ MANIA    BY
+    GEN_CHILD_         1.000      0.000    999.000    999.000
+    GEN_CHILD_         1.042      0.025     42.116      0.000
+    GEN_CHILD_         1.058      0.020     52.823      0.000
+    GEN_CHILD_         1.114      0.021     52.397      0.000
+    GEN_CHILD_         1.072      0.022     47.834      0.000
+    GEN_CHILD_         1.023      0.021     49.153      0.000
+    GEN_CHILD_         1.079      0.020     53.770      0.000
+    GEN_CHILD_         1.120      0.021     52.376      0.000
+    GEN_CHILD_         1.117      0.020     54.567      0.000
+    GEN_CHILD_         0.852      0.020     42.403      0.000
+
+ YOUTHREP BY
+    BPM_1_Y            1.000      0.000    999.000    999.000
+    BPM_2_Y            0.961      0.140      6.845      0.000
+    BPM_3_Y            0.737      0.130      5.666      0.000
+    BPM_4_Y           -0.766      0.196     -3.913      0.000
+    BPM_5_Y           -0.519      0.163     -3.188      0.001
+    BPM_6_Y            0.002      0.202      0.012      0.990
+    BPM_7_Y            0.562      0.136      4.146      0.000
+    BPM_8_Y           -0.238      0.186     -1.278      0.201
+    BPM_9_Y            2.999      0.380      7.896      0.000
+    BPM_10_Y           0.717      0.121      5.929      0.000
+    BPM_11_Y           3.698      0.461      8.013      0.000
+    BPM_12_Y           3.227      0.404      7.996      0.000
+    BPM_13_Y           3.463      0.435      7.969      0.000
+    BPM_14_Y          -0.329      0.155     -2.117      0.034
+    BPM_15_Y           1.416      0.186      7.613      0.000
+    BPM_16_Y           1.088      0.151      7.218      0.000
+    BPM_17_Y           0.510      0.181      2.814      0.005
+    BPM_18_Y           2.555      0.324      7.878      0.000
+    BPM_19_Y           3.648      0.461      7.912      0.000
+
+ POSITIVE BY
+    POA_NIHTB_         1.000      0.000    999.000    999.000
+    POA_NIHTB_         1.400      0.027     52.451      0.000
+    POA_NIHTB_         1.292      0.026     49.368      0.000
+    POA_NIHTB_         1.417      0.028     51.159      0.000
+    POA_NIHTB_         1.523      0.030     50.477      0.000
+    POA_NIHTB_         1.431      0.028     51.574      0.000
+    POA_NIHTB_         1.460      0.029     50.998      0.000
+    POA_NIHTB_         1.396      0.029     48.911      0.000
+    POA_NIHTB_         1.133      0.023     49.807      0.000
+
+ EXTERNAL BY
+    KSADS_14_8         1.000      0.000    999.000    999.000
+    KSADS_14_8         0.879      0.019     47.420      0.000
+    KSADS_14_8         0.844      0.023     37.196      0.000
+    KSADS_14_9         0.964      0.012     78.050      0.000
+    KSADS_15_9         0.968      0.020     49.234      0.000
+    KSADS_15_9         0.885      0.015     58.292      0.000
+    KSADS_15_9         0.876      0.016     56.489      0.000
+    KSADS_15_9         0.924      0.018     51.605      0.000
+    KSADS_16_9         0.699      0.025     27.750      0.000
+    KSADS_16_9         0.600      0.019     31.758      0.000
+    KSADS_16_1         0.583      0.027     21.623      0.000
+    KSADS_16_1         0.655      0.024     26.930      0.000
+    KSADS_16_1         0.655      0.033     19.839      0.000
+    KSADS_16_1         0.625      0.049     12.839      0.000
+    KSADS_14_7         0.924      0.012     74.861      0.000
+    KSADS_14_7         0.808      0.016     50.770      0.000
+
+ GENERAL  BY
+    PRODROMAL_         1.000      0.000    999.000    999.000
+    PRODROMAL_         0.938      0.047     19.975      0.000
+    PRODROMAL_         0.899      0.046     19.572      0.000
+    PRODROMAL_         0.827      0.046     18.024      0.000
+    PRODROMAL_         1.109      0.056     19.825      0.000
+    PRODROMAL_         0.967      0.048     20.268      0.000
+    PRODROMAL_         0.822      0.046     17.760      0.000
+    PRODROMAL_         1.049      0.048     21.701      0.000
+    PRODROMAL_         0.962      0.049     19.568      0.000
+    PRODROMAL_         1.015      0.048     21.183      0.000
+    PRODROMAL_         1.047      0.047     22.441      0.000
+    PRODROMAL_         0.942      0.049     19.127      0.000
+    PRODROMAL_         1.006      0.051     19.692      0.000
+    PRODROMAL_         0.895      0.045     19.772      0.000
+    PRODROMAL_         0.786      0.047     16.593      0.000
+    PRODROMAL_         0.815      0.050     16.250      0.000
+    PRODROMAL_         0.952      0.047     20.169      0.000
+    PRODROMAL_         1.143      0.053     21.414      0.000
+    PRODROMAL_         1.002      0.047     21.397      0.000
+    PRODROMAL_         1.014      0.049     20.805      0.000
+    PRODROMAL_         1.043      0.050     20.731      0.000
+    GEN_CHILD_         0.945      0.051     18.478      0.000
+    GEN_CHILD_         0.797      0.058     13.716      0.000
+    GEN_CHILD_         0.790      0.045     17.558      0.000
+    GEN_CHILD_         0.860      0.055     15.692      0.000
+    GEN_CHILD_         1.001      0.057     17.501      0.000
+    GEN_CHILD_         0.806      0.049     16.357      0.000
+    GEN_CHILD_         0.872      0.049     17.706      0.000
+    GEN_CHILD_         0.899      0.053     17.116      0.000
+    GEN_CHILD_         0.856      0.050     17.037      0.000
+    GEN_CHILD_         0.900      0.050     17.942      0.000
+    BPM_1_Y            1.061      0.054     19.649      0.000
+    BPM_2_Y            1.328      0.062     21.295      0.000
+    BPM_3_Y            1.213      0.058     20.877      0.000
+    BPM_4_Y            1.730      0.077     22.407      0.000
+    BPM_5_Y            1.439      0.065     21.997      0.000
+    BPM_6_Y            1.396      0.072     19.512      0.000
+    BPM_7_Y            1.223      0.059     20.715      0.000
+    BPM_8_Y            1.377      0.067     20.569      0.000
+    BPM_9_Y            1.375      0.067     20.428      0.000
+    BPM_10_Y           1.388      0.064     21.673      0.000
+    BPM_11_Y           1.088      0.058     18.798      0.000
+    BPM_12_Y           1.177      0.062     19.095      0.000
+    BPM_13_Y           0.951      0.052     18.348      0.000
+    BPM_14_Y           1.681      0.076     22.249      0.000
+    BPM_15_Y           0.983      0.051     19.296      0.000
+    BPM_16_Y           1.399      0.066     21.240      0.000
+    BPM_17_Y           1.434      0.071     20.291      0.000
+    BPM_18_Y           1.348      0.066     20.542      0.000
+    BPM_19_Y           1.120      0.058     19.383      0.000
+    POA_NIHTB_        -0.525      0.037    -14.372      0.000
+    POA_NIHTB_        -0.280      0.030     -9.311      0.000
+    POA_NIHTB_        -0.641      0.039    -16.633      0.000
+    POA_NIHTB_        -0.512      0.036    -14.406      0.000
+    POA_NIHTB_        -0.064      0.027     -2.344      0.019
+    POA_NIHTB_        -0.202      0.029     -6.952      0.000
+    POA_NIHTB_        -0.448      0.034    -13.267      0.000
+    POA_NIHTB_        -0.025      0.028     -0.891      0.373
+    POA_NIHTB_        -1.010      0.050    -20.324      0.000
+    KSADS_14_8         0.951      0.051     18.497      0.000
+    KSADS_14_8         0.982      0.060     16.445      0.000
+    KSADS_14_8         1.008      0.065     15.518      0.000
+    KSADS_14_9         1.007      0.053     19.078      0.000
+    KSADS_15_9         0.815      0.057     14.247      0.000
+    KSADS_15_9         0.759      0.046     16.682      0.000
+    KSADS_15_9         0.738      0.044     16.850      0.000
+    KSADS_15_9         0.767      0.051     15.131      0.000
+    KSADS_16_9         0.827      0.057     14.527      0.000
+    KSADS_16_9         0.741      0.046     16.048      0.000
+    KSADS_16_1         0.576      0.055     10.473      0.000
+    KSADS_16_1         0.642      0.052     12.277      0.000
+    KSADS_16_1         0.623      0.068      9.128      0.000
+    KSADS_16_1         0.660      0.089      7.395      0.000
+    KSADS_14_7         0.977      0.051     19.182      0.000
+    KSADS_14_7         0.945      0.052     18.236      0.000
+
+ Thresholds
+    PRODROMA$1         1.709      0.021     80.579      0.000
+    PRODROMA$1         0.957      0.014     66.574      0.000
+    PRODROMA$1         1.347      0.017     79.757      0.000
+    PRODROMA$1         1.395      0.018     79.377      0.000
+    PRODROMA$1         1.864      0.024     79.283      0.000
+    PRODROMA$1         1.054      0.015     70.780      0.000
+    PRODROMA$1         1.396      0.018     79.454      0.000
+    PRODROMA$1         0.981      0.015     67.365      0.000
+    PRODROMA$1         1.267      0.016     77.126      0.000
+    PRODROMA$1         1.242      0.016     76.793      0.000
+    PRODROMA$1         1.056      0.015     70.844      0.000
+    PRODROMA$1         1.491      0.018     81.251      0.000
+    PRODROMA$1         1.679      0.021     80.753      0.000
+    PRODROMA$1         1.380      0.017     80.304      0.000
+    PRODROMA$1         1.429      0.018     80.588      0.000
+    PRODROMA$1         1.654      0.020     81.730      0.000
+    PRODROMA$1         1.343      0.017     78.597      0.000
+    PRODROMA$1         1.330      0.017     78.176      0.000
+    PRODROMA$1         1.330      0.017     78.996      0.000
+    PRODROMA$1         1.494      0.018     80.838      0.000
+    PRODROMA$1         1.275      0.016     77.380      0.000
+    GEN_CHIL$1         1.115      0.016     71.849      0.000
+    GEN_CHIL$2         1.876      0.024     77.995      0.000
+    GEN_CHIL$3         2.357      0.037     64.150      0.000
+    GEN_CHIL$1         1.741      0.022     78.560      0.000
+    GEN_CHIL$2         2.557      0.047     54.823      0.000
+    GEN_CHIL$3         3.095      0.089     34.630      0.000
+    GEN_CHIL$1         0.837      0.014     59.844      0.000
+    GEN_CHIL$2         1.890      0.024     77.722      0.000
+    GEN_CHIL$3         2.524      0.044     57.192      0.000
+    GEN_CHIL$1         1.543      0.019     79.513      0.000
+    GEN_CHIL$2         2.255      0.034     67.126      0.000
+    GEN_CHIL$3         2.856      0.065     44.109      0.000
+    GEN_CHIL$1         1.557      0.019     79.966      0.000
+    GEN_CHIL$2         2.285      0.035     65.516      0.000
+    GEN_CHIL$3         2.831      0.063     45.178      0.000
+    GEN_CHIL$1         1.231      0.016     75.409      0.000
+    GEN_CHIL$2         2.016      0.027     75.309      0.000
+    GEN_CHIL$3         2.569      0.047     55.175      0.000
+    GEN_CHIL$1         1.063      0.015     70.571      0.000
+    GEN_CHIL$2         1.918      0.025     77.492      0.000
+    GEN_CHIL$3         2.513      0.043     58.495      0.000
+    GEN_CHIL$1         1.383      0.017     79.252      0.000
+    GEN_CHIL$2         2.209      0.032     68.927      0.000
+    GEN_CHIL$3         2.807      0.061     46.165      0.000
+    GEN_CHIL$1         1.217      0.016     74.821      0.000
+    GEN_CHIL$2         2.084      0.029     71.668      0.000
+    GEN_CHIL$3         2.753      0.057     48.393      0.000
+    GEN_CHIL$1         1.105      0.015     72.227      0.000
+    GEN_CHIL$2         1.903      0.024     78.084      0.000
+    GEN_CHIL$3         2.463      0.041     60.515      0.000
+    BPM_1_Y$1          0.561      0.013     42.283      0.000
+    BPM_1_Y$2          1.846      0.024     76.209      0.000
+    BPM_2_Y$1         -0.113      0.012     -9.107      0.000
+    BPM_2_Y$2          1.235      0.016     75.592      0.000
+    BPM_3_Y$1          0.408      0.013     32.244      0.000
+    BPM_3_Y$2          1.649      0.020     80.804      0.000
+    BPM_4_Y$1          0.033      0.012      2.710      0.007
+    BPM_4_Y$2          1.154      0.016     74.183      0.000
+    BPM_5_Y$1         -0.159      0.012    -12.862      0.000
+    BPM_5_Y$2          0.776      0.013     57.476      0.000
+    BPM_6_Y$1          1.673      0.021     79.691      0.000
+    BPM_6_Y$2          2.538      0.044     57.302      0.000
+    BPM_7_Y$1          0.775      0.014     56.068      0.000
+    BPM_7_Y$2          2.374      0.037     63.719      0.000
+    BPM_8_Y$1          1.410      0.018     78.617      0.000
+    BPM_8_Y$2          2.505      0.043     57.800      0.000
+    BPM_9_Y$1          1.195      0.016     74.535      0.000
+    BPM_9_Y$2          2.103      0.029     72.302      0.000
+    BPM_10_Y$1         0.175      0.012     14.269      0.000
+    BPM_10_Y$2         1.564      0.019     80.837      0.000
+    BPM_11_Y$1         0.639      0.013     48.750      0.000
+    BPM_11_Y$2         1.698      0.021     80.274      0.000
+    BPM_12_Y$1         1.081      0.015     71.569      0.000
+    BPM_12_Y$2         1.954      0.026     76.502      0.000
+    BPM_13_Y$1         0.267      0.012     21.643      0.000
+    BPM_13_Y$2         1.309      0.017     78.399      0.000
+    BPM_14_Y$1        -0.016      0.012     -1.279      0.201
+    BPM_14_Y$2         1.058      0.015     70.970      0.000
+    BPM_15_Y$1         0.245      0.012     19.702      0.000
+    BPM_15_Y$2         1.315      0.017     77.734      0.000
+    BPM_16_Y$1         0.352      0.012     28.364      0.000
+    BPM_16_Y$2         1.347      0.017     78.854      0.000
+    BPM_17_Y$1         1.564      0.019     80.268      0.000
+    BPM_17_Y$2         2.465      0.042     58.743      0.000
+    BPM_18_Y$1         1.021      0.015     69.444      0.000
+    BPM_18_Y$2         2.016      0.027     74.930      0.000
+    BPM_19_Y$1         0.202      0.012     16.518      0.000
+    BPM_19_Y$2         1.231      0.016     76.269      0.000
+    POA_NIHT$1        -0.868      0.014    -61.086      0.000
+    POA_NIHT$2         0.299      0.013     23.882      0.000
+    POA_NIHT$1        -1.147      0.016    -73.399      0.000
+    POA_NIHT$2         0.151      0.012     12.239      0.000
+    POA_NIHT$1        -1.620      0.020    -81.456      0.000
+    POA_NIHT$2        -0.158      0.012    -13.082      0.000
+    POA_NIHT$1        -1.498      0.019    -80.515      0.000
+    POA_NIHT$2        -0.146      0.012    -12.078      0.000
+    POA_NIHT$1        -1.078      0.015    -71.447      0.000
+    POA_NIHT$2         0.159      0.012     13.002      0.000
+    POA_NIHT$1        -1.100      0.015    -71.491      0.000
+    POA_NIHT$2         0.132      0.012     10.755      0.000
+    POA_NIHT$1        -1.383      0.018    -78.982      0.000
+    POA_NIHT$2        -0.147      0.012    -11.974      0.000
+    POA_NIHT$1        -1.160      0.016    -74.158      0.000
+    POA_NIHT$2        -0.001      0.012     -0.112      0.910
+    POA_NIHT$1        -1.354      0.017    -79.281      0.000
+    POA_NIHT$2        -0.048      0.012     -3.936      0.000
+    KSADS_14$1         1.035      0.015     69.013      0.000
+    KSADS_14$1         1.611      0.020     79.316      0.000
+    KSADS_14$1         1.800      0.023     77.638      0.000
+    KSADS_14$1         0.943      0.014     65.417      0.000
+    KSADS_15$1         1.630      0.021     78.454      0.000
+    KSADS_15$1         0.685      0.014     50.018      0.000
+    KSADS_15$1         0.568      0.013     43.295      0.000
+    KSADS_15$1         1.331      0.017     77.104      0.000
+    KSADS_16$1         1.660      0.021     79.852      0.000
+    KSADS_16$1         0.927      0.015     63.660      0.000
+    KSADS_16$1         1.646      0.021     79.303      0.000
+    KSADS_16$1         1.543      0.019     80.449      0.000
+    KSADS_16$1         2.044      0.028     72.846      0.000
+    KSADS_16$1         2.382      0.038     62.118      0.000
+    KSADS_14$1         0.665      0.013     50.269      0.000
+    KSADS_14$2         0.870      0.014     61.944      0.000
+    KSADS_14$1         1.157      0.016     73.687      0.000
+    KSADS_14$2         1.456      0.018     79.064      0.000
+
+ Variances
+    PSYCHOSIS          0.306      0.022     13.664      0.000
+    MANIA              0.471      0.015     30.626      0.000
+    YOUTHREPOR         0.022      0.006      3.861      0.000
+    POSITIVEAF         0.255      0.010     26.769      0.000
+    EXTERNALIZ         0.624      0.015     42.567      0.000
+    GENERAL            0.211      0.018     11.440      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ PSYCHOSI BY
+    PRODROMAL_         0.553      0.020     27.328      0.000
+    PRODROMAL_         0.575      0.013     42.914      0.000
+    PRODROMAL_         0.576      0.016     36.250      0.000
+    PRODROMAL_         0.642      0.015     43.466      0.000
+    PRODROMAL_         0.533      0.022     24.034      0.000
+    PRODROMAL_         0.518      0.015     35.101      0.000
+    PRODROMAL_         0.645      0.014     45.169      0.000
+    PRODROMAL_         0.530      0.014     37.353      0.000
+    PRODROMAL_         0.527      0.016     33.008      0.000
+    PRODROMAL_         0.615      0.014     43.691      0.000
+    PRODROMAL_         0.615      0.013     47.975      0.000
+    PRODROMAL_         0.574      0.017     33.562      0.000
+    PRODROMAL_         0.532      0.020     26.955      0.000
+    PRODROMAL_         0.607      0.015     39.662      0.000
+    PRODROMAL_         0.473      0.019     24.783      0.000
+    PRODROMAL_         0.634      0.018     34.798      0.000
+    PRODROMAL_         0.593      0.015     38.334      0.000
+    PRODROMAL_         0.511      0.016     31.322      0.000
+    PRODROMAL_         0.656      0.014     47.268      0.000
+    PRODROMAL_         0.681      0.015     46.130      0.000
+    PRODROMAL_         0.533      0.016     33.727      0.000
+
+ MANIA    BY
+    GEN_CHILD_         0.686      0.011     61.251      0.000
+    GEN_CHILD_         0.715      0.016     44.893      0.000
+    GEN_CHILD_         0.726      0.009     76.998      0.000
+    GEN_CHILD_         0.764      0.012     62.942      0.000
+    GEN_CHILD_         0.735      0.013     58.211      0.000
+    GEN_CHILD_         0.702      0.012     60.079      0.000
+    GEN_CHILD_         0.740      0.010     74.688      0.000
+    GEN_CHILD_         0.768      0.011     69.601      0.000
+    GEN_CHILD_         0.766      0.010     78.454      0.000
+    GEN_CHILD_         0.584      0.013     44.586      0.000
+
+ YOUTHREP BY
+    BPM_1_Y            0.147      0.019      7.722      0.000
+    BPM_2_Y            0.142      0.018      7.821      0.000
+    BPM_3_Y            0.109      0.018      5.977      0.000
+    BPM_4_Y           -0.113      0.020     -5.706      0.000
+    BPM_5_Y           -0.076      0.018     -4.177      0.000
+    BPM_6_Y            0.000      0.030      0.012      0.990
+    BPM_7_Y            0.083      0.021      4.024      0.000
+    BPM_8_Y           -0.035      0.026     -1.349      0.177
+    BPM_9_Y            0.442      0.020     21.943      0.000
+    BPM_10_Y           0.106      0.018      5.871      0.000
+    BPM_11_Y           0.545      0.016     33.233      0.000
+    BPM_12_Y           0.475      0.019     25.124      0.000
+    BPM_13_Y           0.510      0.015     33.701      0.000
+    BPM_14_Y          -0.048      0.019     -2.496      0.013
+    BPM_15_Y           0.209      0.018     11.636      0.000
+    BPM_16_Y           0.160      0.019      8.642      0.000
+    BPM_17_Y           0.075      0.027      2.783      0.005
+    BPM_18_Y           0.376      0.019     20.029      0.000
+    BPM_19_Y           0.537      0.015     35.614      0.000
+
+ POSITIVE BY
+    POA_NIHTB_         0.505      0.009     53.538      0.000
+    POA_NIHTB_         0.706      0.007    101.950      0.000
+    POA_NIHTB_         0.652      0.008     81.064      0.000
+    POA_NIHTB_         0.715      0.007     99.787      0.000
+    POA_NIHTB_         0.769      0.006    130.629      0.000
+    POA_NIHTB_         0.722      0.007    109.025      0.000
+    POA_NIHTB_         0.737      0.007    109.189      0.000
+    POA_NIHTB_         0.704      0.007    102.656      0.000
+    POA_NIHTB_         0.572      0.009     65.287      0.000
+
+ EXTERNAL BY
+    KSADS_14_8         0.790      0.009     85.134      0.000
+    KSADS_14_8         0.695      0.015     46.905      0.000
+    KSADS_14_8         0.667      0.018     37.488      0.000
+    KSADS_14_9         0.761      0.009     83.781      0.000
+    KSADS_15_9         0.765      0.014     54.946      0.000
+    KSADS_15_9         0.700      0.010     71.437      0.000
+    KSADS_15_9         0.692      0.010     71.000      0.000
+    KSADS_15_9         0.730      0.012     61.331      0.000
+    KSADS_16_9         0.553      0.019     28.650      0.000
+    KSADS_16_9         0.474      0.014     33.063      0.000
+    KSADS_16_1         0.461      0.021     22.265      0.000
+    KSADS_16_1         0.518      0.019     27.804      0.000
+    KSADS_16_1         0.518      0.026     20.172      0.000
+    KSADS_16_1         0.494      0.038     12.954      0.000
+    KSADS_14_7         0.730      0.009     81.617      0.000
+    KSADS_14_7         0.639      0.012     53.208      0.000
+
+ GENERAL  BY
+    PRODROMAL_         0.459      0.020     22.880      0.000
+    PRODROMAL_         0.431      0.014     30.671      0.000
+    PRODROMAL_         0.413      0.017     24.777      0.000
+    PRODROMAL_         0.380      0.018     21.609      0.000
+    PRODROMAL_         0.510      0.022     23.471      0.000
+    PRODROMAL_         0.444      0.014     31.167      0.000
+    PRODROMAL_         0.378      0.018     21.362      0.000
+    PRODROMAL_         0.482      0.014     35.176      0.000
+    PRODROMAL_         0.442      0.016     28.255      0.000
+    PRODROMAL_         0.466      0.016     29.840      0.000
+    PRODROMAL_         0.481      0.014     34.635      0.000
+    PRODROMAL_         0.433      0.018     24.577      0.000
+    PRODROMAL_         0.462      0.019     24.328      0.000
+    PRODROMAL_         0.411      0.017     24.554      0.000
+    PRODROMAL_         0.361      0.018     19.943      0.000
+    PRODROMAL_         0.375      0.020     18.302      0.000
+    PRODROMAL_         0.437      0.016     26.804      0.000
+    PRODROMAL_         0.525      0.015     34.413      0.000
+    PRODROMAL_         0.461      0.016     28.519      0.000
+    PRODROMAL_         0.466      0.018     26.603      0.000
+    PRODROMAL_         0.479      0.016     30.912      0.000
+    GEN_CHILD_         0.434      0.015     29.469      0.000
+    GEN_CHILD_         0.366      0.022     16.592      0.000
+    GEN_CHILD_         0.363      0.014     25.774      0.000
+    GEN_CHILD_         0.395      0.019     20.919      0.000
+    GEN_CHILD_         0.460      0.018     25.297      0.000
+    GEN_CHILD_         0.370      0.016     22.966      0.000
+    GEN_CHILD_         0.400      0.015     26.925      0.000
+    GEN_CHILD_         0.413      0.017     23.636      0.000
+    GEN_CHILD_         0.393      0.016     24.381      0.000
+    GEN_CHILD_         0.414      0.015     26.869      0.000
+    BPM_1_Y            0.487      0.013     38.697      0.000
+    BPM_2_Y            0.610      0.010     63.351      0.000
+    BPM_3_Y            0.557      0.011     51.004      0.000
+    BPM_4_Y            0.795      0.007    113.282      0.000
+    BPM_5_Y            0.661      0.008     77.939      0.000
+    BPM_6_Y            0.641      0.017     37.572      0.000
+    BPM_7_Y            0.562      0.012     45.294      0.000
+    BPM_8_Y            0.633      0.015     41.578      0.000
+    BPM_9_Y            0.632      0.015     41.726      0.000
+    BPM_10_Y           0.638      0.009     69.351      0.000
+    BPM_11_Y           0.500      0.015     33.361      0.000
+    BPM_12_Y           0.541      0.016     34.280      0.000
+    BPM_13_Y           0.437      0.014     31.942      0.000
+    BPM_14_Y           0.772      0.007    108.683      0.000
+    BPM_15_Y           0.452      0.012     37.439      0.000
+    BPM_16_Y           0.643      0.010     64.151      0.000
+    BPM_17_Y           0.659      0.016     41.246      0.000
+    BPM_18_Y           0.619      0.014     45.121      0.000
+    BPM_19_Y           0.515      0.013     38.742      0.000
+    POA_NIHTB_        -0.241      0.013    -19.247      0.000
+    POA_NIHTB_        -0.129      0.013    -10.200      0.000
+    POA_NIHTB_        -0.295      0.013    -23.539      0.000
+    POA_NIHTB_        -0.235      0.013    -18.402      0.000
+    POA_NIHTB_        -0.029      0.013     -2.349      0.019
+    POA_NIHTB_        -0.093      0.013     -7.366      0.000
+    POA_NIHTB_        -0.206      0.013    -16.318      0.000
+    POA_NIHTB_        -0.011      0.013     -0.893      0.372
+    POA_NIHTB_        -0.464      0.011    -42.586      0.000
+    KSADS_14_8         0.437      0.015     30.067      0.000
+    KSADS_14_8         0.451      0.020     22.421      0.000
+    KSADS_14_8         0.463      0.022     20.695      0.000
+    KSADS_14_9         0.463      0.014     33.287      0.000
+    KSADS_15_9         0.374      0.022     17.214      0.000
+    KSADS_15_9         0.349      0.014     24.397      0.000
+    KSADS_15_9         0.339      0.014     24.425      0.000
+    KSADS_15_9         0.352      0.018     19.127      0.000
+    KSADS_16_9         0.380      0.021     17.981      0.000
+    KSADS_16_9         0.340      0.015     22.216      0.000
+    KSADS_16_1         0.265      0.023     11.465      0.000
+    KSADS_16_1         0.295      0.021     14.072      0.000
+    KSADS_16_1         0.286      0.029      9.843      0.000
+    KSADS_16_1         0.303      0.040      7.639      0.000
+    KSADS_14_7         0.449      0.013     34.795      0.000
+    KSADS_14_7         0.434      0.015     28.345      0.000
+
+ Thresholds
+    PRODROMA$1         1.709      0.021     80.579      0.000
+    PRODROMA$1         0.957      0.014     66.574      0.000
+    PRODROMA$1         1.347      0.017     79.757      0.000
+    PRODROMA$1         1.395      0.018     79.377      0.000
+    PRODROMA$1         1.864      0.024     79.283      0.000
+    PRODROMA$1         1.054      0.015     70.780      0.000
+    PRODROMA$1         1.396      0.018     79.454      0.000
+    PRODROMA$1         0.981      0.015     67.365      0.000
+    PRODROMA$1         1.267      0.016     77.126      0.000
+    PRODROMA$1         1.242      0.016     76.793      0.000
+    PRODROMA$1         1.056      0.015     70.844      0.000
+    PRODROMA$1         1.491      0.018     81.251      0.000
+    PRODROMA$1         1.679      0.021     80.753      0.000
+    PRODROMA$1         1.380      0.017     80.304      0.000
+    PRODROMA$1         1.429      0.018     80.588      0.000
+    PRODROMA$1         1.654      0.020     81.730      0.000
+    PRODROMA$1         1.343      0.017     78.597      0.000
+    PRODROMA$1         1.330      0.017     78.176      0.000
+    PRODROMA$1         1.330      0.017     78.996      0.000
+    PRODROMA$1         1.494      0.018     80.838      0.000
+    PRODROMA$1         1.275      0.016     77.380      0.000
+    GEN_CHIL$1         1.115      0.016     71.849      0.000
+    GEN_CHIL$2         1.876      0.024     77.995      0.000
+    GEN_CHIL$3         2.357      0.037     64.150      0.000
+    GEN_CHIL$1         1.741      0.022     78.560      0.000
+    GEN_CHIL$2         2.557      0.047     54.823      0.000
+    GEN_CHIL$3         3.095      0.089     34.630      0.000
+    GEN_CHIL$1         0.837      0.014     59.844      0.000
+    GEN_CHIL$2         1.890      0.024     77.722      0.000
+    GEN_CHIL$3         2.524      0.044     57.192      0.000
+    GEN_CHIL$1         1.543      0.019     79.513      0.000
+    GEN_CHIL$2         2.255      0.034     67.126      0.000
+    GEN_CHIL$3         2.856      0.065     44.109      0.000
+    GEN_CHIL$1         1.557      0.019     79.966      0.000
+    GEN_CHIL$2         2.285      0.035     65.516      0.000
+    GEN_CHIL$3         2.831      0.063     45.178      0.000
+    GEN_CHIL$1         1.231      0.016     75.409      0.000
+    GEN_CHIL$2         2.016      0.027     75.309      0.000
+    GEN_CHIL$3         2.569      0.047     55.175      0.000
+    GEN_CHIL$1         1.063      0.015     70.571      0.000
+    GEN_CHIL$2         1.918      0.025     77.492      0.000
+    GEN_CHIL$3         2.513      0.043     58.495      0.000
+    GEN_CHIL$1         1.383      0.017     79.252      0.000
+    GEN_CHIL$2         2.209      0.032     68.927      0.000
+    GEN_CHIL$3         2.807      0.061     46.165      0.000
+    GEN_CHIL$1         1.217      0.016     74.821      0.000
+    GEN_CHIL$2         2.084      0.029     71.668      0.000
+    GEN_CHIL$3         2.753      0.057     48.393      0.000
+    GEN_CHIL$1         1.105      0.015     72.227      0.000
+    GEN_CHIL$2         1.903      0.024     78.084      0.000
+    GEN_CHIL$3         2.463      0.041     60.515      0.000
+    BPM_1_Y$1          0.561      0.013     42.283      0.000
+    BPM_1_Y$2          1.846      0.024     76.209      0.000
+    BPM_2_Y$1         -0.113      0.012     -9.107      0.000
+    BPM_2_Y$2          1.235      0.016     75.592      0.000
+    BPM_3_Y$1          0.408      0.013     32.244      0.000
+    BPM_3_Y$2          1.649      0.020     80.804      0.000
+    BPM_4_Y$1          0.033      0.012      2.710      0.007
+    BPM_4_Y$2          1.154      0.016     74.183      0.000
+    BPM_5_Y$1         -0.159      0.012    -12.862      0.000
+    BPM_5_Y$2          0.776      0.013     57.476      0.000
+    BPM_6_Y$1          1.673      0.021     79.691      0.000
+    BPM_6_Y$2          2.538      0.044     57.302      0.000
+    BPM_7_Y$1          0.775      0.014     56.068      0.000
+    BPM_7_Y$2          2.374      0.037     63.719      0.000
+    BPM_8_Y$1          1.410      0.018     78.617      0.000
+    BPM_8_Y$2          2.505      0.043     57.800      0.000
+    BPM_9_Y$1          1.195      0.016     74.535      0.000
+    BPM_9_Y$2          2.103      0.029     72.302      0.000
+    BPM_10_Y$1         0.175      0.012     14.269      0.000
+    BPM_10_Y$2         1.564      0.019     80.837      0.000
+    BPM_11_Y$1         0.639      0.013     48.750      0.000
+    BPM_11_Y$2         1.698      0.021     80.274      0.000
+    BPM_12_Y$1         1.081      0.015     71.569      0.000
+    BPM_12_Y$2         1.954      0.026     76.502      0.000
+    BPM_13_Y$1         0.267      0.012     21.643      0.000
+    BPM_13_Y$2         1.309      0.017     78.399      0.000
+    BPM_14_Y$1        -0.016      0.012     -1.279      0.201
+    BPM_14_Y$2         1.058      0.015     70.970      0.000
+    BPM_15_Y$1         0.245      0.012     19.702      0.000
+    BPM_15_Y$2         1.315      0.017     77.734      0.000
+    BPM_16_Y$1         0.352      0.012     28.364      0.000
+    BPM_16_Y$2         1.347      0.017     78.854      0.000
+    BPM_17_Y$1         1.564      0.019     80.268      0.000
+    BPM_17_Y$2         2.465      0.042     58.743      0.000
+    BPM_18_Y$1         1.021      0.015     69.444      0.000
+    BPM_18_Y$2         2.016      0.027     74.930      0.000
+    BPM_19_Y$1         0.202      0.012     16.518      0.000
+    BPM_19_Y$2         1.231      0.016     76.269      0.000
+    POA_NIHT$1        -0.868      0.014    -61.086      0.000
+    POA_NIHT$2         0.299      0.013     23.882      0.000
+    POA_NIHT$1        -1.147      0.016    -73.399      0.000
+    POA_NIHT$2         0.151      0.012     12.239      0.000
+    POA_NIHT$1        -1.620      0.020    -81.456      0.000
+    POA_NIHT$2        -0.158      0.012    -13.082      0.000
+    POA_NIHT$1        -1.498      0.019    -80.515      0.000
+    POA_NIHT$2        -0.146      0.012    -12.078      0.000
+    POA_NIHT$1        -1.078      0.015    -71.447      0.000
+    POA_NIHT$2         0.159      0.012     13.002      0.000
+    POA_NIHT$1        -1.100      0.015    -71.491      0.000
+    POA_NIHT$2         0.132      0.012     10.755      0.000
+    POA_NIHT$1        -1.383      0.018    -78.982      0.000
+    POA_NIHT$2        -0.147      0.012    -11.974      0.000
+    POA_NIHT$1        -1.160      0.016    -74.158      0.000
+    POA_NIHT$2        -0.001      0.012     -0.112      0.910
+    POA_NIHT$1        -1.354      0.017    -79.281      0.000
+    POA_NIHT$2        -0.048      0.012     -3.936      0.000
+    KSADS_14$1         1.035      0.015     69.013      0.000
+    KSADS_14$1         1.611      0.020     79.316      0.000
+    KSADS_14$1         1.800      0.023     77.638      0.000
+    KSADS_14$1         0.943      0.014     65.417      0.000
+    KSADS_15$1         1.630      0.021     78.454      0.000
+    KSADS_15$1         0.685      0.014     50.018      0.000
+    KSADS_15$1         0.568      0.013     43.295      0.000
+    KSADS_15$1         1.331      0.017     77.104      0.000
+    KSADS_16$1         1.660      0.021     79.852      0.000
+    KSADS_16$1         0.927      0.015     63.660      0.000
+    KSADS_16$1         1.646      0.021     79.303      0.000
+    KSADS_16$1         1.543      0.019     80.449      0.000
+    KSADS_16$1         2.044      0.028     72.846      0.000
+    KSADS_16$1         2.382      0.038     62.118      0.000
+    KSADS_14$1         0.665      0.013     50.269      0.000
+    KSADS_14$2         0.870      0.014     61.944      0.000
+    KSADS_14$1         1.157      0.016     73.687      0.000
+    KSADS_14$2         1.456      0.018     79.064      0.000
+
+ Variances
+    PSYCHOSIS          1.000      0.000    999.000    999.000
+    MANIA              1.000      0.000    999.000    999.000
+    YOUTHREPOR         1.000      0.000    999.000    999.000
+    POSITIVEAF         1.000      0.000    999.000    999.000
+    EXTERNALIZ         1.000      0.000    999.000    999.000
+    GENERAL            1.000      0.000    999.000    999.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed   Residual
+    Variable        Estimate       S.E.  Est./S.E.    P-Value    Variance
+
+    PRODROMA           0.517      0.022     23.093      0.000      0.483
+    PRODROMA           0.516      0.015     34.257      0.000      0.484
+    PRODROMA           0.502      0.018     28.010      0.000      0.498
+    PRODROMA           0.556      0.018     31.248      0.000      0.444
+    PRODROMA           0.544      0.025     21.902      0.000      0.456
+    PRODROMA           0.466      0.016     29.621      0.000      0.534
+    PRODROMA           0.558      0.018     31.609      0.000      0.442
+    PRODROMA           0.513      0.015     34.396      0.000      0.487
+    PRODROMA           0.473      0.017     27.528      0.000      0.527
+    PRODROMA           0.595      0.016     38.036      0.000      0.405
+    PRODROMA           0.609      0.014     42.260      0.000      0.391
+    PRODROMA           0.517      0.019     27.219      0.000      0.483
+    PRODROMA           0.496      0.022     23.047      0.000      0.504
+    PRODROMA           0.538      0.018     30.008      0.000      0.462
+    PRODROMA           0.354      0.019     18.626      0.000      0.646
+    PRODROMA           0.542      0.021     25.232      0.000      0.458
+    PRODROMA           0.542      0.018     30.838      0.000      0.458
+    PRODROMA           0.537      0.017     31.901      0.000      0.463
+    PRODROMA           0.643      0.016     40.370      0.000      0.357
+    PRODROMA           0.681      0.017     40.278      0.000      0.319
+    PRODROMA           0.514      0.017     30.978      0.000      0.486
+    GEN_CHIL           0.659      0.013     49.877      0.000      0.341
+    GEN_CHIL           0.645      0.021     30.318      0.000      0.355
+    GEN_CHIL           0.659      0.012     56.497      0.000      0.341
+    GEN_CHIL           0.740      0.015     48.465      0.000      0.260
+    GEN_CHIL           0.752      0.015     49.937      0.000      0.248
+    GEN_CHIL           0.630      0.014     43.812      0.000      0.370
+    GEN_CHIL           0.708      0.012     60.134      0.000      0.292
+    GEN_CHIL           0.761      0.013     59.493      0.000      0.239
+    GEN_CHIL           0.742      0.012     62.461      0.000      0.258
+    GEN_CHIL           0.513      0.015     34.037      0.000      0.487
+    BPM_1_Y            0.259      0.012     22.437      0.000      0.741
+    BPM_2_Y            0.392      0.011     37.283      0.000      0.608
+    BPM_3_Y            0.322      0.011     28.094      0.000      0.678
+    BPM_4_Y            0.644      0.012     52.537      0.000      0.356
+    BPM_5_Y            0.443      0.012     37.330      0.000      0.557
+    BPM_6_Y            0.411      0.022     18.791      0.000      0.589
+    BPM_7_Y            0.322      0.013     24.365      0.000      0.678
+    BPM_8_Y            0.401      0.020     20.367      0.000      0.599
+    BPM_9_Y            0.594      0.015     38.553      0.000      0.406
+    BPM_10_Y           0.418      0.011     38.382      0.000      0.582
+    BPM_11_Y           0.546      0.014     38.970      0.000      0.454
+    BPM_12_Y           0.518      0.015     33.907      0.000      0.482
+    BPM_13_Y           0.451      0.013     35.479      0.000      0.549
+    BPM_14_Y           0.599      0.011     52.199      0.000      0.401
+    BPM_15_Y           0.248      0.010     24.437      0.000      0.752
+    BPM_16_Y           0.439      0.011     38.870      0.000      0.561
+    BPM_17_Y           0.439      0.020     21.906      0.000      0.561
+    BPM_18_Y           0.525      0.014     37.590      0.000      0.475
+    BPM_19_Y           0.553      0.013     43.577      0.000      0.447
+    POA_NIHT           0.313      0.010     32.036      0.000      0.687
+    POA_NIHT           0.515      0.009     54.885      0.000      0.485
+    POA_NIHT           0.512      0.009     54.288      0.000      0.488
+    POA_NIHT           0.566      0.009     62.042      0.000      0.434
+    POA_NIHT           0.592      0.009     65.956      0.000      0.408
+    POA_NIHT           0.530      0.009     57.292      0.000      0.470
+    POA_NIHT           0.585      0.009     64.364      0.000      0.415
+    POA_NIHT           0.496      0.010     51.483      0.000      0.504
+    POA_NIHT           0.542      0.010     56.623      0.000      0.458
+    KSADS_14           0.815      0.010     82.026      0.000      0.185
+    KSADS_14           0.686      0.016     41.860      0.000      0.314
+    KSADS_14           0.659      0.019     34.174      0.000      0.341
+    KSADS_14           0.794      0.009     85.129      0.000      0.206
+    KSADS_15           0.725      0.017     43.327      0.000      0.275
+    KSADS_15           0.611      0.012     49.597      0.000      0.389
+    KSADS_15           0.594      0.012     48.553      0.000      0.406
+    KSADS_15           0.657      0.015     45.241      0.000      0.343
+    KSADS_16           0.450      0.021     21.453      0.000      0.550
+    KSADS_16           0.340      0.014     24.027      0.000      0.660
+    KSADS_16           0.283      0.020     14.161      0.000      0.717
+    KSADS_16           0.355      0.019     18.423      0.000      0.645
+    KSADS_16           0.350      0.027     12.886      0.000      0.650
+    KSADS_16           0.336      0.039      8.661      0.000      0.664
+    KSADS_14           0.735      0.010     75.427      0.000      0.265
+    KSADS_14           0.596      0.013     44.273      0.000      0.404
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.275E-06
+       (ratio of smallest to largest eigenvalue)
+
+
+SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              PSYCHOSI      PSYCHOSI      MANIA         MANIA_SE      YOUTHREP
+              ________      ________      ________      ________      ________
+                0.044         0.348         0.099         0.440         0.003
+
+
+           Means
+              YOUTHREP      POSITIVE      POSITIVE      EXTERNAL      EXTERNAL
+              ________      ________      ________      ________      ________
+                0.103        -0.004         0.211         0.080         0.449
+
+
+           Means
+              GENERAL       GENERAL_
+              ________      ________
+                0.031         0.175
+
+
+           Covariances
+              PSYCHOSI      PSYCHOSI      MANIA         MANIA_SE      YOUTHREP
+              ________      ________      ________      ________      ________
+ PSYCHOSI       0.148
+ PSYCHOSI      -0.024         0.009
+ MANIA         -0.006         0.003         0.230
+ MANIA_SE      -0.001         0.005        -0.049         0.019
+ YOUTHREP       0.006        -0.002        -0.004         0.000         0.010
+ YOUTHREP      -0.001         0.001         0.000         0.001        -0.001
+ POSITIVE       0.013         0.001         0.010         0.001         0.001
+ POSITIVE       0.000         0.001         0.001         0.001         0.000
+ EXTERNAL      -0.019         0.003         0.093        -0.019        -0.012
+ EXTERNAL       0.001         0.005        -0.012         0.010         0.001
+ GENERAL        0.010        -0.028        -0.012        -0.031         0.005
+ GENERAL_      -0.001         0.002         0.000         0.002         0.000
+
+
+           Covariances
+              YOUTHREP      POSITIVE      POSITIVE      EXTERNAL      EXTERNAL
+              ________      ________      ________      ________      ________
+ YOUTHREP       0.000
+ POSITIVE       0.000         0.191
+ POSITIVE       0.000         0.010         0.001
+ EXTERNAL       0.001         0.006         0.001         0.323
+ EXTERNAL       0.001         0.003         0.001        -0.056         0.021
+ GENERAL       -0.004        -0.017        -0.004        -0.001        -0.032
+ GENERAL_       0.000         0.002         0.000         0.000         0.002
+
+
+           Covariances
+              GENERAL       GENERAL_
+              ________      ________
+ GENERAL        0.165
+ GENERAL_      -0.010         0.001
+
+
+           Correlations
+              PSYCHOSI      PSYCHOSI      MANIA         MANIA_SE      YOUTHREP
+              ________      ________      ________      ________      ________
+ PSYCHOSI       1.000
+ PSYCHOSI      -0.654         1.000
+ MANIA         -0.033         0.060         1.000
+ MANIA_SE      -0.012         0.402        -0.733         1.000
+ YOUTHREP       0.153        -0.177        -0.077        -0.025         1.000
+ YOUTHREP      -0.112         0.645         0.078         0.424        -0.541
+ POSITIVE       0.079         0.033         0.048         0.021         0.015
+ POSITIVE       0.028         0.211         0.065         0.126        -0.047
+ EXTERNAL      -0.087         0.055         0.340        -0.239        -0.209
+ EXTERNAL       0.017         0.381        -0.178         0.487         0.052
+ GENERAL        0.066        -0.725        -0.064        -0.559         0.126
+ GENERAL_      -0.087         0.688         0.016         0.511        -0.147
+
+
+           Correlations
+              YOUTHREP      POSITIVE      POSITIVE      EXTERNAL      EXTERNAL
+              ________      ________      ________      ________      ________
+ YOUTHREP       1.000
+ POSITIVE       0.085         1.000
+ POSITIVE       0.324         0.630         1.000
+ EXTERNAL       0.092         0.025         0.045         1.000
+ EXTERNAL       0.397         0.044         0.142        -0.686         1.000
+ GENERAL       -0.763        -0.093        -0.275        -0.006        -0.552
+ GENERAL_       0.828         0.140         0.401        -0.024         0.529
+
+
+           Correlations
+              GENERAL       GENERAL_
+              ________      ________
+ GENERAL        1.000
+ GENERAL_      -0.810         1.000
+
+
+SAVEDATA INFORMATION
+
+
+  Save file
+    ABCD_psychopathology_bifactor.dat
+
+  Order and format of variables
+
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    PRODROMA       F10.3
+    GEN_CHIL       F10.3
+    GEN_CHIL       F10.3
+    GEN_CHIL       F10.3
+    GEN_CHIL       F10.3
+    GEN_CHIL       F10.3
+    GEN_CHIL       F10.3
+    GEN_CHIL       F10.3
+    GEN_CHIL       F10.3
+    GEN_CHIL       F10.3
+    GEN_CHIL       F10.3
+    BPM_1_Y        F10.3
+    BPM_2_Y        F10.3
+    BPM_3_Y        F10.3
+    BPM_4_Y        F10.3
+    BPM_5_Y        F10.3
+    BPM_6_Y        F10.3
+    BPM_7_Y        F10.3
+    BPM_8_Y        F10.3
+    BPM_9_Y        F10.3
+    BPM_10_Y       F10.3
+    BPM_11_Y       F10.3
+    BPM_12_Y       F10.3
+    BPM_13_Y       F10.3
+    BPM_14_Y       F10.3
+    BPM_15_Y       F10.3
+    BPM_16_Y       F10.3
+    BPM_17_Y       F10.3
+    BPM_18_Y       F10.3
+    BPM_19_Y       F10.3
+    POA_NIHT       F10.3
+    POA_NIHT       F10.3
+    POA_NIHT       F10.3
+    POA_NIHT       F10.3
+    POA_NIHT       F10.3
+    POA_NIHT       F10.3
+    POA_NIHT       F10.3
+    POA_NIHT       F10.3
+    POA_NIHT       F10.3
+    KSADS_14       F10.3
+    KSADS_14       F10.3
+    KSADS_14       F10.3
+    KSADS_14       F10.3
+    KSADS_15       F10.3
+    KSADS_15       F10.3
+    KSADS_15       F10.3
+    KSADS_15       F10.3
+    KSADS_16       F10.3
+    KSADS_16       F10.3
+    KSADS_16       F10.3
+    KSADS_16       F10.3
+    KSADS_16       F10.3
+    KSADS_16       F10.3
+    KSADS_14       F10.3
+    KSADS_14       F10.3
+    PSYCHOSIS      F10.3
+    PSYCHOSI_SE    F10.3
+    MANIA          F10.3
+    MANIA_SE       F10.3
+    YOUTHREPORT    F10.3
+    YOUTHREP_SE    F10.3
+    POSITIVEAFFE   F10.3
+    POSITIVE_SE    F10.3
+    EXTERNALIZIN   F10.3
+    EXTERNAL_SE    F10.3
+    GENERAL        F10.3
+    GENERAL_SE     F10.3
+    FAMID          I6
+
+  Save file format
+    87F10.3 I6
+
+  Save file record length    10000
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\reduc\documents\abcd_psychopathology_bifactor.dgm
+
+     Beginning Time:  18:19:07
+        Ending Time:  18:23:51
+       Elapsed Time:  00:04:44
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen
